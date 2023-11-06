@@ -57,4 +57,65 @@ main {
     margin-top:10px;
     margin-bottom:10px;
 }
-
+#menu{
+    background-color:red;
+    border-block:solid  6px;
+    border-block-color:yellow;
+    width:95%;
+    margin:auto;
+    position:relative;
+    min-block-size:800px
+  
+}
+#menu>.entre{
+    position:static;
+    width:45%;
+    left:0px;
+    top:76px
+}
+#menu>.entres{
+    position:static;
+    width:45%;
+    left:0px;
+    top:139px;
+}
+#menu>.plat{
+    position:absolute;
+    width:45%;
+    right:0px;
+    top:76px;
+    position:
+}
+#menu>.plats{
+    position:absolute;
+    width:45%;
+    right:0px;
+    top:139px;
+}
+#menu h2{
+    text-decoration: underline;
+}
+#menu>.dessers{
+    position:absolute;
+     width:45%;
+    left:0px;
+    top:400px;
+}
+#menu>.desser{
+    position:absolute;
+     width:45%;
+    left:0px;
+    top:340px;
+}
+#menu>.boiss{
+    position:absolute;
+     width:45%;
+    right:0px;
+    top:340px;
+}
+#menu>.boisss{
+    position:absolute;
+     width:45%;
+    right:0px;
+    top:400px;
+}
