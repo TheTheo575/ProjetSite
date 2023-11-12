@@ -19,6 +19,7 @@ header {
     padding: 25%;
     padding-top: 5px;
     padding-bottom: 5px;
+   
 }
 
 nav {
@@ -57,6 +58,7 @@ main {
     margin-top:10px;
     margin-bottom:10px;
 }
+
 #menu{
     background-color:red;
     border-block:solid  6px;
@@ -64,32 +66,33 @@ main {
     width:95%;
     margin:auto;
     position:relative;
-    min-block-size:800px
+    min-block-size:800px;
+    color:white;
   
 }
 #menu>.entre{
     position:static;
     width:45%;
-    left:0px;
+    left:5px;
     top:76px
 }
 #menu>.entres{
     position:static;
     width:45%;
-    left:0px;
+    left:5px;
     top:139px;
 }
 #menu>.plat{
     position:absolute;
     width:45%;
-    right:0px;
+    right:5px;
     top:76px;
-    position:
+    position:absolute;
 }
 #menu>.plats{
     position:absolute;
     width:45%;
-    right:0px;
+    right:5px;
     top:139px;
 }
 #menu h2{
@@ -98,13 +101,13 @@ main {
 #menu>.dessers{
     position:absolute;
      width:45%;
-    left:0px;
+    left:5px;
     top:400px;
 }
 #menu>.desser{
     position:absolute;
      width:45%;
-    left:0px;
+    left:5px;
     top:340px;
 }
 #menu>.boiss{
@@ -118,4 +121,8 @@ main {
      width:45%;
     right:0px;
     top:400px;
+}
+#menu>h1{
+    text-align:center;
+    text-decoration:underline;
 }
