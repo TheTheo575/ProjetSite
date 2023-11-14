@@ -46,7 +46,7 @@ footer {
     padding-left:4px;
     color: var(--text-color);
 
-    background-color: var(--main-color);
+    background-color: var(--main-color);   
     padding-top: 5px;
     padding-bottom: 5px;
 }
