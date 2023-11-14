@@ -2,11 +2,13 @@
     --second-color: #f0e054;
     --main-color: #ff2828;
     --text-color: #ffffff;
+    --marron-color: #615055;
 }
 
 body {
     font-family: Georgia, serif;
     font-size:20px;
+    
 }
 
 header {
@@ -19,7 +21,6 @@ header {
     padding: 25%;
     padding-top: 5px;
     padding-bottom: 5px;
-   
 }
 
 nav {
@@ -59,70 +60,62 @@ main {
     margin-bottom:10px;
 }
 
-#menu{
-    background-color:red;
-    border-block:solid  6px;
-    border-block-color:yellow;
-    width:95%;
-    margin:auto;
-    position:relative;
-    min-block-size:800px;
-    color:white;
-  
-}
-#menu>.entre{
-    position:static;
-    width:45%;
-    left:5px;
-    top:76px
-}
-#menu>.entres{
-    position:static;
-    width:45%;
-    left:5px;
-    top:139px;
-}
-#menu>.plat{
-    position:absolute;
-    width:45%;
-    right:5px;
-    top:76px;
-    position:absolute;
-}
-#menu>.plats{
-    position:absolute;
-    width:45%;
-    right:5px;
-    top:139px;
-}
-#menu h2{
+/* MENU */
+#titre{
+    grid-area: titre;
+    text-align: center;
     text-decoration: underline;
+    
 }
-#menu>.dessers{
-    position:absolute;
-     width:45%;
-    left:5px;
-    top:400px;
+
+#liste-menu ul::first-line{
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
 }
-#menu>.desser{
-    position:absolute;
-     width:45%;
-    left:5px;
-    top:340px;
+
+#liste-menu ul{
+    list-style-type: none;
+    padding-top: 5px;
 }
-#menu>.boiss{
-    position:absolute;
-     width:45%;
-    right:0px;
-    top:340px;
+
+#indic{
+    font-size: 10px;
 }
-#menu>.boisss{
-    position:absolute;
-     width:45%;
-    right:0px;
-    top:400px;
+
+@media only screen and (768px<=width){ 
+#liste-menu {
+    display: grid;
+    /* color: var(--text-color); */
+    grid-template-columns: repeat(2,50%);
+	grid-template-rows: 12% 40% 40% 8%;
+    grid-template-areas: " titre titre"
+                         " a1 a2 "
+                         " b1 b2"
+                         " indic indic";
 }
-#menu>h1{
-    text-align:center;
-    text-decoration:underline;
+
+.entrees{
+    grid-area: a1;
+    text-align: center;
+}
+.plats{
+    grid-area: a2;
+    text-align: center;
+}
+.desserts{
+    grid-area: b1;
+    text-align: center;
+}
+.boissons{
+    grid-area: b2;
+    text-align: center;
+}
+#indic{
+    grid-area: indic;
+    font-size: 10px;
+}
+
 }
