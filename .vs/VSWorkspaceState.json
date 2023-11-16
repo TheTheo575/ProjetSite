@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\site-projet",
+    "\\site-projet\\site-projet",
+    "\\site-projet\\site-projet\\pages_html"
   ],
-  "SelectedNode": "\\C:\\Users\\alexis.evin\\OneDrive - JUNIA Grande école d'ingénieurs\\Desktop\\Info\\Projet\\chtit mamie",
+  "SelectedNode": "\\site-projet\\site-projet\\pages_html\\accueil_eng.html",
   "PreviewInSolutionExplorer": false
 }
