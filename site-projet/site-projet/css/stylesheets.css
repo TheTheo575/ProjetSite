@@ -21,12 +21,13 @@ header {
     padding: 25%;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: -10px;
 }
 
 nav {
     font-size: 25px;
     position: sticky;
-    top: 0px;
+    top: -1px;
     text-align: center;
     word-spacing: 30px;
 
@@ -34,6 +35,7 @@ nav {
     padding: 20%;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: -10px;
 }
 .lien-interne {
     color: var(--text-color);
@@ -50,14 +52,20 @@ footer {
     background-color: var(--main-color);   
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: -10px;
 }
 .lien-image {
-    padding:10%;
+    padding-left:10%;
+    padding-right:10%;
 }
 
 main {
+    margin: -8px;
     margin-top:10px;
     margin-bottom:10px;
+    border: 5px solid var(--second-color);
+    background-color: #ffd4b6;
+
 }
 
 /* MENU */
