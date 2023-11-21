@@ -1,33 +1,35 @@
 ﻿:root {
-    --second-color: #ffd200;
-    --main-color: #e30a0a;
+    --second-color: #ffd200; /* cette partie du code permet de définir des couleur qui vont être utilisé sur tous le code en CSS */
+    --main-color: #e30a0a; 
     --text-color: #ffffff;
     --marron-color: #615055;
 }
 
 body {
-    font-family: Georgia, serif;
-    font-size:20px;
+    font-family: Georgia, serif; /*police du texte choisi*/
+    font-size:20px;/*taille du texte dans le body des pages html*/
     
 }
 
 header {
-    font-size: 55px;
-    text-align: center;
-    font-weight: bold;
-    color: var(--text-color);
+   /*parti du CSS qui s'occupe des entete du site */
+    font-size: 55px;/*taille du texte*/
+    text-align: center;/*allignement du texte*/
+    font-weight: bold; /*texte en gras*/
+    color: var(--text-color);/*couleur du texte*/
 
-    background-color: var(--main-color);
-    padding: 25%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: var(--main-color);/*couleur du fond*/
+    padding: 25%; /*marge intérieur de 25%*/
+    padding-top: 5px; /*marge interieur superieur de 5 pixels*/
+    padding-bottom: 5px;/*marge intérieur inférieur de 5 pixels*/
 }
 
 nav {
-    font-size: 25px;
-    position: sticky;
-    top: 0px;
-    text-align: center;
+   /*partie du CSS qui s'occupe */
+    font-size: 25px;/*taille texte*/
+    position: sticky;/*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
+    top: 0px;/*postion de la nav pas d'écart*/
+    text-align: center;/*texte centrer*/
     word-spacing: 30px;
 
     background-color: var(--main-color);
