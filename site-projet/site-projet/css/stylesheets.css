@@ -18,6 +18,7 @@ header {
     font-weight: bold; /*texte en gras*/
     color: var(--text-color);/*couleur du texte*/
 
+<<<<<<< HEAD
     background-color: var(--main-color);/*couleur du fond*/
     padding: 25%; /*marge intérieur de 25%*/
     padding-top: 5px; /*marge interieur superieur de 5 pixels*/
@@ -30,12 +31,26 @@ nav {
     position: sticky;/*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
     top: 0px;/*postion de la nav pas d'écart*/
     text-align: center;/*texte centrer*/
+
+    background-color: var(--main-color);
+    padding: 25%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: -10px;
+}
+
+nav {
+    font-size: 25px;
+    position: sticky;
+    top: -1px;
+    text-align: center;
     word-spacing: 30px;
 
     background-color: var(--main-color);
     padding: 20%;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: -10px;
 }
 .lien-interne {
     color: var(--text-color);
@@ -52,14 +67,20 @@ footer {
     background-color: var(--main-color);   
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: -10px;
 }
 .lien-image {
-    padding:10%;
+    padding-left:10%;
+    padding-right:10%;
 }
 
 main {
+    margin: -8px;
     margin-top:10px;
     margin-bottom:10px;
+    border: 5px solid var(--second-color);
+    background-color: #ffd4b6;
+
 }
 
 /* MENU */
