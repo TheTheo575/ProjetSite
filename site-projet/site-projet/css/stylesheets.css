@@ -23,6 +23,8 @@ header {
     padding: 25%; /*marge intérieur de 25%*/
     padding-top: 5px; /*marge interieur superieur de 5 pixels*/
     padding-bottom: 5px;/*marge intérieur inférieur de 5 pixels*/
+    margin: -8px; /*marge interieur ecartée de 8 pixels à gauche et à droite */
+    border: 3px solid #8c0f0f; /* bordure */
 }
 
 nav {
@@ -31,27 +33,16 @@ nav {
     position: sticky;/*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
     top: 0px;/*postion de la nav pas d'écart*/
     text-align: center;/*texte centrer*/
+    word-spacing: 30px;
 
     background-color: var(--main-color);
     padding: 25%;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin: -10px;
+    margin: -8px;
+    border: 3px solid #8c0f0f;
 }
 
-nav {
-    font-size: 25px;
-    position: sticky;
-    top: -1px;
-    text-align: center;
-    word-spacing: 30px;
-
-    background-color: var(--main-color);
-    padding: 20%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: -10px;
-}
 .lien-interne {
     color: var(--text-color);
     text-decoration: none;
@@ -67,7 +58,8 @@ footer {
     background-color: var(--main-color);   
     padding-top: 5px;
     padding-bottom: 5px;
-    margin: -10px;
+    margin: -8px;
+    border: 3px solid #8c0f0f;
 }
 .lien-image {
     padding-left:10%;
@@ -76,10 +68,11 @@ footer {
 
 main {
     margin: -8px;
-    margin-top:10px;
-    margin-bottom:10px;
-    border: 5px solid var(--second-color);
+    margin-top:8px;
+    margin-bottom:8px;
+    border: 5px solid #f1aa78;
     background-color: #ffd4b6;
+    padding: 10px;
 
 }
 
