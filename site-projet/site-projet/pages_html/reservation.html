@@ -37,7 +37,7 @@
 
         <fieldset>
             <legend>Votre réservation : </legend>
-           
+
             <label for="nom">Nom :</label>
             <input type="text" name="nom" id="nom" placeholder="Votre nom" />
             <br><br />
@@ -62,14 +62,75 @@
             <input type="time" name="hour" />
             <br><br />
             <label for="tel">numero de téléphone: </label>
-            <input type="tel" name="tel" />
+            <input type="tel" name="tel" placeholder="Numéro de téléphone" />
             <br><br />
-            <i>*toutes vos informations personnelles sont confidentielles<br />Au dela de 8 personnes il faut Réserver pour un évenement voir second formulaire</i>
+            <input type="submit" name="Réserver" id="reservation" value="reserver" />
+            <br><br />
+            <i>*toutes vos informations personnelles sont confidentielles<br />
+            <a href="#event">Plus de 8 personnes</a></i>
 
         </fieldset>
 
-        <img src="../images/mamie-Logo.png"/>
+        <br /><br /><br id="event" /><br />
+        <fieldset >
+            <legend>Réservation Événement </legend>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+            <br><br />
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+            <br><br />
+            <label for="tel">Numero de téléphone: </label>
+            <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+            <br><br />
+            <label for=" date">Date de Réservation: </label>
+            <input type="date" name=" date" />
+            <br><br />
+            <label for="time">heure de réservation: </label>
+            <input type="time" name="hour" />
+            <br><br />
+            <label for="nbr">Combien de Personnes: </label>
+            <select name="nbr">
+                <option>- 0 -</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
 
+            <select name="nbr">
+                <option>- 0 -</option>
+                <option>1</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option selected>8</option>
+                <option>9</option>
+            </select>
+            <br><br />
+            <label for="nbr">Type évenenment: </label>
+            <select name="event">
+                <option>Choisir un type </option>
+                <option>Anniversaire</option>
+                <option>Mariage</option>
+                <option>Séminaire</option>
+                <option>Soirée</option>
+                <option>Autres</option>
+            </select>
+            <br><br />
+
+            <label for="nom">Autre</label>
+            <input type="text" name="type" id="type" placeholder="Autre Événements" />
+            <br><br />
+
+            <input type="submit" name="Réserver l'Événement" id="reservation" value="reserver" />
+            <br><br />
+            <i>Toutes Réservations d'Événement faites moins 1 semaine avant l'Événement ne seront pas pris en compte.</i>
+        </fieldset>
+        <img src="../images/mamie-Logo.png" />
     </main>
 
     <footer>
