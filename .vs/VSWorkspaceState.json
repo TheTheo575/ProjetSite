@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\site-projet",
+    "\\site-projet\\site-projet",
+    "\\site-projet\\site-projet\\pages_html"
   ],
-  "SelectedNode": "\\C:\\Users\\adam.pavy\\Source\\Repos\\ProjetSite",
+  "SelectedNode": "\\site-projet\\site-projet\\pages_html\\reservation.html",
   "PreviewInSolutionExplorer": false
 }
