@@ -1,8 +1,10 @@
 ﻿:root {
     --second-color: #ffd200; /* cette partie du code permet de définir des couleur qui vont être utilisé sur tous le code en CSS */
-    --main-color: #e30a0a; 
+    --main-color: #e30a0a;
     --text-color: #ffffff;
     --marron-color: #615055;
+    --marron-bordure: #f1aa78;
+    --rouge-fonce: #8c0f0f;
 }
 
 body {
