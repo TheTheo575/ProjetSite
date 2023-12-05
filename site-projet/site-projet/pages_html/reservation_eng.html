@@ -38,15 +38,16 @@
     <fieldset id="form">
         <legend>Your Booking : </legend>
 
-        <label for="nom">Last Name :</label>
-        <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+        <label for="nom">Last Name :</label><!--Nom du theme-->
+        <input type="text" name="nom" id="nom" placeholder="Votre nom" /><!--Zone pour entre un texte-->
         <br><br />
         <label for="prenom">First Name :</label>
-        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" /><!--zone pour entrer du texte-->
         <br><br />
         <label for="nbr">How many People: </label>
         <select name="nbr">
-            <option>- 2 -</option>
+            <!--volet dépliant avec des choix prédéfinis-->
+            <option>- 2 -</option><!--les options permettent de définir les choix possible-->
             <option>3</option>
             <option>4</option>
             <option>5</option>
@@ -56,15 +57,15 @@
         </select>
         <br><br />
         <label for=" date">Date: </label>
-        <input type="date" name=" date" />
+        <input type="date" name=" date" /><!--zone avec un calendrier -->
         <br><br />
         <label for="time">Hour: </label>
-        <input type="time" name="hour" />
+        <input type="time" name="hour" /><!--zone avec une horloge pour les horaires-->
         <br><br />
         <label for="tel">Phone Number: </label>
-        <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+        <input type="tel" name="tel" placeholder="Numéro de téléphone" /><!--zone de texte-->
         <br><br />
-        <input type="submit" name="Réserver" id="reservation" value="reserver" />
+        <input type="submit" name="Réserver" id="reservation" value="reserver" /><!--Bouton de confirmation de la réservation-->
         <br><br />
         <i>*All your personal information are confidential<br />
         <a href="#event">More than 8 people?</a></i>
@@ -74,22 +75,22 @@
     <br /><br /><br id="event" /><br />
     <fieldset >
         <legend> Event booking</legend>
-        <label for="nom">Last Name :</label>
+        <label for="nom">Last Name :</label><!--Zone de texte-->
         <input type="text" name="nom" id="nom" placeholder="Votre nom" />
         <br><br />
         <label for="prenom">First Name :</label>
-        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" /><!--Zone de texte-->
         <br><br />
         <label for="tel">Phone Number: </label>
-        <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+        <input type="tel" name="tel" placeholder="Numéro de téléphone" /><!--Zone de texte-->
         <br><br />
         <label for=" date">Date: </label>
-        <input type="date" name=" date" />
+        <input type="date" name=" date" /><!--Zone avec un calendrier pour selectionner une date-->
         <br><br />
         <label for="time">Hour: </label>
-        <input type="time" name="hour" />
+        <input type="time" name="hour" /><!--Zone avec une horloge pour selectionner une horaire-->
         <br><br />
-        <label for="nbr">How many People: </label>
+        <label for="nbr">How many People: </label><!--zone de choix prédefinis-->
         <select name="nbr">
             <option>- 0 -</option>
             <option>1</option>
@@ -111,7 +112,7 @@
             <option>9</option>
         </select>
         <br><br />
-        <label for="nbr">Event Type: </label>
+        <label for="nbr">Event Type: </label><!--zone de choix prédefinis-->
         <select name="event">
             <option>Choose a Type </option>
             <option>Birthday</option>
@@ -123,10 +124,10 @@
         <br><br />
 
         <label for="nom">Other</label>
-        <input type="text" name="type" id="type" placeholder="Autre Événements" />
+        <input type="text" name="type" id="type" placeholder="Autre Événements" /><!--zone de textes-->
         <br><br />
 
-        <input type="submit" name="Réserver l'Événement" id="reservation" value="reserver" />
+        <input type="submit" name="Réserver l'Événement" id="reservation" value="reserver" /><!--bouton confirmation réservation-->
         <br><br />
         <i>Toutes Réservations d'Événement faites moins 1 semaine avant l'Événement ne seront pas pris en compte.</i>
     </fieldset>
