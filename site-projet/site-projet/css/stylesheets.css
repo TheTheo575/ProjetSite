@@ -33,7 +33,7 @@ nav {
    /*partie du CSS qui s'occupe */
     font-size: 20px;/*taille texte*/
     position: sticky;/*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
-    top: 0px;/*postion de la nav pas d'écart*/
+    top: -1px;/*postion de la nav pas d'écart*/
     text-align: center;/*texte centrer*/
     word-spacing: 30px;
 
