@@ -32,43 +32,106 @@
 
     </nav>
 
-    <main>
+   <main>
 
-        <p style="text-decoration:underline;">in progress</p>
 
-        <fieldset>
-            <legend>Your Order </legend>
+    <fieldset id="form">
+        <legend>Your Booking : </legend>
 
-            <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" placeholder="Votre nom" />
-            <br><br />
-            <label for="prenom">Prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
-            <br><br />
-            <label for="nbr">Combien de Personnes: </label>
-            <select name="nbr">
-                <option>- 2 -</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </select>
-            <br><br />
-            <label for=" date">Date de Réservation: </label>
-            <input type="date" name=" date" />
-            <br><br />
-            <label for="time">heure de réservation: </label>
-            <input type="time" name="hour" />
-            <br><br />
-            <label for="tel">Phone Number: </label>
-            <input type="tel" name="tel" />
-            <br><br />
-            <i>*toutes vos informations personnelles sont confidentielles<br />Au dela de 8 personnes il faut Réserver pour un évenement voir second formulaire</i>
+        <label for="nom">Last Name :</label>
+        <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+        <br><br />
+        <label for="prenom">First Name :</label>
+        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+        <br><br />
+        <label for="nbr">How many People: </label>
+        <select name="nbr">
+            <option>- 2 -</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+        </select>
+        <br><br />
+        <label for=" date">Date: </label>
+        <input type="date" name=" date" />
+        <br><br />
+        <label for="time">Hour: </label>
+        <input type="time" name="hour" />
+        <br><br />
+        <label for="tel">Phone Number: </label>
+        <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+        <br><br />
+        <input type="submit" name="Réserver" id="reservation" value="reserver" />
+        <br><br />
+        <i>*All your personal information are confidential<br />
+        <a href="#event">More than 8 people?</a></i>
 
-        </fieldset>
-    </main>
+    </fieldset>
+
+    <br /><br /><br id="event" /><br />
+    <fieldset >
+        <legend> Event booking</legend>
+        <label for="nom">Last Name :</label>
+        <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+        <br><br />
+        <label for="prenom">First Name :</label>
+        <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+        <br><br />
+        <label for="tel">Phone Number: </label>
+        <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+        <br><br />
+        <label for=" date">Date: </label>
+        <input type="date" name=" date" />
+        <br><br />
+        <label for="time">Hour: </label>
+        <input type="time" name="hour" />
+        <br><br />
+        <label for="nbr">How many People: </label>
+        <select name="nbr">
+            <option>- 0 -</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
+        <select name="nbr">
+            <option>- 0 -</option>
+            <option>1</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option selected>8</option>
+            <option>9</option>
+        </select>
+        <br><br />
+        <label for="nbr">Event Type: </label>
+        <select name="event">
+            <option>Choose a Type </option>
+            <option>Birthday</option>
+            <option>Marriage</option>
+            <option>Seminar</option>
+            <option>Party</option>
+            <option>Others</option>
+        </select>
+        <br><br />
+
+        <label for="nom">Other</label>
+        <input type="text" name="type" id="type" placeholder="Autre Événements" />
+        <br><br />
+
+        <input type="submit" name="Réserver l'Événement" id="reservation" value="reserver" />
+        <br><br />
+        <i>Toutes Réservations d'Événement faites moins 1 semaine avant l'Événement ne seront pas pris en compte.</i>
+    </fieldset>
+    <img src="../images/mamie-Logo.png" />
+</main>
 
     <footer>
 
