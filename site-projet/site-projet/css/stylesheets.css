@@ -37,35 +37,46 @@ nav {
     text-align: center;/*texte centrer*/
     word-spacing: 30px;
 
-    background-color: var(--main-color);/*couleur du fond*/
-    padding: 25%;/*marge interne*/
-    padding-top: 5px;/*marge interne supérieur de 5px*/
-    padding-bottom: 5px;/*marge interne inférieur*/
-    margin: -8px;/*marge externe de -8px*/
-    border: 3px solid #8c0f0f;/*bordure visible coloré*/
-}
-/*======================================================================================================================*/
-.lien-interne {/*partie de code s'occupant des liens */
-    color: var(--text-color);/*couleur du texte*/
-    text-decoration: none;/*texte non souligner*/
-}
-.lien-interne:hover {/*partie du code en charge des liens lorsque la souries survole le liens*/
-    color: var(--second-color);/*le liens change de couleur au survole*/
-}
-/*==================================================================================================*/
-footer {/*partie du code en charge du footer */
-    padding-left:4px; /*marge interne de 4px*/
-    color: var(--text-color);/*couleur du texte du footer*/
+    background-color: var(--main-color);
+    padding: 25%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: -8px;
+    border: 3px solid var(--rouge-fonce);
 
-    background-color: var(--main-color);   /*couleur du fond */
-    padding-top: 5px;/*marge interne supérieur de 5px*/
-    padding-bottom: 5px;/*marge interne inférieur de 5px*/
-    margin: -8px;/*marge externe de -8px*/
-    border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
+    /*Transition*/
+
+    transition-property : padding-top, padding-bottom;
+    transition-duration : 0.1s, 0.1s;
+    transition-timing-function : linear, linear;
+    /*Delay à 0s*/
 }
-.lien-image { /*partie du code */
-    padding-left: 10%; /*marge interne gauche de 10% */
-    padding-right: 10%; /*marge interne driote de 10% */
+nav:hover {
+    padding-top : 10px;
+    padding-bottom : 10px;
+}
+
+.lien-interne {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.lien-interne:hover {
+    color: var(--second-color);
+}
+
+footer {
+    padding-left:4px;
+    color: var(--text-color);
+
+    background-color: var(--main-color);   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: -8px;
+    border: 3px solid #8c0f0f;
+}
+.lien-image {
+    padding-left:10%;
+    padding-right:10%;
 }
 
 main {
