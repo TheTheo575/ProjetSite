@@ -151,37 +151,37 @@ main {/*partie du code en charge du main */
     background-color: var(--marron-fond);
    
     font-size: 16px;/*taille des caractère*/
-    width:auto;
+    width:auto;/*largeur automatique*/
 }
 
 .formreserv .nbr{
     width:auto;
 }
 
-#reservation{
-    border: 2px solid var(--marron-fonce-form);
-    border-radius: 10px;
-    background-color: var(--marron-fond);
-    font-size: 18px;
+#reservation{/*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond);/*couleur du fond*/
+    font-size: 18px;/*taille des caractère*/
 }
 
-#reservation:hover{
-    border: 2px solid var(--marron-fonce-form);
-    background-color: var(--marron-fonce-form);
-    color: var(--marron-fond);
+#reservation:hover{/*CSS en charge du survole du bouton réservation*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-fonce-form);/*couleur du fond*/
+    color: var(--marron-fond);/*couleur du texte*/
 }
 
 .chut{
     font-size: 9px;
 }
 
-#Assiette {
-    position: relative;
-    float: right;
-    display: inline; 
-    width: 60px;
-    height: 60px;
-    transform:rotate(11deg);
+#Assiette {/*css en charge de l'image d'assiette*/
+    position: relative;/*position relative*/
+    float: right;/*position sur la droite*/
+    display: inline; /*affichage lineaire*/
+    width: 60px;/*largeur de 60px*/
+    height: 60px;/*hauteur de 60px*/
+    transform:rotate(11deg);/*rotation de l'image de 11deg*/
 }
 
 @media only screen and (768px<=width){ 
