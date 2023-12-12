@@ -40,7 +40,7 @@ nav {
 }
 .conteneur-nav {
     display: flex;
-    /*flex-flow: row, wrap;*/ /*flex-direction - flex-wrap*/
+    flex-flow: row, wrap; /*flex-direction - flex-wrap*/
     justify-content: center;
     justify-content: space-evenly;
     background-color: var(--main-color);
