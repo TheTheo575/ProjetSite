@@ -132,25 +132,25 @@ main {/*partie du code en charge du main */
     margin:5px;/*marge externe de 5px*/
 }
 
-.formreserv fieldset {
-    background-color: var(--marron-bordure);
-    border-radius: 20px;
-    border: 2px solid var(--marron-fonce-form);
+.formreserv fieldset {/*partie du css en charge des formulaire*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    border-radius: 20px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
 }
 
-.formreserv legend{
-    border-radius: 5px;
-    border: 2px solid var(--marron-fonce-form);
-    background-color: var(--marron-bordure);
+.formreserv legend{/*partie du css en charge des légendes des formulaire*/
+    border-radius: 5px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
 }
 
-.formreserv input, .formreserv select{
-    border: none;
-    border-bottom: 2px solid var(--marron-fonce-form);
-    border-radius: 4px 4px 0px 0px;
+.formreserv input, .formreserv select{/*partie du CSS en charge des selections du formulaire*/
+    border: none;/*bordure enlever*/
+    border-bottom: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 4px 4px 0px 0px;/*bordure arrondie*/
     background-color: var(--marron-fond);
-    width: 15%;
-    font-size: 16px;
+   
+    font-size: 16px;/*taille des caractère*/
     width:auto;
 }
 
