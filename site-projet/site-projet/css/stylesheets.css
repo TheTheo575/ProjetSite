@@ -20,8 +20,8 @@ header {
     font-size: 55px;/*taille du texte*/
     text-align: center;/*allignement du texte*/
     font-weight: bold; /*texte en gras*/
-    color: var(--text-color);/*couleur du texte*/
-
+    color: var(--second-color);/*couleur du texte*/
+    text-shadow: 3px 2px 2px var(--marron-bordure);
 
     background-color: var(--main-color);/*couleur du fond*/
     padding: 25%; /*marge intérieur de 25%*/
@@ -37,6 +37,7 @@ nav {
     top: -1px; /*postion de la nav pas d'écart*/
     margin: -8px;
     font-size: 20px;
+    z-index: 1;
 }
 .conteneur-nav {
     display: flex;
@@ -59,12 +60,17 @@ nav {
     padding-bottom: 10px;
 }
 /*======================================================================================================================*/
-.lien-interne {/*partie de code s'occupant des liens */
-    color: var(--text-color);/*couleur du texte*/
-    text-decoration: none;/*texte non souligner*/
+.lien-interne {
+    color: var(--second-color);
+    text-shadow: 1px 1px 2px var(--marron-bordure);
+    text-decoration: none;
 }
-.lien-interne:hover {/*partie du code en charge des liens lorsque la souries survole le liens*/
-    color: var(--second-color);/*le liens change de couleur au survole*/
+.lien-interne:hover {
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--marron-color);
+}
+.lien-interne:active {
+    color: var(--rouge-fonce);
 }
 /*==================================================================================================*/
 footer {/*partie du code en charge du footer */
