@@ -46,8 +46,8 @@ nav {
 
     /*Transition*/
 
-    transition-property : padding-top, padding-bottom;
-    transition-duration : 0.1s, 0.1s;
+    transition-property : padding-top, padding-bottom;/*donne les zones concerné par la transition*/
+    transition-duration : 0.1s, 0.1s;/*durée de l'animation*/
     transition-timing-function : linear, linear;
     /*Delay à 0s*/
 }
@@ -79,84 +79,84 @@ footer {/*partie du code en charge du footer */
     padding-right: 10%; /*marge interne driote de 10% */
 }
 
-main {
-    margin: -8px;
-    margin-top:8px;
-    margin-bottom:8px;
-    border: 5px solid #f1aa78;
-    background-color: #ffd4b6;
-    padding: 10px;
+main {/*partie du code en charge du main */
+    margin: -8px;/*marge externe de -8px*/
+    margin-top:8px;/*marge externe supérieur de 8px*/
+    margin-bottom:8px;/*marge externe inférieur de 8px*/
+    border: 5px solid #f1aa78;/*bordure visible de 5px coloré*/
+    background-color: #ffd4b6;/*couleur du fond*/
+    padding: 10px;/*marge interne de 10px*/
 
 }
 
 /* MENU */
 #titre{
-    grid-area: titre;
-    text-align: center;
-    text-decoration: underline;
+    grid-area: titre;/*selection de la partie titre de la grille (voir plus bas dans le code)*/
+    text-align: center;/*texte du titre alignées sur le centre*/
+    text-decoration: underline;/*le texte du titre est souligné*/
     
 }
 
-#liste-menu ul::first-line{
-    text-align: center;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 25px;
+#liste-menu ul::first-line{/*partie du CSS en charge de la première ligne des liste du menu*/
+    text-align: center;/*texte alignées sur le centre*/
+    text-decoration: underline;/*texte sousligné*/
+    text-transform: uppercase;/*permet de mettre toutes les lettres en majuscules*/
+    font-weight: bold;/*texte en gras*/
+    font-size: 25px;/*taille des caractère de 25px*/
 }
 
 #liste-menu ul{
-    list-style-type: none;
-    padding-top: 5px;
+    list-style-type: none;/*pas d'élement de décoration de la liste (pas le point a chaque nouvelle élément)*/
+    padding-top: 5px;/*marge interne supérieur de 5px*/
 }
 
 #indic{
-    font-size: 10px;
+    font-size: 10px;/*taille du texte de 5px*/
 }
 
 
-/* Reservation */
+
 .conteneur_collab {
-    border: solid;
-    border-color: var(--marron-bordure);
-    padding: 1%;
-    width: 90%;
-    height: 250px;
-    margin: auto;
+    border: solid;/*bordure solid*/
+    border-color: var(--marron-bordure);/*couleur des bordures*/
+    padding: 1%;/*marge interne de 1% */
+    width: 90%;/*prendra 90% de la largeur*/
+    height: 250px;/*250px de hauteur*/
+    margin: auto;/*marge du texte automatique*/
 }
-.conteneur_collab .flottant_collab {
-    float:left;
-    margin:5px;
+.conteneur_collab .flottant_collab {/*élément de class conteneur_collab et de class flottant_collab */
+    float:left;/*les éléments vonts sur la gauche du document*/
+    margin:5px;/*marge externe de 5px*/
 }
 
 
 @media only screen and (768px<=width){ 
-#liste-menu {
-    display: grid;
+#liste-menu {/*partie qui met en place la grille du menu*/
+    display: grid;/*mise en place grille*/
     /* color: var(--text-color); */
-    grid-template-columns: repeat(2,50%);
-	grid-template-rows: 12% 40% 40% 8%;
-    grid-template-areas: " titre titre"
+    grid-template-columns: repeat(2,50%);/*grille de 2 colone qui prenne 50% de la largeur*/
+	grid-template-rows: 12% 40% 40% 8%;/*4 ligne avec des tailles variable voir ci-contre*/
+    grid-template-areas: " titre titre"/*definie les différent nom de chaque partie de la grille*/
                          " a1 a2 "
                          " b1 b2"
                          " indic indic";
 }
 
-.entrees{
-    grid-area: a1;
-    text-align: center;
+.entrees{/*CSS en charge de la partie des entrée du menu*/
+    grid-area: a1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.plats{
-    grid-area: a2;
-    text-align: center;
+.plats{/*CSS en charge de la partie des PLats du menu*/
+    grid-area: a2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.desserts{
-    grid-area: b1;
-    text-align: center;
+.desserts{/*CSS en charge de la partie des desserts du menu*/
+    grid-area: b1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.boissons{
-    grid-area: b2;
-    text-align: center;
+.boissons{/*CSS en charge de la partie des boissons du menu*/
+    grid-area: b2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
 #indic{
     grid-area: indic;
