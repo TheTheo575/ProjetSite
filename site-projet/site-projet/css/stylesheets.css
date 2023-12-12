@@ -213,19 +213,19 @@ main {/*partie du code en charge du main */
     text-align: center;/*texte allignes au centre*/
 }
 #indic{
-    grid-area: indic;
-    font-size: 10px;
+    grid-area: indic;/*place la partie textuel*/
+    font-size: 10px;/*taille du texte 10px*/
 }
 
-	.formreserv {
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-    grid-template-areas: "reservation event";
+.formreserv {
+    display: grid;/*creation d'une grille */
+    grid-template-columns: repeat(2,50%);/*grille de 2 colonne*/
+    grid-template-areas: "reservation event";/*creation des nom des différent emplacement de la grille*/
 }
 .reservation{
-    grid-area: reservation;
+    grid-area: reservation;/*placement du formulaire reservtion dans la grille*/
 }
 .event{
-    grid-area: event;
+    grid-area: event;/*placement du formulaire evenement dans une grille*/
 }
 }
