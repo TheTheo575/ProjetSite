@@ -34,110 +34,111 @@
     </nav>
 
     <main>
+    <div class="formreserv">
+        <div class="reservation">
+            <form method="post" action="#">
+                <fieldset>
+                    <legend>Votre réservation : </legend>
+                    <label for="nom">Nom :</label>
+                    <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+                    <img src="../images/Assiette.png" alt="LogoAssiette" id="Assiette"> <p style="display:inline;"></p>
+                     <br><br />
+                    <label for="prenom">Prénom :</label>
+                     <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+                    <br><br />
+                    <label for="nbr">Nombre de Personnes: </label>
+                    <select class="nbr" name="nbr">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                    <br><br />
+                    <label for=" date">Date de Réservation: </label>
+                    <input type="date" name=" date" />
+                    <br><br />
+                    <label for="time">Heure de réservation: </label>
+                    <input type="time" name="hour" />
+                    <br><br />
+                    <label for="tel">Numero de téléphone: </label>
+                    <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+                    <br><br />
+                    <input type="submit" name="Réserver" id="reservation" value="Reserver" />
+                    <br><br />
+                    <i class="chut">*toutes vos informations personnelles sont confidentielles</i>
+                </fieldset>
+            </form>
+        </div>
 
+        <br /><br /><br /><br />
 
-        <fieldset id="form"><!--Zone de formulaire-->
-            <legend>Votre réservation : </legend>
-
-            <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" placeholder="Votre nom" /><!--zone de texte-->
-            <br><br />
-            <label for="prenom">Prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" /><!--zone de texte-->
-            <br><br />
-            <label for="nbr">Combien de Personnes: </label>
-            <select name="nbr">
-                <!--zone de choix prédefinis-->
-                <option>- 2 -</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </select>
-            <br><br />
-            <label for=" date">Date de Réservation: </label><!--zone de selection de dates -->
-            <input type="date" name=" date" />
-            <br><br />
-            <label for="time">heure de réservation: </label><!--zone de selection heure -->
-            <input type="time" name="hour" />
-            <br><br />
-            <label for="tel">numero de téléphone: </label>
-            <input type="tel" name="tel" placeholder="Numéro de téléphone" /><!--zone de texte-->
-            <br><br />
-            <input type="submit" name="Réserver" id="reservation" value="reserver" /><!--bouton de confirmation-->
-            <br><br />
-            <i>
-                *toutes vos informations personnelles sont confidentielles<br />
-                <a href="#event">Plus de 8 personnes</a>
-            </i>
-
-        </fieldset>
-
-        <br /><br /><br id="event" /><br />
-        <fieldset >
-            <legend>Réservation Événement </legend>
-            <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" placeholder="Votre nom" /><!--zone de texte-->
-            <br><br />
-            <label for="prenom">Prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" /><!--zone de texte-->
-            <br><br />
-            <label for="tel">Numero de téléphone: </label>
-            <input type="tel" name="tel" placeholder="Numéro de téléphone" /><!--zone de texte-->
-            <br><br />
-            <label for=" date">Date de Réservation: </label><!--zone de selection de dates -->
-            <input type="date" name=" date" />
-            <br><br />
-            <label for="time">heure de réservation: </label><!--zone de selection heure -->
-            <input type="time" name="hour" />
-            <br><br />
-            <label for="nbr">Combien de Personnes: </label>
-            <select name="nbr">
-                <!--zone de choix prédefinis-->
-                <option>- 0 -</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-
-            <select name="nbr">
-                <!--zone de choix prédefinis-->
-                <option>- 0 -</option>
-                <option>1</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option selected>8</option>
-                <option>9</option>
-            </select>
-            <br><br />
-            <label for="nbr">Type évenenment: </label>
-            <select name="event">
-                <!--zone de choix prédefinis-->
-                <option>Choisir un type </option>
-                <option>Anniversaire</option>
-                <option>Mariage</option>
-                <option>Séminaire</option>
-                <option>Soirée</option>
-                <option>Autres</option>
-            </select>
-            <br><br />
-
-            <label for="nom">Autre</label><!--zone de texte-->
-            <input type="text" name="type" id="type" placeholder="Autre Événements" />
-            <br><br />
-
-            <input type="submit" name="Réserver l'Événement" id="reservation" value="reserver" /><!--bouton de confirmation-->
-            <br><br />
-            <i>Toutes Réservations d'Événement faites moins 1 semaine avant l'Événement ne seront pas pris en compte.</i>
-        </fieldset>
-        <img src="../images/mamie-Logo.png" />
+        <div class="event">
+            <form method="post" action="#" >
+                <fieldset>
+                    <legend>Réservation Événement </legend>
+                    <label for="nom">Nom :</label>
+                    <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+                    <br><br />
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+                    <br><br />
+                    <label for="tel">Numero de téléphone: </label>
+                    <input type="tel" name="tel" placeholder="Numéro de téléphone" />
+                    <br><br />
+                    <label for=" date">Date de Réservation: </label>
+                    <input type="date" name=" date" />
+                    <br><br />
+                    <label for="time">Heure de réservation: </label>
+                    <input type="time" name="hour" />
+                    <br><br />
+                    <label for="nbr">Nombre de Personnes: </label>
+                    <select class="nbr" name="nbr">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                
+                    <select class="nbr" name="nbr">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option selected>8</option>
+                        <option>9</option>
+                    </select>
+                    <br><br />
+                    <label for="nbr">Type évenenment: </label>
+                    <select name="event">
+                        <option>Choisir un type </option>
+                        <option>Anniversaire</option>
+                        <option>Mariage</option>
+                        <option>Séminaire</option>
+                        <option>Soirée</option>
+                        <option>Autre</option>
+                    </select>
+                    <br><br />
+                
+                    <label for="nom">Autre</label>
+                    <input type="text" name="type" id="type" placeholder="Autre Événements" />
+                    <br><br />
+                
+                    <input type="submit" name="Réserver l'Événement" id="reservation" value="Reserver" />
+                    <br><br />
+                    <i class="chut">*toute réservation d'Événement envoyée moins d'une semaine avant l'Événement ne sera pas prise en compte.</i>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     </main>
 
     <footer>
