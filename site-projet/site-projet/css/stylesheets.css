@@ -5,6 +5,8 @@
     --marron-color: #615055;
     --marron-bordure: #f1aa78;
     --rouge-fonce: #8c0f0f;
+    --marron-fonce-form: #8F6547;
+    --marron-fond: #ffd4b6;
 }
 
 body {
@@ -36,6 +38,7 @@ nav {
     top: -1px;/*postion de la nav pas d'écart*/
     text-align: center;/*texte centrer*/
     word-spacing: 30px;
+    z-index: 1;
 
     background-color: var(--main-color);
     padding: 25%;
@@ -129,6 +132,57 @@ main {
     margin:5px;
 }
 
+.formreserv fieldset {
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+}
+
+.formreserv legend{
+    border-radius: 5px;
+    border: 2px solid var(--marron-fonce-form);
+    background-color: var(--marron-bordure);
+}
+
+.formreserv input, .formreserv select{
+    border: none;
+    border-bottom: 2px solid var(--marron-fonce-form);
+    border-radius: 4px 4px 0px 0px;
+    background-color: var(--marron-fond);
+    width: 15%;
+    font-size: 16px;
+    width:auto;
+}
+
+.formreserv .nbr{
+    width:auto;
+}
+
+#reservation{
+    border: 2px solid var(--marron-fonce-form);
+    border-radius: 10px;
+    background-color: var(--marron-fond);
+    font-size: 18px;
+}
+
+#reservation:hover{
+    border: 2px solid var(--marron-fonce-form);
+    background-color: var(--marron-fonce-form);
+    color: var(--marron-fond);
+}
+
+.chut{
+    font-size: 9px;
+}
+
+#Assiette {
+    position: relative;
+    float: right;
+    display: inline; 
+    width: 60px;
+    height: 60px;
+    transform:rotate(11deg);
+}
 
 @media only screen and (768px<=width){ 
 #liste-menu {
