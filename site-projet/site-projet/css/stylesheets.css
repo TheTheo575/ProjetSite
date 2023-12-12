@@ -47,8 +47,6 @@ nav {
     background-color: var(--main-color);
 
     border: 3px solid var(--rouge-fonce);
-    width: 100%;
-    height: auto;
 
     /*Transition*/
     transition-property: padding-top, padding-bottom;
