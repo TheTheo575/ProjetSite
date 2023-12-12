@@ -217,4 +217,15 @@ main {/*partie du code en charge du main */
     font-size: 10px;
 }
 
+	.formreserv {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-areas: "reservation event";
+}
+.reservation{
+    grid-area: reservation;
+}
+.event{
+    grid-area: event;
+}
 }
