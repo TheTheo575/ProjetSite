@@ -149,6 +149,12 @@ main {/*partie du code en charge du main */
 
 
 .conteneur_collab {
+
+    display:flex;
+    flex-flow:row, wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
+    justify-content:start;
+    justify-content: space-around; /*espacement entre les éléments*/
+
     border: solid;/*bordure solid*/
     border-color: var(--marron-bordure);/*couleur des bordures*/
     padding: 1%;/*marge interne de 1% */
@@ -156,9 +162,12 @@ main {/*partie du code en charge du main */
     height: 250px;/*250px de hauteur*/
     margin: auto;/*marge du texte automatique*/
 }
-.conteneur_collab .flottant_collab {/*élément de class conteneur_collab et de class flottant_collab */
-    float:left;/*les éléments vonts sur la gauche du document*/
-    margin:5px;/*marge externe de 5px*/
+.element_collab {
+    align-self:center; /*on centralise les éléments dans le conteneur selon l'axe secondaire*/
+    text-align:center;
+}
+.element_collab:hover {
+    transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
 }
 
 .formreserv fieldset {/*partie du css en charge des formulaire*/
