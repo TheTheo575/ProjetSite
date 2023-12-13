@@ -20,8 +20,8 @@ header {
     font-size: 55px;/*taille du texte*/
     text-align: center;/*allignement du texte*/
     font-weight: bold; /*texte en gras*/
-    color: var(--text-color);/*couleur du texte*/
-
+    color: var(--second-color);/*couleur du texte*/
+    text-shadow: 3px 2px 2px var(--marron-bordure);
 
     background-color: var(--main-color);/*couleur du fond*/
     padding: 25%; /*marge intérieur de 25%*/
@@ -30,6 +30,23 @@ header {
     margin: -8px; /*marge interieur ecartée de 8 pixels à gauche et à droite */
     border: 3px solid #8c0f0f; /* bordure */
 }
+.image-accueil {
+    animation-name: image-accueil;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-delay:0s;
+    animation-iteration-count:1;
+    animation-direction:normal;
+    animation-fill-mode:forwards;
+}
+@keyframes image-accueil {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:100%
+    }
+}
 
 nav {
     /*partie du CSS qui s'occupe */
@@ -37,6 +54,7 @@ nav {
     top: -1px; /*postion de la nav pas d'écart*/
     margin: -8px;
     font-size: 20px;
+    z-index: 1;
 }
 .conteneur-nav {
     display: flex;
@@ -46,8 +64,6 @@ nav {
     background-color: var(--main-color);
 
     border: 3px solid var(--rouge-fonce);
-    width: 100%;
-    height: auto;
 
     /*Transition*/
     transition-property: padding-top, padding-bottom;
@@ -59,12 +75,17 @@ nav {
     padding-bottom: 10px;
 }
 /*======================================================================================================================*/
-.lien-interne {/*partie de code s'occupant des liens */
-    color: var(--text-color);/*couleur du texte*/
-    text-decoration: none;/*texte non souligner*/
+.lien-interne {
+    color: var(--second-color);
+    text-shadow: 1px 1px 2px var(--marron-bordure);
+    text-decoration: none;
 }
-.lien-interne:hover {/*partie du code en charge des liens lorsque la souries survole le liens*/
-    color: var(--second-color);/*le liens change de couleur au survole*/
+.lien-interne:hover {
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--marron-color);
+}
+.lien-interne:active {
+    color: var(--rouge-fonce);
 }
 /*==================================================================================================*/
 footer {/*partie du code en charge du footer */
@@ -77,9 +98,17 @@ footer {/*partie du code en charge du footer */
     margin: -8px;/*marge externe de -8px*/
     border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
 }
-.lien-image { /*partie du code */
-    padding-left: 10%; /*marge interne gauche de 10% */
-    padding-right: 10%; /*marge interne driote de 10% */
+.conteneur-image {
+    margin-left:25%;
+    margin-right:25%;
+
+    display:flex;
+    flex-flow: row, wrap;
+    justify-content:center;
+    justify-content:space-around;
+}
+.lien-image:hover {
+    transform: scale(1.5) rotate(20deg);
 }
 
 main {/*partie du code en charge du main */
