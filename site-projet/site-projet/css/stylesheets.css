@@ -81,9 +81,17 @@ footer {/*partie du code en charge du footer */
     margin: -8px;/*marge externe de -8px*/
     border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
 }
-.lien-image { /*partie du code */
-    padding-left: 10%; /*marge interne gauche de 10% */
-    padding-right: 10%; /*marge interne driote de 10% */
+.conteneur-image {
+    margin-left:25%;
+    margin-right:25%;
+
+    display:flex;
+    flex-flow: row, wrap;
+    justify-content:center;
+    justify-content:space-around;
+}
+.lien-image:hover {
+    transform: scale(1.5) rotate(20deg);
 }
 
 main {/*partie du code en charge du main */

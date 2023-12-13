@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\site-projet",
+    "\\site-projet\\site-projet",
+    "\\site-projet\\site-projet\\css",
+    "\\site-projet\\site-projet\\images"
   ],
-  "SelectedNode": "\\C:\\Users\\jeremie.marcant\\Source\\Repos\\ProjetSite",
+  "SelectedNode": "\\site-projet\\site-projet\\images\\Francois-Logo.png",
   "PreviewInSolutionExplorer": false
 }
