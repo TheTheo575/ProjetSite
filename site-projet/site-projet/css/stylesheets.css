@@ -166,6 +166,12 @@ main {/*partie du code en charge du main */
     align-self:center; /*on centralise les éléments dans le conteneur selon l'axe secondaire*/
     text-align:center;
 }
+
+.photocollab{
+    height: 96px;
+    width: 96px;
+}
+
 .element_collab:hover {
     transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
 }
