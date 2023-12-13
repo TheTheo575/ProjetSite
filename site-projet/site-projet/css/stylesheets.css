@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --second-color: #ffd200; /* cette partie du code permet de définir des couleur qui vont être utilisé sur tous le code en CSS */
     --main-color: #e30a0a;
     --text-color: #ffffff;
@@ -155,21 +155,25 @@ main {/*partie du code en charge du main */
     justify-content:start;
     justify-content: space-around; /*espacement entre les éléments*/
 
+    background-color: var(--marron-bordure);
     border: solid;/*bordure solid*/
-    border-color: var(--marron-bordure);/*couleur des bordures*/
+    border-color: var(--marron-fonce-form);/*couleur des bordures*/
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
     padding: 1%;/*marge interne de 1% */
     width: 90%;/*prendra 90% de la largeur*/
-    height: 250px;/*250px de hauteur*/
+    height: auto;/*hauteur automatique de la boite*/
     margin: auto;/*marge du texte automatique*/
 }
 .element_collab {
-    align-self:center; /*on centralise les éléments dans le conteneur selon l'axe secondaire*/
-    text-align:center;
+    text-align:center; /*alignement automatique au centre */
+    width: 96px; /*Largeur des conteneurs des photos de presentation*/
+    height: auto; /*Hauteur des conteneurs des photos de presentation*/
 }
 
 .photocollab{
-    height: 96px;
-    width: 96px;
+    height: 96px; /*Largeur des photos de presentation*/
+    width: 96px; /*Hauteur des photos de presentation*/
 }
 
 .element_collab:hover {
@@ -228,6 +232,13 @@ main {/*partie du code en charge du main */
     transform:rotate(11deg);/*rotation de l'image de 11deg*/
 }
 
+#rectanglecarte{
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+
 @media only screen and (768px<=width){ 
 #liste-menu {/*partie qui met en place la grille du menu*/
     display: grid;/*mise en place grille*/
@@ -272,4 +283,22 @@ main {/*partie du code en charge du main */
 .event{
     grid-area: event;/*placement du formulaire evenement dans une grille*/
 }
+}
+
+@media only screen and (1200px<=width){ 
+    #footer {/*partie qui met en place la grille du footer*/
+        display: grid;/*mise en place grille*/
+        grid-template-columns: repeat(3,33%);/*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-areas: "contact carte reseaux"/*definie les différent nom de chaque partie de la grille*/
+    }
+    .contact {
+        grid-area: contact;/*placement du formulaire reservtion dans la grille*/
+    }
+    .carte{
+        grid-area: carte;/*placement du formulaire reservtion dans la grille*/
+    }
+    .reseaux{
+        grid-area: reseaux;/*placement du formulaire evenement dans une grille*/
+    }
+
 }
