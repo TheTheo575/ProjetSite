@@ -249,35 +249,6 @@ main {/*partie du code en charge du main */
     box-shadow: 2px 2px grey;
 }
 
-/* .conteneur-nav{partie qui met en place la grille du menu
-    display: grid;
-    grid-template-columns: repeat(6,16.5%);
-	grid-template-rows: repeat(2,50%);
-    grid-template-areas: " accueil accueil menu menu anglais anglais "
-                         " reservation reservation reservation collab collab collab ";
-}
-
-#paccueil{
-    grid-area: accueil;
-    text-align:center;
-}
-#pmenu{
-    grid-area: menu;
-    text-align: center;
-}
-#panglais{
-    grid-area: anglais;
-    text-align: center;
-}
-#preservation{
-    grid-area: reservation;
-    text-align: center;
-}
-#pcollab{
-    grid-area: collab;
-    text-align: center;
-} */
-
 .conteneur-confirmation {
     background-color: var(--marron-bordure);
     border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
