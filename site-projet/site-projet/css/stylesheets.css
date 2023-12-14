@@ -58,11 +58,10 @@ nav {
 }
 .conteneur-nav {
     display: flex;
-    flex-flow: row, wrap; /*flex-direction - flex-wrap*/
-    justify-content: center;
-    justify-content: space-evenly;
+    flex-flow: row wrap; /*flex-direction - flex-wrap*/
+    align-content: space-around;
+    justify-content: space-around;
     background-color: var(--main-color);
-
     border: 3px solid var(--rouge-fonce);
 
     /*Transition*/
@@ -103,7 +102,7 @@ footer {/*partie du code en charge du footer */
     margin-right:25%;
 
     display:flex;
-    flex-flow: row, wrap;
+    flex-flow: row wrap;
     justify-content:center;
     justify-content:space-around;
 }
@@ -129,6 +128,13 @@ main {/*partie du code en charge du main */
     
 }
 
+#liste-menu{
+    border: 2px solid var(--marron-fonce-form);
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
+}
+
 #liste-menu ul::first-line{/*partie du CSS en charge de la première ligne des liste du menu*/
     text-align: center;/*texte alignées sur le centre*/
     text-decoration: underline;/*texte sousligné*/
@@ -151,7 +157,7 @@ main {/*partie du code en charge du main */
 .conteneur_collab {
 
     display:flex;
-    flex-flow:row, wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
+    flex-flow:row wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
     justify-content:start;
     justify-content: space-around; /*espacement entre les éléments*/
 
@@ -238,6 +244,35 @@ main {/*partie du code en charge du main */
     height: 250px;
     box-shadow: 2px 2px grey;
 }
+
+/* .conteneur-nav{partie qui met en place la grille du menu
+    display: grid;
+    grid-template-columns: repeat(6,16.5%);
+	grid-template-rows: repeat(2,50%);
+    grid-template-areas: " accueil accueil menu menu anglais anglais "
+                         " reservation reservation reservation collab collab collab ";
+}
+
+#paccueil{
+    grid-area: accueil;
+    text-align:center;
+}
+#pmenu{
+    grid-area: menu;
+    text-align: center;
+}
+#panglais{
+    grid-area: anglais;
+    text-align: center;
+}
+#preservation{
+    grid-area: reservation;
+    text-align: center;
+}
+#pcollab{
+    grid-area: collab;
+    text-align: center;
+} */
 
 @media only screen and (768px<=width){ 
 #liste-menu {/*partie qui met en place la grille du menu*/
