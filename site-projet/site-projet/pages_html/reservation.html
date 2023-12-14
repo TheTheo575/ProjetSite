@@ -39,17 +39,19 @@
     <div class="formreserv">
         <div class="reservation">
             <form method="post" action="#">
-                <fieldset><!--Zone permettant de creer une interface de questionnaire-->
+                <fieldset>
+                    <!--Zone permettant de creer une interface de questionnaire-->
                     <legend>Votre réservation : </legend><!--nom du fieldset-->
                     <label for="nom">Nom :</label>
                     <input type="text" name="nom" id="nom" placeholder="Votre nom" /><!--zone de texte a inserer-->
                     <img src="../images/Assiette.png" alt="LogoAssiette" id="Assiette"> <p style="display:inline;"></p>
-                     <br><br />
+                    <br><br />
                     <label for="prenom">Prénom :</label>
-                     <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
+                    <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" />
                     <br><br /><!--zone de texte à insérer pour le prénom-->
                     <label for="nbr">Nombre de Personnes: </label>
-                    <select class="nbr" name="nbr"><!--zone de sélection d'option -->
+                    <select class="nbr" name="nbr">
+                        <!--zone de sélection d'option -->
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -69,7 +71,8 @@
                     <label for="tel">Numero de téléphone: </label>
                     <input type="tel" name="tel" placeholder="Numéro de téléphone" /><!--zone de texte pour le numéro -->
                     <br><br />
-                    <input type="submit" name="Réserver" id="reservation" value="Reserver" /><!--bouton pour confirmer la réservation-->
+                    <!--<input type="submit" name="Réserver" id="reservation" value="Reserver" />--><!--bouton pour confirmer la réservation-->
+                    <a href="confirmation.html" id="reservation">Reserver</a>
                     <br><br />
                     <i class="chut">*toutes vos informations personnelles sont confidentielles</i>
                 </fieldset>
@@ -134,7 +137,8 @@
                     <input type="text" name="type" id="type" placeholder="Autre Événements" /><!--zone de texte -->
                     <br><br />
                 
-                    <input type="submit" name="Réserver l'Événement" id="reservation" value="Reserver" /><!--bouton pour confirmer la réservaton -->
+                    <!--<input type="submit" name="Réserver l'Événement" id="reservation" value="Reserver" />--><!--bouton pour confirmer la réservaton -->
+                    <a href="confirmation.html" id="reservation">Reserver</a>
                     <br><br />
                     <i class="chut">*toute réservation d'Événement envoyée moins d'une semaine avant l'Événement ne sera pas prise en compte.</i>
                 </fieldset>

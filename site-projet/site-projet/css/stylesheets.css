@@ -217,6 +217,10 @@ main {/*partie du code en charge du main */
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-fond);/*couleur du fond*/
     font-size: 18px;/*taille des caractère*/
+
+    padding:3px;
+    text-decoration:none;
+    color:black;
 }
 
 #reservation:hover{/*CSS en charge du survole du bouton réservation*/
