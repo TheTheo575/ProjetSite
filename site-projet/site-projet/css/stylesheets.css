@@ -279,6 +279,53 @@ main {/*partie du code en charge du main */
     text-transform:uppercase;
 }
 
+#liste-plats{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0px;
+    row-gap: 20px;
+}
+
+.recette:hover {
+    transform: rotateY(180deg);
+}
+
+.recette{
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+    padding: 3px;
+    text-decoration: underline;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+}
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+}
+
 @media only screen and (768px<=width){ 
 #liste-menu {/*partie qui met en place la grille du menu*/
     display: grid;/*mise en place grille*/
