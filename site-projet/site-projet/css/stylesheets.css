@@ -119,6 +119,26 @@ main {/*partie du code en charge du main */
     padding: 10px;/*marge interne de 10px*/
 
 }
+/* ACCUEIL */
+.conteneur-accueil {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding-right:5%;
+    padding-left:5%;
+
+    background-color: var(--marron-bordure);
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    font-size: 18px; /*taille des caractère*/
+}
+.conteneur-accueil:hover {
+    box-shadow: 2px 2px grey;
+}
+.conteneur-accueil h3{
+    text-decoration:underline;
+    font-weight:bold;
+}
 
 /* MENU */
 #titre{
