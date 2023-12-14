@@ -69,7 +69,8 @@
                         <label for="tel">Phone number : </label>
                         <input type="tel" name="tel" placeholder="number" /><!--zone de texte pour le numero de telephone-->
                         <br><br />
-                        <input type="submit" name="Réserver" id="reservation" value="Book" /><!--bouton pour confirmer réservation-->
+                        <!--<input type="submit" name="Réserver" id="reservation" value="Book" />--><!--bouton pour confirmer réservation-->
+                        <a href="confirmation_eng.html" id="reservation">Submit</a>
                         <br><br />
                         <i class="chut">*all your informations are confidentials</i>
                     </fieldset>
@@ -134,7 +135,8 @@
                         <input type="text" name="type" id="type" placeholder="Other event" />
                         <br><br />
                     
-                        <input type="submit" name="Réserver l'Événement" id="reservation" value="Book" />
+                        <!--<input type="submit" name="Réserver l'Événement" id="reservation" value="Book" />-->
+                        <a href="confirmation_eng.html" id="reservation">Submit</a>
                         <br><br /><!--bouton confirmation reservation-->
                         <i class="chut">*all reservation made less than one week before the date will not be considered</i>
                     </fieldset>
@@ -144,20 +146,29 @@
         </main>
 
     <footer>
+        <div id="footer">
+        <div class="contact">
+            <p>Phone : +33 3 16 14 23 XX</p>
+            <p>Mail : ChtiteMamie@gmail.com</p>
+        </div>
 
-        <p>Phone : +33 3 16 14 23 XX</p>
-        <p>Mail : ChtiteMamie@gmail.com</p>
+        <div class="carte">
+        <p>Our location :</p>
+        <div id="rectanglecarte">
+        <!--code permetant l'affichage d'une map avec un emplacement-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" width="400px" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
 
-        <p>Our Place :</p>
-        <!--carte de lieux restaurant-->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        <p>Our social networks :</p>
-        <!--liens imagés vers nos réseaux sociaux-->
+        <div class="reseaux">
+        <p>Social Networks :</p>
+        <!--permet de d'afficher des images qui servent aussi de lien-->
         <div class="conteneur-image">
             <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
             <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
             <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+        </div>
+        </div>
         </div>
 
     </footer>

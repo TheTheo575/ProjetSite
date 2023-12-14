@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --second-color: #ffd200; /* cette partie du code permet de définir des couleur qui vont être utilisé sur tous le code en CSS */
     --main-color: #e30a0a;
     --text-color: #ffffff;
@@ -58,11 +58,10 @@ nav {
 }
 .conteneur-nav {
     display: flex;
-    flex-flow: row, wrap; /*flex-direction - flex-wrap*/
-    justify-content: center;
-    justify-content: space-evenly;
+    flex-flow: row wrap; /*flex-direction - flex-wrap*/
+    align-content: space-around;
+    justify-content: space-around;
     background-color: var(--main-color);
-
     border: 3px solid var(--rouge-fonce);
 
     /*Transition*/
@@ -103,10 +102,10 @@ footer {/*partie du code en charge du footer */
     margin-right:25%;
 
     display:flex;
-    flex-flow: row, wrap;
+    flex-flow: row wrap;
     justify-content:center;
     justify-content:space-around;
-}
+}  
 .lien-image:hover {
     transform: scale(1.5) rotate(20deg);
 }
@@ -129,6 +128,13 @@ main {/*partie du code en charge du main */
     
 }
 
+#liste-menu{
+    border: 2px solid var(--marron-fonce-form);
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
+}
+
 #liste-menu ul::first-line{/*partie du CSS en charge de la première ligne des liste du menu*/
     text-align: center;/*texte alignées sur le centre*/
     text-decoration: underline;/*texte sousligné*/
@@ -149,16 +155,35 @@ main {/*partie du code en charge du main */
 
 
 .conteneur_collab {
+
+    display:flex;
+    flex-flow:row wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
+    justify-content:start;
+    justify-content: space-around; /*espacement entre les éléments*/
+
+    background-color: var(--marron-bordure);
     border: solid;/*bordure solid*/
-    border-color: var(--marron-bordure);/*couleur des bordures*/
+    border-color: var(--marron-fonce-form);/*couleur des bordures*/
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
     padding: 1%;/*marge interne de 1% */
     width: 90%;/*prendra 90% de la largeur*/
-    height: 250px;/*250px de hauteur*/
+    height: auto;/*hauteur automatique de la boite*/
     margin: auto;/*marge du texte automatique*/
 }
-.conteneur_collab .flottant_collab {/*élément de class conteneur_collab et de class flottant_collab */
-    float:left;/*les éléments vonts sur la gauche du document*/
-    margin:5px;/*marge externe de 5px*/
+.element_collab {
+    text-align:center; /*alignement automatique au centre */
+    width: 96px; /*Largeur des conteneurs des photos de presentation*/
+    height: auto; /*Hauteur des conteneurs des photos de presentation*/
+}
+
+.photocollab{
+    height: 96px; /*Largeur des photos de presentation*/
+    width: 96px; /*Hauteur des photos de presentation*/
+}
+
+.element_collab:hover {
+    transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
 }
 
 .formreserv fieldset {/*partie du css en charge des formulaire*/
@@ -192,6 +217,10 @@ main {/*partie du code en charge du main */
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-fond);/*couleur du fond*/
     font-size: 18px;/*taille des caractère*/
+
+    padding:3px;
+    text-decoration:none;
+    color:black;
 }
 
 #reservation:hover{/*CSS en charge du survole du bouton réservation*/
@@ -211,6 +240,23 @@ main {/*partie du code en charge du main */
     width: 60px;/*largeur de 60px*/
     height: 60px;/*hauteur de 60px*/
     transform:rotate(11deg);/*rotation de l'image de 11deg*/
+}
+
+#rectanglecarte{
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+
+.conteneur-confirmation {
+    background-color: var(--marron-bordure);
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    font-size: 18px; /*taille des caractère*/
+
+    text-align: center;
+    text-transform:uppercase;
 }
 
 @media only screen and (768px<=width){ 
@@ -257,4 +303,22 @@ main {/*partie du code en charge du main */
 .event{
     grid-area: event;/*placement du formulaire evenement dans une grille*/
 }
+}
+
+@media only screen and (1200px<=width){ 
+    #footer {/*partie qui met en place la grille du footer*/
+        display: grid;/*mise en place grille*/
+        grid-template-columns: repeat(3,33%);/*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-areas: "contact carte reseaux"/*definie les différent nom de chaque partie de la grille*/
+    }
+    .contact {
+        grid-area: contact;/*placement du formulaire reservtion dans la grille*/
+    }
+    .carte{
+        grid-area: carte;/*placement du formulaire reservtion dans la grille*/
+    }
+    .reseaux{
+        grid-area: reseaux;/*placement du formulaire evenement dans une grille*/
+    }
+
 }
