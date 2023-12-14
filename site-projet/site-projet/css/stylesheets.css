@@ -105,7 +105,7 @@ footer {/*partie du code en charge du footer */
     flex-flow: row wrap;
     justify-content:center;
     justify-content:space-around;
-}
+}  
 .lien-image:hover {
     transform: scale(1.5) rotate(20deg);
 }
@@ -273,6 +273,16 @@ main {/*partie du code en charge du main */
     grid-area: collab;
     text-align: center;
 } */
+
+.conteneur-confirmation {
+    background-color: var(--marron-bordure);
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    font-size: 18px; /*taille des caractère*/
+
+    text-align: center;
+    text-transform:uppercase;
+}
 
 @media only screen and (768px<=width){ 
 #liste-menu {/*partie qui met en place la grille du menu*/
