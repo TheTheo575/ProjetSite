@@ -117,6 +117,23 @@ main {/*partie du code en charge du main */
 
 }
 
+/* ACCUEIL */
+.conteneur-accueil {
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    font-size: 18px;/*taille des caractère*/
+
+    margin: 2% 5%; /*2% pour la marge vertical et 5% pour la marge horizontale*/
+
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.conteneur-accueil h3 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /* MENU */
 #titre{
     grid-area: titre;/*selection de la partie titre de la grille (voir plus bas dans le code)*/
@@ -214,6 +231,9 @@ main {/*partie du code en charge du main */
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-fond);/*couleur du fond*/
     font-size: 18px;/*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
 }
 
 #reservation:hover{/*CSS en charge du survole du bouton réservation*/
