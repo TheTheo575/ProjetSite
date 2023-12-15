@@ -31,12 +31,9 @@ header {
     border: 3px solid #8c0f0f; /* bordure */
 }
 .image-accueil {
-    animation-name: image-accueil;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
-    animation-delay:0s;
-    animation-iteration-count:1;
-    animation-direction:normal;
+    animation-name: image-accueil;/*nom animation */
+    animation-duration: 1.5s;/*durée animation*/
+    
     animation-fill-mode:forwards;
 }
 @keyframes image-accueil {
