@@ -105,7 +105,7 @@ footer {/*partie du code en charge du footer */
     flex-flow: row wrap;
     justify-content:center;
     justify-content:space-around;
-}  
+}
 .lien-image:hover {
     transform: scale(1.5) rotate(20deg);
 }
@@ -118,26 +118,6 @@ main {/*partie du code en charge du main */
     background-color: #ffd4b6;/*couleur du fond*/
     padding: 10px;/*marge interne de 10px*/
 
-}
-/* ACCUEIL */
-.conteneur-accueil {
-    margin-left: 5%;
-    margin-right: 5%;
-
-    padding-right:5%;
-    padding-left:5%;
-
-    background-color: var(--marron-bordure);
-    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-    border-radius: 10px; /*bordure avec des coins arrondie*/
-    font-size: 18px; /*taille des caractère*/
-}
-.conteneur-accueil:hover {
-    box-shadow: 2px 2px grey;
-}
-.conteneur-accueil h3{
-    text-decoration:underline;
-    font-weight:bold;
 }
 
 /* MENU */
@@ -237,10 +217,6 @@ main {/*partie du code en charge du main */
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-fond);/*couleur du fond*/
     font-size: 18px;/*taille des caractère*/
-
-    padding:3px;
-    text-decoration:none;
-    color:black;
 }
 
 #reservation:hover{/*CSS en charge du survole du bouton réservation*/
@@ -269,16 +245,6 @@ main {/*partie du code en charge du main */
     box-shadow: 2px 2px grey;
 }
 
-.conteneur-confirmation {
-    background-color: var(--marron-bordure);
-    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-    border-radius: 10px; /*bordure avec des coins arrondie*/
-    font-size: 18px; /*taille des caractère*/
-
-    text-align: center;
-    text-transform:uppercase;
-}
-
 #liste-plats{
     display: flex;
     flex-wrap: wrap;
@@ -302,6 +268,7 @@ main {/*partie du code en charge du main */
     padding: 3px;
     text-decoration: underline;
     backface-visibility: hidden;
+    margin-bottom: 20px;
 }
 
 .card-front {
@@ -309,10 +276,12 @@ main {/*partie du code en charge du main */
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
-    background-color: var(--marron-bordure);
+    background-color: var(--marron-fond);
     border-radius: 20px;
     border: 2px solid var(--marron-fonce-form);
     box-shadow: 2px 2px grey;
+    overflow: hidden;
+    padding-left: 8px;
 }
 .card-back {
     position: absolute;
@@ -320,10 +289,40 @@ main {/*partie du code en charge du main */
     width: 100%;
     backface-visibility: hidden;
     transform: rotateY(-180deg);
-    background-color: var(--marron-bordure);
+    background-color: var(--marron-fond);
     border-radius: 20px;
     border: 2px solid var(--marron-fonce-form);
     box-shadow: 2px 2px grey;
+    padding-left: 8px;
+}
+
+.card-front>div .card-back>div {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.photoplat{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+#liste-recette-entree{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    border-radius: 20px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+}
+
+#liste-recette-entree>legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/{ 
+    border-radius: 5px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
 }
 
 @media only screen and (768px<=width){ 
