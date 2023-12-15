@@ -26,11 +26,11 @@
     <nav>
 
         <div class="conteneur-nav">
-            <a href="../pages_html/accueil.html" class="lien-interne">Accueil</a>
-            <a href="../pages_html/menu.html" class="lien-interne"><b><u>Menu</u></b></a>
-            <a href="../pages_html/menu_eng.html" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
-            <a href="../pages_html/reservation.html" class="lien-interne">Réservation</a>
-            <a href="../pages_html/collab.html" class="lien-interne">Partenaires</a>
+            <a href="../pages_html/accueil.html" class="lien-interne" id="paccueil">Accueil</a>
+            <a href="../pages_html/menu.html" class="lien-interne" id="pmenu"><b><u>Menu</u></b></a>
+            <a href="../pages_html/menu_eng.html" class="lien-interne" id="panglais"><b><u>FRA</u></b>/ENG</a>
+            <a href="../pages_html/reservation.html" class="lien-interne" id="preservation">Réservation</a>
+            <a href="../pages_html/collab.html" class="lien-interne" id="pcollab">Partenaires</a>
         </div>
 
     </nav>
@@ -85,15 +85,33 @@
             </ul>
             <h3 id="indic">Toute intoxication liée de près ou de loin à notre nourriture sera déclinée</h3>
         </ul>
-        <div id="liste-plats">
-            <div class="recette">
-                <div class="card-front">
-                    <div>Un plat</div>
-                </div>
-                <div class="card-back">
-                    <div>Recette</div>
-                </div>
-            </div>
+        <div id="liste-plats">  <!--Debut de la liste des cartes des recettes -->
+            <fieldset id="liste-recette-entree">
+            <legend>Nos entrées</legend>   <!--Legende de chaque partie (ici les entrées) -->
+            <div class="recette">   <!-- Debut d'une carte -->
+                <div class="card-front">   <!--Face avant de la carte -->
+                    <div>Salade césar</div>
+                    <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="saldecesar" style="width: 110px; height: 110px;"/>
+                </div>   <!--Fin face avant de la carte -->
+                <div class="card-back">   <!--Face arriere de la carte -->
+                    <div>Ingrédients :<br/>
+                        Premier Ingrédients<br/>
+                        Deuxième Ingrédients<br/>
+                    </div>
+                </div>   <!--Fin face arriere de la carte -->
+            </div>   <!--Fin d'une carte -->
+            <div class="recette">   <!-- Debut d'une carte -->
+                <div class="card-front">   <!--Face avant de la carte -->
+                    <div>Salade césar</div>
+                    <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="saldecesar" style="width: 110px; height: 110px;"/>
+                </div>   <!--Fin face avant de la carte -->
+                <div class="card-back">   <!--Face arriere de la carte -->
+                    <div>Ingrédients :<br/>
+                        Premier Ingrédients<br/>
+                        Deuxième Ingrédients<br/>
+                    </div>
+                </div>   <!--Fin face arriere de la carte -->
+            </div>   <!--Fin d'une carte -->
             <div class="recette">
                 <div class="card-front">
                     <div>Un  autre plat</div>
@@ -118,6 +136,7 @@
                     <div>Recette</div>
                 </div>
             </div>
+            </fieldset>
             <div class="recette">
                 <div class="card-front">
                     <div>Et encore un autre plat</div>
@@ -134,7 +153,7 @@
                     <div>Recette</div>
                 </div>
             </div>
-        </div>
+        </div>   <!--Fin de la liste des cartes des recettes -->
 
 
     </main>
