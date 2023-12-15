@@ -34,14 +34,14 @@ header {
     animation-name: image-accueil;/*nom animation */
     animation-duration: 1.5s;/*durée animation*/
     
-    animation-fill-mode:forwards;
+    animation-fill-mode:forwards;/*conserve le dernier element de l'animation*/
 }
-@keyframes image-accueil {
+@keyframes image-accueil {/*anmation de image-acceuil*/
     from {
-        opacity:0;
+        opacity:0;/*debut animation logo invisible*/
     }
     to {
-        opacity:100%
+        opacity:100%/*fin animation logo visible*/
     }
 }
 
@@ -54,12 +54,12 @@ nav {
     z-index: 1;
 }
 .conteneur-nav {
-    display: flex;
+    display: flex;/*contenu flexible*/
     flex-flow: row wrap; /*flex-direction - flex-wrap*/
-    align-content: space-around;
+    align-content: space-around;/*espace entre les les différent élement et avec le bord(espace avec le bord plus ptit)*/
     justify-content: space-around;
-    background-color: var(--main-color);
-    border: 3px solid var(--rouge-fonce);
+    background-color: var(--main-color);/*couleur du fond*/
+    border: 3px solid var(--rouge-fonce);/*bordure solid colorées*/
 
     /*Transition*/
     transition-property: padding-top, padding-bottom;
