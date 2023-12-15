@@ -242,6 +242,13 @@ main {/*partie du code en charge du main */
     box-shadow: 2px 2px grey;
 }
 
+#rectanglecarte{
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+
 #liste-plats{
     display: flex;
     flex-wrap: wrap;
