@@ -122,6 +122,7 @@ main {/*partie du code en charge du main */
     border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-bordure);/*couleur du fond*/
+    box-shadow: 2px 2px grey; /*ajout d'une ombre grise de 2px*/
     font-size: 18px;/*taille des caractère*/
 
     margin: 2% 5%; /*2% pour la marge vertical et 5% pour la marge horizontale*/
