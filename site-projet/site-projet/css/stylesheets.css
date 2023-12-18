@@ -246,6 +246,21 @@ main {/*partie du code en charge du main */
     background-color: var(--marron-fonce-form);/*couleur du fond*/
     color: var(--marron-fond);/*couleur du texte*/
 }
+#reservation2 { /*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond); /*couleur du fond*/
+    font-size: 18px; /*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
+}
+
+    #reservation2:hover { /*CSS en charge du survole du bouton réservation*/
+        border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+        background-color: var(--marron-fonce-form); /*couleur du fond*/
+        color: var(--marron-fond); /*couleur du texte*/
+    }
 
 .chut{
     font-size: 9px;
