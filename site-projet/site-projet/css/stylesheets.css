@@ -8,15 +8,15 @@
     --marron-fonce-form: #8F6547;
     --marron-fond: #ffd4b6;
 }
-iframe { /*parie du code en charge des maps de fin de page*/
-    width :400px;/*largeur et hauteur de la map*/
-    height:250px;
-}
+
 
 body {
     font-family: Georgia, serif; /*police du texte choisi*/
     font-size:20px;/*taille du texte dans le body des pages html*/
     
+}
+.chut {/*partie du code pour les élément tous petit dans plusieurs pages*/
+    font-size: 9px;
 }
 
 header {
@@ -48,7 +48,8 @@ header {
         opacity:100%/*fin animation logo visible*/
     }
 }
-
+/*==============================================================================================*/
+/*NAVIGATION*/
 nav {
     /*partie du CSS qui s'occupe */
     position: sticky; /*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
@@ -88,6 +89,7 @@ nav {
     color: var(--rouge-fonce);
 }
 /*==================================================================================================*/
+/*FOOTER*/
 footer {/*partie du code en charge du footer */
     padding-left:4px; /*marge interne de 4px*/
     color: var(--text-color);/*couleur du texte du footer*/
@@ -98,19 +100,50 @@ footer {/*partie du code en charge du footer */
     margin: -8px;/*marge externe de -8px*/
     border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
 }
-.conteneur-image {
-    margin-left:25%;
-    margin-right:25%;
-
-    display:flex;
-    flex-flow: row wrap;
-    justify-content:center;
-    justify-content:space-around;
+#rectanglecarte {
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
 }
-.lien-image:hover {
+@media only screen and (1200px<=width) {
+    #footer { /*partie qui met en place la grille du footer*/
+        display: grid; /*mise en place grille*/
+        grid-template-columns: repeat(3,33%); /*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-areas: "contact carte reseaux" /*definie les différent nom de chaque partie de la grille*/
+    }
+
+    .contact {
+        grid-area: contact; /*placement du formulaire reservtion dans la grille*/
+    }
+
+    .carte {
+        grid-area: carte; /*placement du formulaire reservtion dans la grille*/
+    }
+
+    .reseaux {
+        grid-area: reseaux; /*placement du formulaire evenement dans une grille*/
+    }
+}
+iframe { /*parie du code en charge des maps de fin de page*/
+    width: 400px; /*largeur et hauteur de la map*/
+    height: 250px;
+}
+.conteneur-image {/*parti en charge des images du footer*/
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.lien-image:hover {/*partie en charge des images */
     transform: scale(1.5) rotate(20deg);
 }
+/*===========================================*/
 
+/*MAIN */
 main {/*partie du code en charge du main */
     margin: -8px;/*marge externe de -8px*/
     margin-top:8px;/*marge externe supérieur de 8px*/
@@ -120,7 +153,8 @@ main {/*partie du code en charge du main */
     padding: 10px;/*marge interne de 10px*/
 
 }
-
+/*=======================================================================================================================================================*/
+/*Début CSS pour les diférentes pages cas  par cas*/
 /* ACCUEIL */
 .conteneur-accueil {
     border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
@@ -135,10 +169,10 @@ main {/*partie du code en charge du main */
     padding-right: 5%;
 }
 .conteneur-accueil h3 {
-    text-decoration: underline;
-    font-weight: bold;
+    text-decoration: underline;/*h3 avec texte souligné*/
+    font-weight: bold;/*texte en gras*/
 }
-
+/*=========================================================================================================*/
 /* MENU */
 #titre{
     grid-area: titre;/*selection de la partie titre de la grille (voir plus bas dans le code)*/
@@ -165,128 +199,6 @@ main {/*partie du code en charge du main */
 #liste-menu ul{
     list-style-type: none;/*pas d'élement de décoration de la liste (pas le point a chaque nouvelle élément)*/
     padding-top: 5px;/*marge interne supérieur de 5px*/
-}
-
-#indic{
-    font-size: 10px;/*taille du texte de 5px*/
-}
-
-
-
-.conteneur_collab {
-
-    display:flex;
-    flex-flow:row wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
-    justify-content:start;
-    justify-content: space-around; /*espacement entre les éléments*/
-
-    background-color: var(--marron-bordure);
-    border: solid;/*bordure solid*/
-    border-color: var(--marron-fonce-form);/*couleur des bordures*/
-    border-radius: 20px;
-    box-shadow: 2px 2px grey;
-    padding: 1%;/*marge interne de 1% */
-    width: 90%;/*prendra 90% de la largeur*/
-    height: auto;/*hauteur automatique de la boite*/
-    margin: auto;/*marge du texte automatique*/
-}
-.element_collab {
-    text-align:center; /*alignement automatique au centre */
-    width: 96px; /*Largeur des conteneurs des photos de presentation*/
-    height: auto; /*Hauteur des conteneurs des photos de presentation*/
-}
-
-.photocollab{
-    height: 96px; /*Largeur des photos de presentation*/
-    width: 96px; /*Hauteur des photos de presentation*/
-}
-
-.element_collab:hover {
-    transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
-}
-
-.formreserv fieldset {/*partie du css en charge des formulaire*/
-    background-color: var(--marron-bordure);/*couleur du fond*/
-    border-radius: 20px;/*bordure arrondie*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-}
-
-.formreserv legend{/*partie du css en charge des légendes des formulaire*/
-    border-radius: 5px;/*bordure arrondie*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-    background-color: var(--marron-bordure);/*couleur du fond*/
-}
-
-.formreserv input, .formreserv select{/*partie du CSS en charge des selections du formulaire*/
-    border: none;/*bordure enlever*/
-    border-bottom: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-    border-radius: 4px 4px 0px 0px;/*bordure arrondie*/
-    background-color: var(--marron-fond);
-   
-    font-size: 16px;/*taille des caractère*/
-    width:auto;/*largeur automatique*/
-}
-
-.formreserv .nbr{
-    width:auto;
-}
-
-#reservation{/*bouton reserver du formulaire*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-    border-radius: 10px;/*bordure avec des coins arrondie*/
-    background-color: var(--marron-fond);/*couleur du fond*/
-    font-size: 18px;/*taille des caractère*/
-    padding: 3px; /*marge interne de 3px*/
-    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
-    color: black; /*text de couleur noir*/
-}
-
-#reservation:hover{/*CSS en charge du survole du bouton réservation*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-    background-color: var(--marron-fonce-form);/*couleur du fond*/
-    color: var(--marron-fond);/*couleur du texte*/
-}
-#reservation2 { /*bouton reserver du formulaire*/
-    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-    border-radius: 10px; /*bordure avec des coins arrondie*/
-    background-color: var(--marron-fond); /*couleur du fond*/
-    font-size: 18px; /*taille des caractère*/
-    padding: 3px; /*marge interne de 3px*/
-    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
-    color: black; /*text de couleur noir*/
-}
-
-    #reservation2:hover { /*CSS en charge du survole du bouton réservation*/
-        border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-        background-color: var(--marron-fonce-form); /*couleur du fond*/
-        color: var(--marron-fond); /*couleur du texte*/
-    }
-
-.chut{
-    font-size: 9px;
-}
-
-#Assiette {/*css en charge de l'image d'assiette*/
-    position: relative;/*position relative*/
-    float: right;/*position sur la droite*/
-    display: inline; /*affichage lineaire*/
-    width: 60px;/*largeur de 60px*/
-    height: 60px;/*hauteur de 60px*/
-    transform:rotate(11deg);/*rotation de l'image de 11deg*/
-}
-
-#rectanglecarte{
-    border: 2px solid var(--rouge-fonce);
-    width: 400px;
-    height: 250px;
-    box-shadow: 2px 2px grey;
-}
-
-#rectanglecarte{
-    border: 2px solid var(--rouge-fonce);
-    width: 400px;
-    height: 250px;
-    box-shadow: 2px 2px grey;
 }
 
 #liste-plats{
@@ -397,10 +309,114 @@ main {/*partie du code en charge du main */
     grid-area: b2;/*position dansla grille de cette partie*/
     text-align: center;/*texte allignes au centre*/
 }
-#indic{
-    grid-area: indic;/*place la partie textuel*/
-    font-size: 10px;/*taille du texte 10px*/
+/*===================================================================================================*/
+
+/* COLLAB*/
+.conteneur_collab {
+
+    display:flex;
+    flex-flow:row wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
+    justify-content:start;
+    justify-content: space-around; /*espacement entre les éléments*/
+
+    background-color: var(--marron-bordure);
+    border: solid;/*bordure solid*/
+    border-color: var(--marron-fonce-form);/*couleur des bordures*/
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
+    padding: 1%;/*marge interne de 1% */
+    width: 90%;/*prendra 90% de la largeur*/
+    height: auto;/*hauteur automatique de la boite*/
+    margin: auto;/*marge du texte automatique*/
 }
+.element_collab {
+    text-align:center; /*alignement automatique au centre */
+    width: 96px; /*Largeur des conteneurs des photos de presentation*/
+    height: auto; /*Hauteur des conteneurs des photos de presentation*/
+}
+
+.photocollab{
+    height: 96px; /*Largeur des photos de presentation*/
+    width: 96px; /*Hauteur des photos de presentation*/
+}
+
+.element_collab:hover {
+    transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
+}
+/*========================================================================================*/
+/*RESERVATION*/
+.formreserv fieldset {/*partie du css en charge des formulaire*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    border-radius: 20px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+}
+
+.formreserv legend{/*partie du css en charge des légendes des formulaire*/
+    border-radius: 5px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+}
+
+.formreserv input, .formreserv select{/*partie du CSS en charge des selections du formulaire*/
+    border: none;/*bordure enlever*/
+    border-bottom: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 4px 4px 0px 0px;/*bordure arrondie*/
+    background-color: var(--marron-fond);
+   
+    font-size: 16px;/*taille des caractère*/
+    width:auto;/*largeur automatique*/
+}
+
+.formreserv .nbr{
+    width:auto;
+}
+
+#reservation{/*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond);/*couleur du fond*/
+    font-size: 18px;/*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
+}
+
+#reservation:hover{/*CSS en charge du survole du bouton réservation*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-fonce-form);/*couleur du fond*/
+    color: var(--marron-fond);/*couleur du texte*/
+}
+#reservation2 { /*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond); /*couleur du fond*/
+    font-size: 18px; /*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
+}
+
+#reservation2:hover { /*CSS en charge du survole du bouton réservation*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    background-color: var(--marron-fonce-form); /*couleur du fond*/
+    color: var(--marron-fond); /*couleur du texte*/
+}
+
+
+
+#Assiette {/*css en charge de l'image d'assiette*/
+    position: relative;/*position relative*/
+    float: right;/*position sur la droite*/
+    display: inline; /*affichage lineaire*/
+    width: 60px;/*largeur de 60px*/
+    height: 60px;/*hauteur de 60px*/
+    transform:rotate(11deg);/*rotation de l'image de 11deg*/
+}
+
+
+
+
+
 
 .formreserv {
     display: grid;/*creation d'une grille */
@@ -415,20 +431,3 @@ main {/*partie du code en charge du main */
 }
 }
 
-@media only screen and (1200px<=width){ 
-    #footer {/*partie qui met en place la grille du footer*/
-        display: grid;/*mise en place grille*/
-        grid-template-columns: repeat(3,33%);/*grille de 2 colone qui prenne 50% de la largeur*/
-        grid-template-areas: "contact carte reseaux"/*definie les différent nom de chaque partie de la grille*/
-    }
-    .contact {
-        grid-area: contact;/*placement du formulaire reservtion dans la grille*/
-    }
-    .carte{
-        grid-area: carte;/*placement du formulaire reservtion dans la grille*/
-    }
-    .reseaux{
-        grid-area: reseaux;/*placement du formulaire evenement dans une grille*/
-    }
-
-}
