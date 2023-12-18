@@ -3,65 +3,102 @@
 
 <head>
 
-    <title>Partenaires</title>
+    <title>Partenaires</title><!--partenaire-->
     <meta charset="utf-8">
     <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
     <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Réservation">
     <meta name="description" content="Collaborateur de la ch'tite mamie">
-
+    <!--icon pour le logo de la page-->
     <link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
     <link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
-
+    <!--liens vers la page CSS-->
 </head>
 
 <body>
 
     <header>
-
-        <img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"> <p style="display:inline;">Ch'tite mamie</p>
+        <!--partie en charge du logo et du Nom de la pages en haut du site-->
+        <a href="../pages_html/accueil.html" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
+        <p style="display:inline;">Ch'tite mamie</p>
 
     </header>
 
     <nav>
-
-        <a href="../pages_html/accueil.html" class="lien-interne">Accueil</a>
-        <a href="../pages_html/menu.html" class="lien-interne">Menu</a>
-        <a href="../pages_html/collab_eng.html" class="lien-interne">FRA/ENG</a>
-        <a href="../pages_html/reservation.html" class="lien-interne">Réservation</a>
-        <a href="../pages_html/collab.html" class="lien-interne">Partenaires</a>
+        <!--menu de navigation vers les différentes page du site-->
+        <div class="conteneur-nav">
+            <a href="../pages_html/accueil.html" class="lien-interne">Accueil</a>
+            <a href="../pages_html/menu.html" class="lien-interne">Menu</a>
+            <a href="../pages_html/collab_eng.html" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
+            <a href="../pages_html/reservation.html" class="lien-interne">Réservation</a>
+            <a href="../pages_html/collab.html" class="lien-interne"><b><u>Partenaires</u></b></a>
+        </div>
 
     </nav>
 
-    <main>
+    <main><!--début contenu de la page-->
 
-        On est bo !
-        <h1>Nos Collaborateurs.</h1>
-        <h2>Le departement du Nord</h2> **ajouter une images**
+        <h1>Nos Collaborateurs.</h1><!--nom principale de la page-->
+
+        <h2>Chez nous on mange locale</h2><!--corps de présentation de nos collaborateurs-->
+        <p>Nous sommes en partenariat avec divers élèveurs et producteurs du département</p>
+        <div class="conteneur_collab">
+            <div class="element_collab">
+                <!--image avec texte dans une division pour le personnage de guillaume-->
+                <img src="../images/Guillaume-Logo.png" alt="photo de Guillaume" class="photocollab">
+                <br>Guillaume
+                <br>Agriculteur situé à quaëdypre
+            </div>
+            <div class="element_collab"><!--partie comportant letexte et la photo d'un collaborateur'-->
+                <img src="../images/Francois-Logo.png" alt="photo de Francois" class="photocollab">
+                <br>François
+                <br>Vigeron situé à Lievin
+            </div>
+            <div class="element_collab">
+                <img src="../images/Gerard-Logo.png" alt="photo de Gerard" class="photocollab">
+                <br>Gérard
+                <br>Maraicher 
+            </div>
+        </div>
+
+        <h2>Le departement du Nord</h2>
+        <img src="../images/logo-nord-departement.jpg" alt="Logo du departement du nord" style="height : 100px; width : 200px">
         <p>NO</p>
-        <h2>La Goudale</h2>**ajouter images*
+
+        <h2>La Goudale</h2>
+        <img src="../images/goudale.png" alt="Logo Goudale">
         <p> Afin de vous proposer une grande quantité de Boissons Chtites. Notre Partenaires La Goudale vous propose une grande variétée de Boissons disponible des à presents dans notre réstaurant.  </p>
-        <h2>Partenaire JO 2024</h2>**ajouter logo**
-        <p>Dans le But de promouvoir la gastronomie Française durant l'évenement des JO 2024 de PARIS. La Ch'tite Mamie a été choisi afin de représenté la Gastronomie Nordiste durant l'évenement. </p> 
 
-
+        <h2>Partenaire JO 2024</h2>
+        <img src="../images/JO_2024.png" alt="Logo des JO 2024" style="height: 250px; width:150px">
+        <p>Dans le But de promouvoir la gastronomie Française durant l'évenement des JO 2024 de PARIS. La Ch'tite Mamie a été choisi afin de représenté la Gastronomie Nordiste durant l'évenement. </p>
 
     </main>
 
     <footer>
-
+        <div id="footer">
+        <div class="contact">
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
+        </div>
 
+        <div class="carte">
         <p>Où nous trouver :</p>
+        <div id="rectanglecarte">
+        <!--code permetant l'affichage d'une map avec un emplacement-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" width="400px" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.618469352299!2d3.046185475721663!3d50.634204071627806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1695117198728!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
+        <div class="reseaux">
         <p>Nos Réseaux :</p>
-
-        <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
-        <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
-        <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+        <!--permet de d'afficher des images qui servent aussi de lien-->
+        <div class="conteneur-image">
+            <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
+            <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
+            <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+        </div>
+        </div>
+        </div>
 
     </footer>
 

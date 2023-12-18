@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -18,100 +18,169 @@
 
     <header>
 
-        <img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"> <p style="display:inline;">Ch'tite mamie</p>
+        <a href="../pages_html/accueil.html" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
+        <p style="display:inline;">Ch'tite mamie</p>
 
     </header>
 
     <nav>
 
-        <a href="../pages_html/accueil.html" class="lien-interne">Accueil</a>
-        <a href="../pages_html/menu.html" class="lien-interne">Menu</a>
-        <a href="../pages_html/menu_eng.html" class="lien-interne">FRA/ENG</a>
-        <a href="../pages_html/reservation.html" class="lien-interne">Réservation</a>
-        <a href="../pages_html/collab.html" class="lien-interne">Partenaires</a>
+        <div class="conteneur-nav">
+            <a href="../pages_html/accueil.html" class="lien-interne" id="paccueil">Accueil</a>
+            <a href="../pages_html/menu.html" class="lien-interne" id="pmenu"><b><u>Menu</u></b></a>
+            <a href="../pages_html/menu_eng.html" class="lien-interne" id="panglais"><b><u>FRA</u></b>/ENG</a>
+            <a href="../pages_html/reservation.html" class="lien-interne" id="preservation">Réservation</a>
+            <a href="../pages_html/collab.html" class="lien-interne" id="pcollab">Partenaires</a>
+        </div>
 
     </nav>
 
-    <main id="liste-menu">
-        <h1 id="titre">Menu de la ch'ti mamie</h1>
-        <ul class="entrees">
-            <li>Nos Entrées :</li>
-            <li>Salade</li>
-            <li>Quiche Aux Poireaux</li>
-            <li>Oeufs Cocottes Maroilles</li>
-            <li>Chicons A la Béchamel</li>
-        </ul>
-        <ul class="plats">
-            <li>Nos Plats :</li>
-            <li>Potjevleesch</li>
-            <li>Fricadelle</li>
-            <li>Américain</li>
-            <li>Frites</li>
-            <li>La Moule Mamie</li>
-            <li>Carbonnade Flamande</li>
-            <li>Welsh</li>
-        </ul>
-        <ul class="desserts">
-            <li>Nos Désserts :</li>
-            <li>Le Chtiramisu</li>
-            <li>La Tarte Au Sucre</li>
-            <li>Café Liégeois</li>
-            <li>Crème Brûlée A La Chicorée</li>
-            <li>Café Gourmand</li>
-            <li></li>
-        </ul>
-        <ul class="boissons">
-            <li>Les Boissons :</li>
-            <li>Soft</li>
-            <li>Bière</li>
-            <li>Digestifs</li>
-            <li>Vins</li>
-        </ul>
-        <h1>Détails du Menu</h1>
-        <h2>Les Boissons :</h2>
-        <ul>
-            <li>Soft</li>
-            <ul>
-                <li>Coca-Cola: Original/Zéro</li>
-                <li>schweppes: Agrumes</li>
-                <li>Fanta: Orange/Citron</li>
-                <li>Oasis: Tropical</li>
+    <main>
+        <ul id="liste-menu">
+            <h1 id="titre">Menu de la ch'ti mamie</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul class="entrees">
+                <li>Nos entrées :</li>
+                <li>Salade</li>
+                <li>Quiche Aux Poireaux</li>
+                <li>Oeufs Cocottes Maroilles</li>
+                <li>Chicons A la Béchamel</li>
             </ul>
-            <li>Bière</li>
-            <ul>
-                <li>Anosteké: 8%</li>
-                <li>Chouffe: 8% </li>
-                <li>Goudale: 7.2%</li>
-                <li>Ch'ti: 6.4%</li>
+            <ul class="plats">
+                <li>Nos Plats :</li>
+                <li>Potjevleesch</li>
+                <li>Fricadelle</li>
+                <li>Américain</li>
+                <li>Frites</li>
+                <li>La Moule Mamie</li>
+                <li>Carbonnade Flamande</li>
+                <li>Welsh</li>
             </ul>
-            <li>Digestifs</li>
-            <li>Vins</li>>
+            <ul class="desserts">
+                <li>Nos Désserts :</li>
+                <li>Le Chtiramisu</li>
+                <li>La Tarte Au Sucre</li>
+                <li>Café Liégeois</li>
+                <li>Crème Brûlée A La Chicorée</li>
+                <li>Café Gourmand</li>
+                <li></li>
+            </ul>
+            <ul class="boissons">
+                <li>Les Boissons :</li>
+                <li>Soft</li>
+                <li>Bière</li>
+                <li>Digestifs</li>
+                <li>Vins</li>
+            </ul>
+            <h3 id="indic">Toute intoxication liée de près ou de loin à notre nourriture sera déclinée</h3>
         </ul>
-        <h3 id="indic">Toute intoxication liée de près ou de loin à notre nourriture sera déclinée</h3>
-
-        <br />
-        <hr align="center" />
-        <br />
-
-        <p>HARA</p>
-
+        <div id="liste-plats">  <!--Debut de la liste des cartes des recettes -->
+            <fieldset id="liste-recette-entree">
+            <legend>Nos entrées</legend>   <!--Legende de chaque partie (ici les entrées) -->
+            <div class="recette">   <!-- Debut d'une carte -->
+                <div class="card-front">   <!--Face avant de la carte -->
+                    <div>Salade césar</div>
+                    <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="saldecesar" style="width: 110px; height: 110px;"/><!--Ne pas modifier les valeurs de taille -->
+                </div>   <!--Fin face avant de la carte -->
+                <div class="card-back">   <!--Face arriere de la carte -->
+                    <div>Ingrédients :<br/>
+                        Premier Ingrédients<br/>
+                        Deuxième Ingrédients<br/>
+                    </div>
+                </div>   <!--Fin face arriere de la carte -->
+            </div>   <!--Fin d'une carte -->
+            <div class="recette">   <!-- Debut d'une carte -->
+                <div class="card-front">   <!--Face avant de la carte -->
+                    <div>Salade césar</div>
+                    <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="saldecesar" style="width: 110px; height: 110px;"/>
+                </div>   <!--Fin face avant de la carte -->
+                <div class="card-back">   <!--Face arriere de la carte -->
+                    <div>Ingrédients :<br/>
+                        Premier Ingrédients<br/>
+                        Deuxième Ingrédients<br/>
+                    </div>
+                </div>   <!--Fin face arriere de la carte -->
+            </div>   <!--Fin d'une carte -->
+            <div class="recette">
+                <div class="card-front">
+                    <div>Un  autre plat</div>
+                </div>
+                <div class="card-back">
+                    <div>Recette</div>
+                </div>
+            </div>
+            <div class="recette">
+                <div class="card-front">
+                    <div>Encore un autre plat</div>
+                </div>
+                <div class="card-back">
+                    <div>Recette</div>
+                </div>
+            </div>
+            <div class="recette">
+                <div class="card-front">
+                    <div>Toujours un autre plat</div>
+                </div>
+                <div class="card-back">
+                    <div>Recette</div>
+                </div>
+            </div>
+            </fieldset>
+            <div class="recette">
+                <div class="card-front">
+                    <div>Et encore un autre plat</div>
+                </div>
+                <div class="card-back">
+                    <div>Recette</div>
+                </div>
+            </div>
+            <div class="recette">
+                <div class="card-front">
+                    <div>Et pour finir ... un autre plat</div>
+                </div>
+                <div class="card-back">
+                    <div>Recette</div>
+                </div>
+            </div>
+        </div>   <!--Fin de la liste des cartes des recettes -->
     </main>
 
-    <footer id="pied">
-
+    <footer>
+        <div id="footer">
+        <div class="contact">
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
+        </div>
 
+        <div class="carte">
         <p>Où nous trouver :</p>
+        <div id="rectanglecarte">
+        <!--code permetant l'affichage d'une map avec un emplacement-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" width="400px" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </div>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.618469352299!2d3.046185475721663!3d50.634204071627806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1695117198728!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
+        <div class="reseaux">
         <p>Nos Réseaux :</p>
-
-        <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
-        <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
-        <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+        <!--permet de d'afficher des images qui servent aussi de lien-->
+        <div class="conteneur-image">
+            <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
+            <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
+            <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+        </div>
+        </div>
+        </div>
 
     </footer>
 

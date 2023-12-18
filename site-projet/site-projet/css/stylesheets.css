@@ -1,8 +1,12 @@
-﻿:root {
+:root {
     --second-color: #ffd200; /* cette partie du code permet de définir des couleur qui vont être utilisé sur tous le code en CSS */
-    --main-color: #e30a0a; 
+    --main-color: #e30a0a;
     --text-color: #ffffff;
     --marron-color: #615055;
+    --marron-bordure: #f1aa78;
+    --rouge-fonce: #8c0f0f;
+    --marron-fonce-form: #8F6547;
+    --marron-fond: #ffd4b6;
 }
 
 body {
@@ -16,8 +20,8 @@ header {
     font-size: 55px;/*taille du texte*/
     text-align: center;/*allignement du texte*/
     font-weight: bold; /*texte en gras*/
-    color: var(--text-color);/*couleur du texte*/
-
+    color: var(--second-color);/*couleur du texte*/
+    text-shadow: 3px 2px 2px var(--marron-bordure);
 
     background-color: var(--main-color);/*couleur du fond*/
     padding: 25%; /*marge intérieur de 25%*/
@@ -26,111 +30,386 @@ header {
     margin: -8px; /*marge interieur ecartée de 8 pixels à gauche et à droite */
     border: 3px solid #8c0f0f; /* bordure */
 }
+.image-accueil {
+    animation-name: image-accueil;/*nom animation */
+    animation-duration: 1.5s;/*durée animation*/
+    
+    animation-fill-mode:forwards;/*conserve le dernier element de l'animation*/
+}
+@keyframes image-accueil {/*anmation de image-acceuil*/
+    from {
+        opacity:0;/*debut animation logo invisible*/
+    }
+    to {
+        opacity:100%/*fin animation logo visible*/
+    }
+}
 
 nav {
-   /*partie du CSS qui s'occupe */
-    font-size: 25px;/*taille texte*/
-    position: sticky;/*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
-    top: 0px;/*postion de la nav pas d'écart*/
-    text-align: center;/*texte centrer*/
-    word-spacing: 30px;
-
-    background-color: var(--main-color);/* couleur du fond*/
-    padding: 25%;/*marge interne de 25%*/
-    padding-top: 5px;/*marge supérieur*/
-    padding-bottom: 5px;/*marge inférrieur*/
-    margin: -8px;/*marge externe */
-    border: 3px solid #8c0f0f;/*mise en place de bordure visible de 3px*/
+    /*partie du CSS qui s'occupe */
+    position: sticky; /*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
+    top: -1px; /*postion de la nav pas d'écart*/
+    margin: -8px;
+    font-size: 20px;
+    z-index: 1;
 }
+.conteneur-nav {
+    display: flex;/*contenu flexible*/
+    flex-flow: row wrap; /*flex-direction - flex-wrap*/
+    align-content: space-around;/*espace entre les les différent élement et avec le bord(espace avec le bord plus ptit)*/
+    justify-content: space-around;
+    background-color: var(--main-color);/*couleur du fond*/
+    border: 3px solid var(--rouge-fonce);/*bordure solid colorées*/
 
-.lien-interne {/*css en charge des liens*/
-    color: var(--text-color);
-    text-decoration: none;/*enleve le soulignement des liens*/
+    /*Transition*/
+    transition-property: padding-top, padding-bottom;
+    transition-duration: 0.1s, 0.1s;
+    transition-timing-function: linear, linear;
 }
-.lien-interne:hover {/*css en charge des liens deja utilisés*/
+.conteneur-nav:hover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*======================================================================================================================*/
+.lien-interne {
     color: var(--second-color);
+    text-shadow: 1px 1px 2px var(--marron-bordure);
+    text-decoration: none;
+}
+.lien-interne:hover {
+    color: var(--text-color);
+    text-shadow: 2px 2px 2px var(--marron-color);
+}
+.lien-interne:active {
+    color: var(--rouge-fonce);
+}
+/*==================================================================================================*/
+footer {/*partie du code en charge du footer */
+    padding-left:4px; /*marge interne de 4px*/
+    color: var(--text-color);/*couleur du texte du footer*/
+
+    background-color: var(--main-color);   /*couleur du fond */
+    padding-top: 5px;/*marge interne supérieur de 5px*/
+    padding-bottom: 5px;/*marge interne inférieur de 5px*/
+    margin: -8px;/*marge externe de -8px*/
+    border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
+}
+.conteneur-image {
+    margin-left:25%;
+    margin-right:25%;
+
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    justify-content:space-around;
+}
+.lien-image:hover {
+    transform: scale(1.5) rotate(20deg);
 }
 
-footer {/*css en charge du pied de page*/
-    padding-left: 4px; /*marge interne gauche de 4px*/
-    color: var(--text-color); /*couleur texte*/
-
-    background-color: var(--main-color); /*couleur du fond*/
-    padding-top: 5px; /*marge interne superieur*/
-    padding-bottom: 5px; /*marge interne inférieur*/
-    margin: -8px; /*marge externe*/
-    border: 3px solid #8c0f0f; /*mise en place de bordure visible de 3px*/
-}
-.lien-image {/*css en charge des images*/
-    padding-left:10%;/*marge interne gauche */
-    padding-right:10%;/*marge interne droite*/
-}
-
-main { /*css en charde du main*/
-    margin: -8px; /*marge extene */
-    margin-top: 8px; /*marge externe supérieur*/
-    margin-bottom: 8px; /*marge externe inferieur*/
-    border: 5px solid #f1aa78; /*mise en place de bordure visible de 5px*/
+main {/*partie du code en charge du main */
+    margin: -8px;/*marge externe de -8px*/
+    margin-top:8px;/*marge externe supérieur de 8px*/
+    margin-bottom:8px;/*marge externe inférieur de 8px*/
+    border: 5px solid #f1aa78;/*bordure visible de 5px coloré*/
     background-color: #ffd4b6;/*couleur du fond*/
-    padding: 10px;/*marge interne*/
+    padding: 10px;/*marge interne de 10px*/
+
+}
+
+/* ACCUEIL */
+.conteneur-accueil {
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    box-shadow: 2px 2px grey; /*ajout d'une ombre grise de 2px*/
+    font-size: 18px;/*taille des caractère*/
+
+    margin: 2% 5%; /*2% pour la marge vertical et 5% pour la marge horizontale*/
+
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.conteneur-accueil h3 {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* MENU */
-#titre{/*css en charge des id titre*/
-    grid-area: titre;
-    text-align: center;/*allignement du texte*/
-    text-decoration: underline;/*texte souligne*/
+#titre{
+    grid-area: titre;/*selection de la partie titre de la grille (voir plus bas dans le code)*/
+    text-align: center;/*texte du titre alignées sur le centre*/
+    text-decoration: underline;/*le texte du titre est souligné*/
     
 }
 
-#liste-menu ul::first-line{/*css en charge de la premier ligne des listes avec id liste-menu*/
-    text-align: center;/*allignement du texte au centre*/
-    text-decoration: underline;/*texte souligné*/
-    text-transform: uppercase;
+#liste-menu{
+    border: 2px solid var(--marron-fonce-form);
+    background-color: var(--marron-bordure);
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
+}
+
+#liste-menu ul::first-line{/*partie du CSS en charge de la première ligne des liste du menu*/
+    text-align: center;/*texte alignées sur le centre*/
+    text-decoration: underline;/*texte sousligné*/
+    text-transform: uppercase;/*permet de mettre toutes les lettres en majuscules*/
     font-weight: bold;/*texte en gras*/
-    font-size: 25px;/*taille des caractere*//*vv*/
+    font-size: 25px;/*taille des caractère de 25px*/
 }
 
 #liste-menu ul{
-    list-style-type: none;
-    padding-top: 5px;
+    list-style-type: none;/*pas d'élement de décoration de la liste (pas le point a chaque nouvelle élément)*/
+    padding-top: 5px;/*marge interne supérieur de 5px*/
 }
 
 #indic{
-    font-size: 10px;
+    font-size: 10px;/*taille du texte de 5px*/
+}
+
+
+
+.conteneur_collab {
+
+    display:flex;
+    flex-flow:row wrap; /*axe principal : ligne, peut passer à la ligne suivante*/
+    justify-content:start;
+    justify-content: space-around; /*espacement entre les éléments*/
+
+    background-color: var(--marron-bordure);
+    border: solid;/*bordure solid*/
+    border-color: var(--marron-fonce-form);/*couleur des bordures*/
+    border-radius: 20px;
+    box-shadow: 2px 2px grey;
+    padding: 1%;/*marge interne de 1% */
+    width: 90%;/*prendra 90% de la largeur*/
+    height: auto;/*hauteur automatique de la boite*/
+    margin: auto;/*marge du texte automatique*/
+}
+.element_collab {
+    text-align:center; /*alignement automatique au centre */
+    width: 96px; /*Largeur des conteneurs des photos de presentation*/
+    height: auto; /*Hauteur des conteneurs des photos de presentation*/
+}
+
+.photocollab{
+    height: 96px; /*Largeur des photos de presentation*/
+    width: 96px; /*Hauteur des photos de presentation*/
+}
+
+.element_collab:hover {
+    transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
+}
+
+.formreserv fieldset {/*partie du css en charge des formulaire*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    border-radius: 20px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+}
+
+.formreserv legend{/*partie du css en charge des légendes des formulaire*/
+    border-radius: 5px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+}
+
+.formreserv input, .formreserv select{/*partie du CSS en charge des selections du formulaire*/
+    border: none;/*bordure enlever*/
+    border-bottom: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 4px 4px 0px 0px;/*bordure arrondie*/
+    background-color: var(--marron-fond);
+   
+    font-size: 16px;/*taille des caractère*/
+    width:auto;/*largeur automatique*/
+}
+
+.formreserv .nbr{
+    width:auto;
+}
+
+#reservation{/*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond);/*couleur du fond*/
+    font-size: 18px;/*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
+}
+
+#reservation:hover{/*CSS en charge du survole du bouton réservation*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-fonce-form);/*couleur du fond*/
+    color: var(--marron-fond);/*couleur du texte*/
+}
+
+.chut{
+    font-size: 9px;
+}
+
+#Assiette {/*css en charge de l'image d'assiette*/
+    position: relative;/*position relative*/
+    float: right;/*position sur la droite*/
+    display: inline; /*affichage lineaire*/
+    width: 60px;/*largeur de 60px*/
+    height: 60px;/*hauteur de 60px*/
+    transform:rotate(11deg);/*rotation de l'image de 11deg*/
+}
+
+#rectanglecarte{
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+
+#rectanglecarte{
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+
+#liste-plats{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0px;
+    row-gap: 20px;
+}
+
+.recette:hover {
+    transform: rotateY(180deg);
+}
+
+.recette{
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+    padding: 3px;
+    text-decoration: underline;
+    backface-visibility: hidden;
+    margin-bottom: 20px;
+}
+
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: var(--marron-fond);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+    overflow: hidden;
+    padding-left: 8px;
+}
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    background-color: var(--marron-fond);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+    padding-left: 8px;
+}
+
+.card-front>div .card-back>div {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.photoplat{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+#liste-recette-entree{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    border-radius: 20px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+}
+
+#liste-recette-entree>legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/{ 
+    border-radius: 5px;/*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
 }
 
 @media only screen and (768px<=width){ 
-#liste-menu {
-    display: grid;
+#liste-menu {/*partie qui met en place la grille du menu*/
+    display: grid;/*mise en place grille*/
     /* color: var(--text-color); */
-    grid-template-columns: repeat(2,50%);
-	grid-template-rows: 12% 40% 40% 8%;
-    grid-template-areas: " titre titre"
+    grid-template-columns: repeat(2,50%);/*grille de 2 colone qui prenne 50% de la largeur*/
+	grid-template-rows: 12% 40% 40% 8%;/*4 ligne avec des tailles variable voir ci-contre*/
+    grid-template-areas: " titre titre"/*definie les différent nom de chaque partie de la grille*/
                          " a1 a2 "
                          " b1 b2"
                          " indic indic";
 }
 
-.entrees{
-    grid-area: a1;
-    text-align: center;
+.entrees{/*CSS en charge de la partie des entrée du menu*/
+    grid-area: a1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.plats{
-    grid-area: a2;
-    text-align: center;
+.plats{/*CSS en charge de la partie des PLats du menu*/
+    grid-area: a2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.desserts{
-    grid-area: b1;
-    text-align: center;
+.desserts{/*CSS en charge de la partie des desserts du menu*/
+    grid-area: b1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
-.boissons{
-    grid-area: b2;
-    text-align: center;
+.boissons{/*CSS en charge de la partie des boissons du menu*/
+    grid-area: b2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
 }
 #indic{
-    grid-area: indic;
-    font-size: 10px;
+    grid-area: indic;/*place la partie textuel*/
+    font-size: 10px;/*taille du texte 10px*/
 }
+
+.formreserv {
+    display: grid;/*creation d'une grille */
+    grid-template-columns: repeat(2,50%);/*grille de 2 colonne*/
+    grid-template-areas: "reservation event";/*creation des nom des différent emplacement de la grille*/
+}
+.reservation{
+    grid-area: reservation;/*placement du formulaire reservtion dans la grille*/
+}
+.event{
+    grid-area: event;/*placement du formulaire evenement dans une grille*/
+}
+}
+
+@media only screen and (1200px<=width){ 
+    #footer {/*partie qui met en place la grille du footer*/
+        display: grid;/*mise en place grille*/
+        grid-template-columns: repeat(3,33%);/*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-areas: "contact carte reseaux"/*definie les différent nom de chaque partie de la grille*/
+    }
+    .contact {
+        grid-area: contact;/*placement du formulaire reservtion dans la grille*/
+    }
+    .carte{
+        grid-area: carte;/*placement du formulaire reservtion dans la grille*/
+    }
+    .reseaux{
+        grid-area: reseaux;/*placement du formulaire evenement dans une grille*/
+    }
 
 }
