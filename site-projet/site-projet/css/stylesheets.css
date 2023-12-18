@@ -265,21 +265,20 @@ main {/*partie du code en charge du main */
     overflow: hidden;
 }
 
-#liste-recette-entree{
+#liste-recette-entree, #liste-recette-plat, #liste-recette-dessert, #liste-recette-boisson {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    background-color: var(--marron-bordure);/*couleur du fond*/
-    border-radius: 20px;/*bordure arrondie*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure); /*couleur du fond*/
+    border-radius: 20px; /*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
 }
 
-#liste-recette-entree>legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/{ 
+#liste-recette-entree>legend, #liste-recette-plat>legend, #liste-recette-dessert>legend, #liste-recette-boisson>legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/{ 
     border-radius: 5px;/*bordure arrondie*/
     border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
     background-color: var(--marron-bordure);/*couleur du fond*/
-}
 
 @media only screen and (768px<=width){ 
 #liste-menu {/*partie qui met en place la grille du menu*/
