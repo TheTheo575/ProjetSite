@@ -275,22 +275,11 @@ main {/*partie du code en charge du main */
     border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
 }
 
-#liste-recette-entree>legend, #liste-recette-plat>legend, #liste-recette-dessert>legend, #liste-recette-boisson>legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/{ 
-    border-radius: 5px;/*bordure arrondie*/
-    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
-    background-color: var(--marron-bordure);/*couleur du fond*/
-
-@media only screen and (768px<=width){ 
-#liste-menu {/*partie qui met en place la grille du menu*/
-    display: grid;/*mise en place grille*/
-    /* color: var(--text-color); */
-    grid-template-columns: repeat(2,50%);/*grille de 2 colone qui prenne 50% de la largeur*/
-	grid-template-rows: 12% 40% 40% 8%;/*4 ligne avec des tailles variable voir ci-contre*/
-    grid-template-areas: " titre titre"/*definie les différent nom de chaque partie de la grille*/
-                         " a1 a2 "
-                         " b1 b2"
-                         " indic indic";
-}
+    #liste-recette-entree > legend, #liste-recette-plat > legend, #liste-recette-dessert > legend, #liste-recette-boisson > legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/ {
+        border-radius: 5px; /*bordure arrondie*/
+        border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+        background-color: var(--marron-bordure); /*couleur du fond*/
+    }
 
 .entrees{/*CSS en charge de la partie des entrée du menu*/
     grid-area: a1;/*position dansla grille de cette partie*/
@@ -307,6 +296,18 @@ main {/*partie du code en charge du main */
 .boissons{/*CSS en charge de la partie des boissons du menu*/
     grid-area: b2;/*position dansla grille de cette partie*/
     text-align: center;/*texte allignes au centre*/
+}
+@media only screen and (768px<=width) {
+    #liste-menu { /*partie qui met en place la grille du menu*/
+        display: grid; /*mise en place grille*/
+        /* color: var(--text-color); */
+        grid-template-columns: repeat(2,50%); /*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-rows: 12% 40% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
+        grid-template-areas: " titre titre" /*definie les différent nom de chaque partie de la grille*/
+            " a1 a2 "
+            " b1 b2"
+            " indic indic";
+    }
 }
 /*===================================================================================================*/
 
@@ -428,5 +429,5 @@ main {/*partie du code en charge du main */
 .event{
     grid-area: event;/*placement du formulaire evenement dans une grille*/
 }
-}
+
 
