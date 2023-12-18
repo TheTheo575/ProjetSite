@@ -35,61 +35,60 @@ nav {
     text-align: center;/*texte centrer*/
     word-spacing: 30px;
 
-    background-color: var(--main-color);
-    padding: 25%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: -8px;
-    border: 3px solid #8c0f0f;
+    background-color: var(--main-color);/* couleur du fond*/
+    padding: 25%;/*marge interne de 25%*/
+    padding-top: 5px;/*marge supérieur*/
+    padding-bottom: 5px;/*marge inférrieur*/
+    margin: -8px;/*marge externe */
+    border: 3px solid #8c0f0f;/*mise en place de bordure visible de 3px*/
 }
 
-.lien-interne {
+.lien-interne {/*css en charge des liens*/
     color: var(--text-color);
-    text-decoration: none;
+    text-decoration: none;/*enleve le soulignement des liens*/
 }
-.lien-interne:hover {
+.lien-interne:hover {/*css en charge des liens deja utilisés*/
     color: var(--second-color);
 }
 
-footer {
-    padding-left:4px;
-    color: var(--text-color);
+footer {/*css en charge du pied de page*/
+    padding-left: 4px; /*marge interne gauche de 4px*/
+    color: var(--text-color); /*couleur texte*/
 
-    background-color: var(--main-color);   
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: -8px;
-    border: 3px solid #8c0f0f;
+    background-color: var(--main-color); /*couleur du fond*/
+    padding-top: 5px; /*marge interne superieur*/
+    padding-bottom: 5px; /*marge interne inférieur*/
+    margin: -8px; /*marge externe*/
+    border: 3px solid #8c0f0f; /*mise en place de bordure visible de 3px*/
 }
-.lien-image {
-    padding-left:10%;
-    padding-right:10%;
+.lien-image {/*css en charge des images*/
+    padding-left:10%;/*marge interne gauche */
+    padding-right:10%;/*marge interne droite*/
 }
 
-main {
-    margin: -8px;
-    margin-top:8px;
-    margin-bottom:8px;
-    border: 5px solid #f1aa78;
-    background-color: #ffd4b6;
-    padding: 10px;
-
+main { /*css en charde du main*/
+    margin: -8px; /*marge extene */
+    margin-top: 8px; /*marge externe supérieur*/
+    margin-bottom: 8px; /*marge externe inferieur*/
+    border: 5px solid #f1aa78; /*mise en place de bordure visible de 5px*/
+    background-color: #ffd4b6;/*couleur du fond*/
+    padding: 10px;/*marge interne*/
 }
 
 /* MENU */
-#titre{
+#titre{/*css en charge des id titre*/
     grid-area: titre;
-    text-align: center;
-    text-decoration: underline;
+    text-align: center;/*allignement du texte*/
+    text-decoration: underline;/*texte souligne*/
     
 }
 
-#liste-menu ul::first-line{
-    text-align: center;
-    text-decoration: underline;
+#liste-menu ul::first-line{/*css en charge de la premier ligne des listes avec id liste-menu*/
+    text-align: center;/*allignement du texte au centre*/
+    text-decoration: underline;/*texte souligné*/
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 25px;
+    font-weight: bold;/*texte en gras*/
+    font-size: 25px;/*taille des caractere*//*vv*/
 }
 
 #liste-menu ul{
