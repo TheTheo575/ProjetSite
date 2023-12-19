@@ -205,9 +205,12 @@ main {/*partie du code en charge du main */
     text-decoration: underline;/*h3 avec texte souligné*/
     font-weight: bold;/*texte en gras*/
 }
-.imgfriterie{
-    width:50%;
+.imgfriterie{/*partie du css en charge de l'image de la friterie*/
+    width:50%;/*largeur et hauteur de l'image*/
     height:10%;
+}
+.horaires{/*css en charge de la carte des horaire*/
+    text-align:center;/*image au centre de la page*/
 }
 /*=========================================================================================================*/
 /* MENU */
