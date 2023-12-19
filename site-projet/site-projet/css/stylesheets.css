@@ -143,6 +143,7 @@ iframe { /*parie du code en charge des maps de fin de page*/
 }
 .foot{
     text-decoration:underline;
+    font-weight:bold;
 }
 /*===========================================*/
 
@@ -310,6 +311,7 @@ main {/*partie du code en charge du main */
             " a1 a2 "
             " b1 b2"
             " indic indic";
+       
     }
 }
 /*===================================================================================================*/
