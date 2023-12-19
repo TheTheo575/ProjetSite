@@ -253,7 +253,7 @@ main {/*partie du code en charge du main */
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 100%;
     height: 100px;
     padding: 3px;
     text-decoration: underline;
@@ -309,11 +309,34 @@ main {/*partie du code en charge du main */
     border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
 }
 
-    #liste-recette-entree > legend, #liste-recette-plat > legend, #liste-recette-dessert > legend, #liste-recette-boisson > legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/ {
-        border-radius: 5px; /*bordure arrondie*/
-        border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-        background-color: var(--marron-bordure); /*couleur du fond*/
+#liste-recette-entree > legend, #liste-recette-plat > legend, #liste-recette-dessert > legend, #liste-recette-boisson > legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/ {
+    border-radius: 5px; /*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    background-color: var(--marron-bordure); /*couleur du fond*/
+}
+
+@media only screen and (758px<=width) {
+    #liste-menu { /*partie qui met en place la grille du menu*/
+        display: grid; /*mise en place grille*/
+        /* color: var(--text-color); */
+        grid-template-columns: repeat(2,50%); /*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-rows: 12% 48% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
+        grid-template-areas: " titre titre" /*definie les différent nom de chaque partie de la grille*/
+            " a1 a2 "
+            " b1 b2"
+            " indic indic";
     }
+
+    .recette{
+        width: 40%;
+    }
+}
+
+@media only screen and (1200px<=width) {
+    .recette{
+        width: 30%;
+    }
+}
 
 .entrees{/*CSS en charge de la partie des entrée du menu*/
     grid-area: a1;/*position dansla grille de cette partie*/
@@ -338,7 +361,7 @@ main {/*partie du code en charge du main */
     box-shadow:2px 2px grey;/*ombre de la box*/
 }
 
-.desserts { /*CSS en charge de la partie des desserts du menu*/
+.desserts{ /*CSS en charge de la partie des desserts du menu*/
     grid-area: b1; /*position dansla grille de cette partie*/
     text-align: center; /*texte allignes au centre*/
     border: solid 2px; /*bordure solid de 2px*/
@@ -362,20 +385,6 @@ main {/*partie du code en charge du main */
     box-shadow:2px 2px grey;/*ombre de la box*/
 }
 
-@media only screen and (768px<=width) {
-    #liste-menu { /*partie qui met en place la grille du menu*/
-        display: grid; /*mise en place grille*/
-        /* color: var(--text-color); */
-        grid-template-columns: repeat(2,50%); /*grille de 2 colone qui prenne 50% de la largeur*/
-        grid-template-rows: 12% 48% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
-        grid-template-areas: " titre titre" /*definie les différent nom de chaque partie de la grille*/
-            " a1 a2 "
-            " b1 b2"
-            " indic indic";
-        
-      
-    }
-}
 .lcarte:first-line{/*partie du CSS pour rendre la première ligne des carte du dos des carte en souligné*/
     text-decoration:underline;
     font-weight:bold;
