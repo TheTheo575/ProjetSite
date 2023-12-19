@@ -141,9 +141,38 @@ iframe { /*parie du code en charge des maps de fin de page*/
 .lien-image:hover {/*partie en charge des images */
     transform: scale(1.5) rotate(20deg);
 }
+
 .foot{
     text-decoration:underline;
     font-weight:bold;
+}
+
+#blaguecookie{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+#cookies{
+    color: white;
+    font-size: 10px;
+}
+
+#photocookie{
+    animation-name: blaguecookie;/*nom animation */
+    animation-duration: 3s;/*durée animation*/
+    animation-fill-mode:forwards;/*conserve le dernier element de l'animation*/
+    animation-iteration-count: infinite;
+}
+
+@keyframes blaguecookie {/*anmation de image-acceuil*/
+    from {
+        transform:rotate(0deg);/*debut animation logo invisible*/
+    }
+    to {
+        transform:rotate(360deg);/*fin animation logo visible*/
+    }
 }
 /*===========================================*/
 
