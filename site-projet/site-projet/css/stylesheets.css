@@ -338,7 +338,7 @@ main {/*partie du code en charge du main */
         display: grid; /*mise en place grille*/
         /* color: var(--text-color); */
         grid-template-columns: repeat(2,50%); /*grille de 2 colone qui prenne 50% de la largeur*/
-        grid-template-rows: 12% 40% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
+        grid-template-rows: 12% 48% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
         grid-template-areas: " titre titre" /*definie les différent nom de chaque partie de la grille*/
             " a1 a2 "
             " b1 b2"
