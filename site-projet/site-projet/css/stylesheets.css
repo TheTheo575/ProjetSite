@@ -289,19 +289,50 @@ main {/*partie du code en charge du main */
 .entrees{/*CSS en charge de la partie des entrée du menu*/
     grid-area: a1;/*position dansla grille de cette partie*/
     text-align: center;/*texte allignes au centre*/
+    border: solid 2px;/*bordure solid de 2px*/
+    border-radius: 25px;/*coins arrondi de 25px*/
+    margin: 75px;/*marge externe de 75px*/
+    padding-right:40px;/*marge interne de 40px*/
+    border-color:var(--marron-color);/*couleur des barrières*/
+    background-color:var(--marron-fond);/*couleur du fond*/
+    box-shadow:2px 2px grey;/*ombre de la box*/
 }
 .plats{/*CSS en charge de la partie des PLats du menu*/
     grid-area: a2;/*position dansla grille de cette partie*/
     text-align: center;/*texte allignes au centre*/
+    border: solid 2px;/*bordure solid de 2px*/
+    border-radius: 25px;/*coins arrondi de 25px*/
+    margin: 75px;/*marge externe de 75px*/
+    padding-right:40px;/*marge interne de 40px*/
+    border-color:var(--marron-color);/*couleur des barrières*/
+    background-color:var(--marron-fond);/*couleur du fond*/
+    box-shadow:2px 2px grey;/*ombre de la box*/
 }
-.desserts{/*CSS en charge de la partie des desserts du menu*/
-    grid-area: b1;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
+
+.desserts { /*CSS en charge de la partie des desserts du menu*/
+    grid-area: b1; /*position dansla grille de cette partie*/
+    text-align: center; /*texte allignes au centre*/
+    border: solid 2px; /*bordure solid de 2px*/
+    border-radius: 25px; /*coins arrondi de 25px*/
+    margin: 75px; /*marge externe de 75px*/
+    padding-right: 40px; /*marge interne de 40px*/
+    border-color:var(--marron-color);/*couleur des barrières*/
+    background-color:var(--marron-fond);/*couleur du fond*/
+    box-shadow:2px 2px grey;/*ombre de la box*/
+
 }
-.boissons{/*CSS en charge de la partie des boissons du menu*/
-    grid-area: b2;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
+.boissons{ /*CSS en charge de la partie des boissons du menu*/
+    grid-area: b2; /*position dansla grille de cette partie*/
+    text-align: center; /*texte allignes au centre*/
+    border: solid 2px; /*bordure solid de 2px*/
+    border-radius: 25px; /*coins arrondi de 25px*/
+    margin: 75px; /*marge externe de 75px*/
+    padding-right: 40px; /*marge interne de 40px*/
+    border-color:var(--marron-color);/*couleur des barrières*/
+    background-color:var(--marron-fond);/*couleur du fond*/
+    box-shadow:2px 2px grey;/*ombre de la box*/
 }
+
 @media only screen and (768px<=width) {
     #liste-menu { /*partie qui met en place la grille du menu*/
         display: grid; /*mise en place grille*/
@@ -312,7 +343,8 @@ main {/*partie du code en charge du main */
             " a1 a2 "
             " b1 b2"
             " indic indic";
-       
+        
+      
     }
 }
 .lcarte:first-line{/*partie du CSS pour rendre la première ligne des carte du dos des carte en souligné*/
