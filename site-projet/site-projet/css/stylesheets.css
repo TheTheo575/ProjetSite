@@ -141,6 +141,9 @@ iframe { /*parie du code en charge des maps de fin de page*/
 .lien-image:hover {/*partie en charge des images */
     transform: scale(1.5) rotate(20deg);
 }
+.foot{
+    text-decoration:underline;
+}
 /*===========================================*/
 
 /*MAIN */
