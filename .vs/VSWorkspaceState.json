@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\site-projet",
+    "\\site-projet\\site-projet",
+    "\\site-projet\\site-projet\\css",
+    "\\site-projet\\site-projet\\pages_html"
   ],
-  "SelectedNode": "\\C:\\Users\\jeremie.marcant\\Source\\Repos\\ProjetSite",
+  "SelectedNode": "\\site-projet\\site-projet\\pages_html\\accueil_eng.html",
   "PreviewInSolutionExplorer": false
 }
