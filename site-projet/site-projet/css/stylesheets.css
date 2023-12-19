@@ -9,10 +9,14 @@
     --marron-fond: #ffd4b6;
 }
 
+
 body {
     font-family: Georgia, serif; /*police du texte choisi*/
     font-size:20px;/*taille du texte dans le body des pages html*/
     
+}
+.chut {/*partie du code pour les élément tous petit dans plusieurs pages*/
+    font-size: 9px;
 }
 
 header {
@@ -31,23 +35,21 @@ header {
     border: 3px solid #8c0f0f; /* bordure */
 }
 .image-accueil {
-    animation-name: image-accueil;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
-    animation-delay:0s;
-    animation-iteration-count:1;
-    animation-direction:normal;
-    animation-fill-mode:forwards;
+    animation-name: image-accueil;/*nom animation */
+    animation-duration: 1.5s;/*durée animation*/
+    
+    animation-fill-mode:forwards;/*conserve le dernier element de l'animation*/
 }
-@keyframes image-accueil {
+@keyframes image-accueil {/*anmation de image-acceuil*/
     from {
-        opacity:0;
+        opacity:0;/*debut animation logo invisible*/
     }
     to {
-        opacity:100%
+        opacity:100%/*fin animation logo visible*/
     }
 }
-
+/*==============================================================================================*/
+/*NAVIGATION*/
 nav {
     /*partie du CSS qui s'occupe */
     position: sticky; /*position du menu de navigation pour qu'il reste en au de la page même si la page est en mouvement */
@@ -57,12 +59,12 @@ nav {
     z-index: 1;
 }
 .conteneur-nav {
-    display: flex;
+    display: flex;/*contenu flexible*/
     flex-flow: row wrap; /*flex-direction - flex-wrap*/
-    align-content: space-around;
+    align-content: space-around;/*espace entre les les différent élement et avec le bord(espace avec le bord plus ptit)*/
     justify-content: space-around;
-    background-color: var(--main-color);
-    border: 3px solid var(--rouge-fonce);
+    background-color: var(--main-color);/*couleur du fond*/
+    border: 3px solid var(--rouge-fonce);/*bordure solid colorées*/
 
     /*Transition*/
     transition-property: padding-top, padding-bottom;
@@ -87,6 +89,7 @@ nav {
     color: var(--rouge-fonce);
 }
 /*==================================================================================================*/
+/*FOOTER*/
 footer {/*partie du code en charge du footer */
     padding-left:4px; /*marge interne de 4px*/
     color: var(--text-color);/*couleur du texte du footer*/
@@ -97,19 +100,53 @@ footer {/*partie du code en charge du footer */
     margin: -8px;/*marge externe de -8px*/
     border: 3px solid #8c0f0f;/*bordure de 3px visible coloré*/
 }
-.conteneur-image {
-    margin-left:25%;
-    margin-right:25%;
+#rectanglecarte {
+    border: 2px solid var(--rouge-fonce);
+    width: 400px;
+    height: 250px;
+    box-shadow: 2px 2px grey;
+}
+@media only screen and (1200px<=width) {
+    #footer { /*partie qui met en place la grille du footer*/
+        display: grid; /*mise en place grille*/
+        grid-template-columns: repeat(3,33%); /*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-areas: "contact carte reseaux" /*definie les différent nom de chaque partie de la grille*/
+    }
 
-    display:flex;
+    .contact {
+        grid-area: contact; /*placement du formulaire reservtion dans la grille*/
+    }
+
+    .carte {
+        grid-area: carte; /*placement du formulaire reservtion dans la grille*/
+    }
+
+    .reseaux {
+        grid-area: reseaux; /*placement du formulaire evenement dans une grille*/
+    }
+}
+iframe { /*parie du code en charge des maps de fin de page*/
+    width: 400px; /*largeur et hauteur de la map*/
+    height: 250px;
+}
+.conteneur-image {/*parti en charge des images du footer*/
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
     flex-flow: row wrap;
-    justify-content:center;
-    justify-content:space-around;
-}  
-.lien-image:hover {
-    transform: scale(1.5) rotate(20deg);
+    justify-content: center;
+    justify-content: space-around;
 }
 
+.lien-image:hover {/*partie en charge des images */
+    transform: scale(1.5) rotate(20deg);
+}
+.foot{
+    text-decoration:underline;
+}
+/*===========================================*/
+
+/*MAIN */
 main {/*partie du code en charge du main */
     margin: -8px;/*marge externe de -8px*/
     margin-top:8px;/*marge externe supérieur de 8px*/
@@ -119,27 +156,26 @@ main {/*partie du code en charge du main */
     padding: 10px;/*marge interne de 10px*/
 
 }
+/*=======================================================================================================================================================*/
+/*Début CSS pour les diférentes pages cas  par cas*/
 /* ACCUEIL */
 .conteneur-accueil {
-    margin-left: 5%;
-    margin-right: 5%;
+    border: 2px solid var(--marron-fonce-form);/*bordure visible de 2px coloré*/
+    border-radius: 10px;/*bordure avec des coins arrondie*/
+    background-color: var(--marron-bordure);/*couleur du fond*/
+    box-shadow: 2px 2px grey; /*ajout d'une ombre grise de 2px*/
+    font-size: 18px;/*taille des caractère*/
 
-    padding-right:5%;
-    padding-left:5%;
+    margin: 2% 5%; /*2% pour la marge vertical et 5% pour la marge horizontale*/
 
-    background-color: var(--marron-bordure);
-    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-    border-radius: 10px; /*bordure avec des coins arrondie*/
-    font-size: 18px; /*taille des caractère*/
+    padding-left: 5%;
+    padding-right: 5%;
 }
-.conteneur-accueil:hover {
-    box-shadow: 2px 2px grey;
+.conteneur-accueil h3 {
+    text-decoration: underline;/*h3 avec texte souligné*/
+    font-weight: bold;/*texte en gras*/
 }
-.conteneur-accueil h3{
-    text-decoration:underline;
-    font-weight:bold;
-}
-
+/*=========================================================================================================*/
 /* MENU */
 #titre{
     grid-area: titre;/*selection de la partie titre de la grille (voir plus bas dans le code)*/
@@ -168,12 +204,117 @@ main {/*partie du code en charge du main */
     padding-top: 5px;/*marge interne supérieur de 5px*/
 }
 
-#indic{
-    font-size: 10px;/*taille du texte de 5px*/
+#liste-plats{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0px;
+    row-gap: 20px;
 }
 
+.recette:hover {
+    transform: rotateY(180deg);
+}
 
+.recette{
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+    padding: 3px;
+    text-decoration: underline;
+    backface-visibility: hidden;
+    margin-bottom: 20px;
+}
 
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: var(--marron-fond);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+    overflow: hidden;
+    padding-left: 8px;
+}
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    background-color: var(--marron-fond);
+    border-radius: 20px;
+    border: 2px solid var(--marron-fonce-form);
+    box-shadow: 2px 2px grey;
+    padding-left: 8px;
+}
+
+.card-front>div .card-back>div {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.photoplat{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+#liste-recette-entree, #liste-recette-plat, #liste-recette-dessert, #liste-recette-boisson {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--marron-bordure); /*couleur du fond*/
+    border-radius: 20px; /*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+}
+
+    #liste-recette-entree > legend, #liste-recette-plat > legend, #liste-recette-dessert > legend, #liste-recette-boisson > legend /*#liste-recette-plat>legend #liste-recette-dessert>legend #liste-recette-boisson>legend*/ {
+        border-radius: 5px; /*bordure arrondie*/
+        border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+        background-color: var(--marron-bordure); /*couleur du fond*/
+    }
+
+.entrees{/*CSS en charge de la partie des entrée du menu*/
+    grid-area: a1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
+}
+.plats{/*CSS en charge de la partie des PLats du menu*/
+    grid-area: a2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
+}
+.desserts{/*CSS en charge de la partie des desserts du menu*/
+    grid-area: b1;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
+}
+.boissons{/*CSS en charge de la partie des boissons du menu*/
+    grid-area: b2;/*position dansla grille de cette partie*/
+    text-align: center;/*texte allignes au centre*/
+}
+@media only screen and (768px<=width) {
+    #liste-menu { /*partie qui met en place la grille du menu*/
+        display: grid; /*mise en place grille*/
+        /* color: var(--text-color); */
+        grid-template-columns: repeat(2,50%); /*grille de 2 colone qui prenne 50% de la largeur*/
+        grid-template-rows: 12% 40% 40% 8%; /*4 ligne avec des tailles variable voir ci-contre*/
+        grid-template-areas: " titre titre" /*definie les différent nom de chaque partie de la grille*/
+            " a1 a2 "
+            " b1 b2"
+            " indic indic";
+    }
+}
+/*===================================================================================================*/
+
+/* COLLAB*/
 .conteneur_collab {
 
     display:flex;
@@ -205,7 +346,8 @@ main {/*partie du code en charge du main */
 .element_collab:hover {
     transform: scale(1.05); /*aggrandissement de l'image quand on y passe sa sours*/
 }
-
+/*========================================================================================*/
+/*RESERVATION*/
 .formreserv fieldset {/*partie du css en charge des formulaire*/
     background-color: var(--marron-bordure);/*couleur du fond*/
     border-radius: 20px;/*bordure arrondie*/
@@ -237,10 +379,9 @@ main {/*partie du code en charge du main */
     border-radius: 10px;/*bordure avec des coins arrondie*/
     background-color: var(--marron-fond);/*couleur du fond*/
     font-size: 18px;/*taille des caractère*/
-
-    padding:3px;
-    text-decoration:none;
-    color:black;
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
 }
 
 #reservation:hover{/*CSS en charge du survole du bouton réservation*/
@@ -248,10 +389,23 @@ main {/*partie du code en charge du main */
     background-color: var(--marron-fonce-form);/*couleur du fond*/
     color: var(--marron-fond);/*couleur du texte*/
 }
-
-.chut{
-    font-size: 9px;
+#reservation2 { /*bouton reserver du formulaire*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    border-radius: 10px; /*bordure avec des coins arrondie*/
+    background-color: var(--marron-fond); /*couleur du fond*/
+    font-size: 18px; /*taille des caractère*/
+    padding: 3px; /*marge interne de 3px*/
+    text-decoration: none; /*text avec aucune décoration, pour enlever le soulignement*/
+    color: black; /*text de couleur noir*/
 }
+
+#reservation2:hover { /*CSS en charge du survole du bouton réservation*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    background-color: var(--marron-fonce-form); /*couleur du fond*/
+    color: var(--marron-fond); /*couleur du texte*/
+}
+
+
 
 #Assiette {/*css en charge de l'image d'assiette*/
     position: relative;/*position relative*/
@@ -262,55 +416,10 @@ main {/*partie du code en charge du main */
     transform:rotate(11deg);/*rotation de l'image de 11deg*/
 }
 
-#rectanglecarte{
-    border: 2px solid var(--rouge-fonce);
-    width: 400px;
-    height: 250px;
-    box-shadow: 2px 2px grey;
-}
 
-.conteneur-confirmation {
-    background-color: var(--marron-bordure);
-    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
-    border-radius: 10px; /*bordure avec des coins arrondie*/
-    font-size: 18px; /*taille des caractère*/
 
-    text-align: center;
-    text-transform:uppercase;
-}
 
-@media only screen and (768px<=width){ 
-#liste-menu {/*partie qui met en place la grille du menu*/
-    display: grid;/*mise en place grille*/
-    /* color: var(--text-color); */
-    grid-template-columns: repeat(2,50%);/*grille de 2 colone qui prenne 50% de la largeur*/
-	grid-template-rows: 12% 40% 40% 8%;/*4 ligne avec des tailles variable voir ci-contre*/
-    grid-template-areas: " titre titre"/*definie les différent nom de chaque partie de la grille*/
-                         " a1 a2 "
-                         " b1 b2"
-                         " indic indic";
-}
 
-.entrees{/*CSS en charge de la partie des entrée du menu*/
-    grid-area: a1;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
-}
-.plats{/*CSS en charge de la partie des PLats du menu*/
-    grid-area: a2;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
-}
-.desserts{/*CSS en charge de la partie des desserts du menu*/
-    grid-area: b1;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
-}
-.boissons{/*CSS en charge de la partie des boissons du menu*/
-    grid-area: b2;/*position dansla grille de cette partie*/
-    text-align: center;/*texte allignes au centre*/
-}
-#indic{
-    grid-area: indic;/*place la partie textuel*/
-    font-size: 10px;/*taille du texte 10px*/
-}
 
 .formreserv {
     display: grid;/*creation d'une grille */
@@ -323,22 +432,5 @@ main {/*partie du code en charge du main */
 .event{
     grid-area: event;/*placement du formulaire evenement dans une grille*/
 }
-}
 
-@media only screen and (1200px<=width){ 
-    #footer {/*partie qui met en place la grille du footer*/
-        display: grid;/*mise en place grille*/
-        grid-template-columns: repeat(3,33%);/*grille de 2 colone qui prenne 50% de la largeur*/
-        grid-template-areas: "contact carte reseaux"/*definie les différent nom de chaque partie de la grille*/
-    }
-    .contact {
-        grid-area: contact;/*placement du formulaire reservtion dans la grille*/
-    }
-    .carte{
-        grid-area: carte;/*placement du formulaire reservtion dans la grille*/
-    }
-    .reseaux{
-        grid-area: reseaux;/*placement du formulaire evenement dans une grille*/
-    }
 
-}

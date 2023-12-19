@@ -41,14 +41,14 @@
                 <form method="post" action="#">
                     <fieldset><!--zone pour mettre un formulare-->
                         <legend>Your reservation : </legend><!--nom de la zone du formulaire-->
-                        <label for="nom">Name : </label>
+                        <label >Name : </label>
                         <input type="text" name="nom" id="nom" placeholder="your name" /><!--zone de texte pour le nom-->
                         <img src="../images/Assiette.png" alt="LogoAssiette" id="Assiette"> <p style="display:inline;"></p>
                          <br><br />
-                        <label for="prenom">First name : </label>
+                        <label >First name : </label>
                          <input type="text" name="prenom" id="prenom" placeholder="your first name" /><!--zone de texte pour le prénom-->
                         <br><br />
-                        <label for="nbr">Number of people : </label><!--zone de sélection d'option-->
+                        <label >Number of people : </label><!--zone de sélection d'option-->
                         <select class="nbr" name="nbr">
                             <option>1</option>
                             <option>2</option>
@@ -60,13 +60,13 @@
                             <option>8</option>
                         </select>
                         <br><br />
-                        <label for=" date">Date of the reservation : </label>
+                        <label >Date of the reservation : </label>
                         <input type="date" name=" date" /><!--zone de selection date avec un calendrier-->
                         <br><br />
-                        <label for="time">Hour of the reservation : </label>
+                        <label >Hour of the reservation : </label>
                         <input type="time" name="hour" /><!--zone selection haoraire avec une horloge-->
                         <br><br />
-                        <label for="tel">Phone number : </label>
+                        <label >Phone number : </label>
                         <input type="tel" name="tel" placeholder="number" /><!--zone de texte pour le numero de telephone-->
                         <br><br />
                         <!--<input type="submit" name="Réserver" id="reservation" value="Book" />--><!--bouton pour confirmer réservation-->
@@ -83,22 +83,22 @@
                 <form method="post" action="#" >
                     <fieldset><!--zone début nouveaux formulaire-->
                         <legend>Event reservation </legend><!--nom de la zone du formulaire-->
-                        <label for="nom">Name : </label>
-                        <input type="text" name="nom" id="nom" placeholder="your name" /><!--zone de texte pour le nom-->
+                        <label >Name : </label>
+                        <input type="text" name="nom"  placeholder="your name" /><!--zone de texte pour le nom-->
                         <br><br />
-                        <label for="prenom">First name : </label>
-                        <input type="text" name="prenom" id="prenom" placeholder="your first name" /><!--zone de texte pour le prénom-->
+                        <label >First name : </label>
+                        <input type="text" name="prenom"  placeholder="your first name" /><!--zone de texte pour le prénom-->
                         <br><br />
-                        <label for="tel">Phone number : </label><!--zone de texte pour le numéro de téléphone-->
+                        <label >Phone number : </label><!--zone de texte pour le numéro de téléphone-->
                         <input type="tel" name="tel" placeholder="number" />
                         <br><br />
-                        <label for=" date">Date of reservation : </label>
+                        <label >Date of reservation : </label>
                         <input type="date" name=" date" /><!--zone de selection de date sur un calendrier-->
                         <br><br />
-                        <label for="time">Hour of reservation : </label>
+                        <label >Hour of reservation : </label>
                         <input type="time" name="hour" /><!--zone de selection d'horaire avec horloge-->
                         <br><br />
-                        <label for="nbr">Number of people : </label>
+                        <label >Number of people : </label>
                         <select class="nbr" name="nbr"><!--zone de selection option-->
                             <option>0</option>
                             <option>1</option>
@@ -120,7 +120,7 @@
                             <option>9</option>
                         </select>
                         <br><br />
-                        <label for="nbr">Event type : </label>
+                        <label >Event type : </label>
                         <select name="event"><!--zone selection option-->
                             <option>Choose a type </option>
                             <option>Birthday</option>
@@ -136,7 +136,7 @@
                         <br><br />
                     
                         <!--<input type="submit" name="Réserver l'Événement" id="reservation" value="Book" />-->
-                        <a href="confirmation_eng.html" id="reservation">Submit</a>
+                        <a href="confirmation_eng.html" id="reservation2">Submit</a>
                         <br><br /><!--bouton confirmation reservation-->
                         <i class="chut">*all reservation made less than one week before the date will not be considered</i>
                     </fieldset>
@@ -148,25 +148,26 @@
     <footer>
         <div id="footer">
         <div class="contact">
+            <p class="foot">Contact us</p>
             <p>Phone : +33 3 16 14 23 XX</p>
             <p>Mail : ChtiteMamie@gmail.com</p>
         </div>
 
         <div class="carte">
-        <p>Our location :</p>
+        <p class="foot">Our location :</p>
         <div id="rectanglecarte">
         <!--code permetant l'affichage d'une map avec un emplacement-->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" width="400px" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         </div>
 
         <div class="reseaux">
-        <p>Social Networks :</p>
+        <p class="foot">Social Networks :</p>
         <!--permet de d'afficher des images qui servent aussi de lien-->
         <div class="conteneur-image">
-            <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png"></a>
-            <a href="http://instagram.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/instagram.png"></a>
-            <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png"></a>
+            <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png" alt="logo twitter"></a>
+            <a href="https://www.instagram.com/la_chtite_mamie" class="lien-image" target="_blank"><img src="../images/instagram.png" alt="logo insta"></a>
+            <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png" alt="logo facebook"></a>
         </div>
         </div>
         </div>
