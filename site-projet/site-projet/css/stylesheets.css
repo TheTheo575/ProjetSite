@@ -484,11 +484,6 @@ main {/*partie du code en charge du main */
     transform:rotate(11deg);/*rotation de l'image de 11deg*/
 }
 
-
-
-
-
-
 .formreserv {
     display: grid;/*creation d'une grille */
     grid-template-columns: repeat(2,50%);/*grille de 2 colonne*/
