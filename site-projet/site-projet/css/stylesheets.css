@@ -153,6 +153,9 @@ main {/*partie du code en charge du main */
     padding: 10px;/*marge interne de 10px*/
 
 }
+ul{
+    padding-left:0px;
+}
 /*=======================================================================================================================================================*/
 /*Début CSS pour les diférentes pages cas  par cas*/
 /* ACCUEIL */
