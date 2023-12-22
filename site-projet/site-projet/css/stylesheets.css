@@ -186,6 +186,9 @@ main {/*partie du code en charge du main */
     padding: 10px;/*marge interne de 10px*/
 
 }
+ul{
+    padding-left:0px;
+}
 /*=======================================================================================================================================================*/
 /*Début CSS pour les diférentes pages cas  par cas*/
 /* ACCUEIL */
@@ -242,75 +245,75 @@ main {/*partie du code en charge du main */
 }
 
 #liste-plats{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0px;
-    row-gap: 20px;
+    display: flex; /*Afficher sous fomre de flex*/
+    flex-wrap: wrap; /*Permettre de passer a la ligne*/
+    justify-content: space-around; /*Creer un décalage plus important entre les elements qu'au niveau des bords du conteneur*/
+    width: 100%; /*largeur de 100%*/
+    padding: 0px;/*ne creer aucune marge interne*/
+    row-gap: 20px;/*espace entre les lignes*/
     
 }
 
 .recette:hover {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);/*Animation de rotation lorsque la souris survole l'element*/
 }
 
 .recette{
-    transition: all 1s ease;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
-    padding: 3px;
-    text-decoration: underline;
-    backface-visibility: hidden;
-    margin-bottom: 20px;
+    transition: all 1s ease;/*parametres de l'animation*/
+    transform-style: preserve-3d;/*parametre de l'animation*/
+    display: flex;/*afficher sous forme de flex*/
+    justify-content: center;/*centrer les elements*/
+    width: 100%;/*largeur de 100%*/
+    height: 100px;/*hauteur de 100px*/
+    padding: 3px;/*marge interne de 3px*/
+    text-decoration: underline;/*texte souligné*/
+    backface-visibility: hidden;/*cacher la face arriere de la carte*/
+    margin-bottom: 20px;/*marge externe en dessous*/
 }
 
 .card-front {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    background-color: var(--marron-fond);
-    border-radius: 20px;
-    border: 2px solid var(--marron-fonce-form);
-    box-shadow: 2px 2px grey;
-    overflow: hidden;
-    padding-left: 8px;
+    position: absolute;/*passer en position absolue*/
+    height: 100%;/*hauteur de 100%*/
+    width: 100%;/*largeur de 100%*/
+    backface-visibility: hidden;/*cacher la face arriere*/
+    background-color: var(--marron-fond); /*couleur du fond*/
+    border-radius: 20px;/*bordures arrondies*/
+    border: 2px solid var(--marron-fonce-form);/*couleur des bordure*/
+    box-shadow: 2px 2px grey;/*creer une ombre*/
+    overflow: hidden;/*cacher le contenu depassant du conteneur*/
+    padding-left: 8px;/*marge interne gauche de 8px*/
 }
 .card-back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(-180deg);
-    background-color: var(--marron-fond);
-    border-radius: 20px;
-    border: 2px solid var(--marron-fonce-form);
-    box-shadow: 2px 2px grey;
-    padding-left: 8px;
+    position: absolute;/*passer en position absolue*/
+    height: 100%;/*hauteur de 100%*/
+    width: 100%;/*largeur de 100%*/
+    backface-visibility: hidden;/*Cacher la face arriere*/
+    transform: rotateY(-180deg);/*retourner la carte*/
+    background-color: var(--marron-bordure); /*couleur du fond*/
+    border-radius: 20px; /*bordure arrondie*/
+    border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
+    box-shadow: 2px 2px grey;/*ajouter une ombre a la carte*/
+    padding-left: 8px;/*marge interieure gauche de 8px*/
 }
 
 .card-front>div .card-back>div {
-    position: absolute;
-    top: 12px;
-    left: 20px;
+    position: absolute;/*passer en position absolue*/
+    top: 12px;/*decaler de 12px par rapport au haut du conteneur*/
+    left: 20px;/*decaler de 20px par rapport a la gauche du conteneur*/
 }
 
 .photoplat{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    overflow: hidden;
+    position: absolute;/*passer en position absolue*/
+    right: 0px;/*coller a droite du conteneur*/
+    top: 0px;/*coller au haut du conteneur*/
+    overflow: hidden;/*cacher le contenu depassant du conteneur*/
 }
 
 #liste-recette-entree, #liste-recette-plat, #liste-recette-dessert, #liste-recette-boisson {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
+    display: flex;/*passer en affichage flex*/
+    flex-wrap: wrap;/*autoriser le passage a la ligne*/
+    justify-content: space-around;/*cacher le contenu depassant du conteneur*/
+    width: 100%;/*largeur de 100%*/
     background-color: var(--marron-bordure); /*couleur du fond*/
     border-radius: 20px; /*bordure arrondie*/
     border: 2px solid var(--marron-fonce-form); /*bordure visible de 2px coloré*/
