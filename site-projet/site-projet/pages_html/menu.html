@@ -38,27 +38,16 @@
     <main>
         <div id="liste-menu">
             <h1 id="titre">Menu de la ch'ti mamie</h1>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <ul class="entrees">
-                <li>Nos entrées :</li>
+            
+            <ul class="entrees"><!--liste non ordonées pour les entrées-->
+                <li> Entrées :</li>
                 <li>Salade</li>
                 <li>Quiche Aux Poireaux</li>
                 <li>Oeufs Cocottes Maroilles</li>
                 <li>Chicons A la Béchamel</li>
             </ul>
-            <ul class="plats">
-                <li>Nos Plats :</li>
+            <ul class="plats"><!--liste non ordonées pour les plat-->
+                <li> Plats :</li>
                 <li>Potjevleesch</li>
                 <li>Fricadelle</li>
                 <li>Américain</li>
@@ -67,8 +56,8 @@
                 <li>Carbonnade Flamande</li>
                 <li>Welsh</li>
             </ul>
-            <ul class="desserts">
-                <li>Nos Désserts :</li>
+            <ul class="desserts"><!--liste non ordonées pour les desserts-->
+                <li> Désserts :</li>
                 <li>Le Chtiramisu</li>
                 <li>La Tarte Au Sucre</li>
                 <li>Café Liégeois</li>
@@ -76,19 +65,22 @@
                 <li>Café Gourmand</li>
                 <li></li>
             </ul>
-            <ul class="boissons">
-                <li>Les Boissons :</li>
+            <ul class="boissons"><!--liste non ordonées pour les boissons-->
+                <li> Boissons :</li>
                 <li>Soft</li>
                 <li>Bière</li>
                 <li>Digestifs</li>
                 <li>Vins</li>
             </ul>
             <h3 class="chut">Toute intoxication liée de près ou de loin à notre nourriture sera déclinée</h3>
+            <!--texte caché en fin de page garce a la class chute-->
         </div>
 
         <br />
 
-        <!-----------NOS ENTREES-------------->
+       
+
+               <!--==========NOS ENTREES==================-->
 
         <div id="liste-plats">
             <!--Debut de la liste des cartes des recettes -->
@@ -103,7 +95,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Salade<br />
                             Mozzarella<br />
@@ -120,7 +112,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Oeuf<br />
                             Poireaux<br />
@@ -134,7 +126,7 @@
                         <img class="photoplat" src="../images/Plats/Oeuf-Cocotte-Maroille.jpeg" alt="cocotte-maroille" style="width: 110px; height: 110px;" />
                     </div>
                     <div class="card-back">
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Oeuf<br />
                             Maroille<br />
@@ -151,7 +143,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Chicon<br />
                             Béchamel<br />
@@ -160,14 +152,14 @@
                     </div>   <!--Fin face arriere de la carte -->
                 </div>
             </fieldset>
-        </div>   <!--Fin de la liste des cartes des recettes -->
+            <!--Fin de la liste des cartes des recettes -->
 
-        <br />
-        <br />
+            <br />
+            <br />
 
-        <!-----------NOS PLATS-------------->
+            <!-----------NOS PLATS-------------->
 
-        <div id="liste-plats">
+        
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-plat">
                 <legend>Nos Plats</legend>   <!--Legende de chaque partie (ici les entrées) -->
@@ -180,7 +172,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Poulet<br />
                             Lapin<br />
@@ -197,9 +189,9 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
-                            Chais bon mais on chai po squi a d'in
+                            Ca, c'est le secret de mamie
                         </div>
                     </div>   <!--Fin face arriere de la carte -->
                 </div>   <!--Fin d'une carte -->
@@ -209,7 +201,7 @@
                         <img class="photoplat" src="../images/Plats/Americain.jpeg" alt="americain" style="width: 110px; height: 110px;" />
                     </div>
                     <div class="card-back">
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Frite<br />
                             Sauce au choix<br />
@@ -226,9 +218,9 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
-                            Pommes de la Terre<br />
+                            Pommes de Terre<br />
                         </div>
                     </div>   <!--Fin face arriere de la carte -->
                 </div>
@@ -241,7 +233,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Moules<br />
                             Maroille<br />
@@ -257,7 +249,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Lard Fumé<br />
                             Beauf<br />
@@ -274,7 +266,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Oeuf<br />
                             Jambon<br />
@@ -283,14 +275,13 @@
                     </div>   <!--Fin face arriere de la carte -->
                 </div>
             </fieldset>
-        </div>   <!--Fin de la liste des cartes des recettes -->
+        
 
-        <br />
-        <br />
+            <br />
+            <br />
 
-        <!-----------NOS DESSERTS-------------->
+            <!-----------NOS DESSERTS-------------->
 
-        <div id="liste-plats">
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-dessert">
                 <legend>Nos Desserts</legend>
@@ -303,7 +294,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Speculos<br />
                             Café<br />
@@ -320,7 +311,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Du Sucre<br />
                             Du Sucre<br />
@@ -337,7 +328,7 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Café<br />
                             Vanille<br />
@@ -354,11 +345,104 @@
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
-                        <div>
+                        <div class="lcarte">
                             Ingrédients :<br />
                             Chicorée<br />
                             Vanille<br />
                             Crème<br />
+                        </div>
+                    </div>   <!--Fin face arriere de la carte -->
+                </div>
+                <div class="recette">
+                    <!-- Debut d'une carte -->
+                    <div class="card-front">
+                        <!--Face avant de la carte -->
+                        <div>Café Gourmand</div>
+                        <img class="photoplat" src="../images/Plats/Cafe-Gourmand.jpg" alt="café gourmand" style="width: 110px; height: 110px;" />
+                    </div>   <!--Fin face avant de la carte -->
+                    <div class="card-back">
+                        <!--Face arriere de la carte -->
+                        <div class="lcarte">
+                            Ingrédients :<br />
+                            Café<br />
+                            Desserts du jour<br />
+                        </div>
+                    </div>   <!--Fin face arriere de la carte -->
+                </div>
+            </fieldset>
+            
+            <br />
+            <br />
+
+                <!-----------NOS BOISSONS-------------->
+
+        
+            <!--Debut de la liste des cartes des recettes -->
+            <fieldset id="liste-recette-boisson">
+                <legend>Nos Boissons</legend>
+                <div class="recette">
+                    <!-- Debut d'une carte -->
+                    <div class="card-front">
+                        <!--Face avant de la carte -->
+                        <div>Soft</div>
+                        <img class="photoplat" src="../images/Plats/Soft.jpg" alt="boisson soft" style="width: 110px; height: 110px;" />
+                    </div>   <!--Fin face avant de la carte -->
+                    <div class="card-back">
+                        <!--Face arriere de la carte -->
+                        <div class="lcarte">
+                            Liste des Soft :<br />
+                            Eau , Perrier , Coca<br />
+                            Diabolo , Oasis , Fanta , Ice Tea<br />
+                            Schweppes <br />
+                        </div>
+                    </div>   <!--Fin face arriere de la carte -->
+                </div>
+                <div class="recette">
+                    <!-- Debut d'une carte -->
+                    <div class="card-front">
+                        <!--Face avant de la carte -->
+                        <div>Bières</div>
+                        <img class="photoplat" src="../images/Plats/Biere.jpg" alt="bère" style="width: 110px; height: 110px;" />
+                    </div>   <!--Fin face avant de la carte -->
+                    <div class="card-back">
+                        <!--Face arriere de la carte -->
+                        <div class="lcarte">
+                            Liste des bières :<br />
+                            Goulade , Anosteke , Cuvé des Trolls<br />
+                            Paix Dieux , Grimbergen , Bush<br />
+                        </div>
+                    </div>   <!--Fin face arriere de la carte -->
+                </div>
+                <div class="recette">
+                    <!-- Debut d'une carte -->
+                    <div class="card-front">
+                        <!--Face avant de la carte -->
+                        <div>Digestifs</div>
+                        <img class="photoplat" src="../images/Plats/Digestif.jpg" alt="dingestif" style="width: 110px; height: 110px;" />
+                    </div>   <!--Fin face avant de la carte -->
+                    <div class="card-back">
+                        <!--Face arriere de la carte -->
+                        <div class="lcarte">
+                            Liste des digestifs :<br />
+                            Get 27/31 , Vodka Citron/Fraise<br />
+                            Rhum , Digestif Maison
+                        </div>
+                    </div>   <!--Fin face arriere de la carte -->
+                </div>
+                <div class="recette">
+                    <!-- Debut d'une carte -->
+                    <div class="card-front">
+                        <!--Face avant de la carte -->
+                        <div>Vins</div>
+                        <img class="photoplat" src="../images/Plats/Vin.jpg" alt="Vin" style="width: 110px; height: 110px;" />
+                    </div>   <!--Fin face avant de la carte -->
+                    <div class="card-back">
+                        <!--Face arriere de la carte -->
+                        <div class="lcarte">
+                            Liste des vins :<br />
+                            Vin Rouge : Bordeaux , Côte du Rhône<br />
+                            Vin Blanc : Grand Cru , Chardonnay<br />
+                            Rosé : Côte de Provence , Argali Rosé<br />
                         </div>
                     </div>   <!--Fin face arriere de la carte -->
                 </div>
@@ -369,12 +453,13 @@
     <footer>
         <div id="footer">
         <div class="contact">
+        <p class="foot">Nous contacter</p>
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
         </div>
 
         <div class="carte">
-        <p>Où nous trouver :</p>
+        <p class="foot">Où nous trouver :</p>
         <div id="rectanglecarte">
         <!--code permetant l'affichage d'une map avec un emplacement-->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5773028165336!2d2.430749075747542!3d50.968518971695794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcf360f6b0d15b%3A0x1fde110afbf3f137!2sBergues!5e0!3m2!1sfr!2sfr!4v1702378398429!5m2!1sfr!2sfr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -382,14 +467,15 @@
         </div>
 
         <div class="reseaux">
-        <p>Nos Réseaux :</p>
+        <p class="foot">Nos Réseaux :</p>
         <!--permet de d'afficher des images qui servent aussi de lien-->
         <div class="conteneur-image">
-            <a href="http://twitter.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/twitter.png" alt="logo twitter"></a>
+            <a href="https://twitter.com/LachtiteMami" class="lien-image" target="_blank"><img src="../images/twitter.png" alt="logo twitter"></a>
             <a href="https://www.instagram.com/la_chtite_mamie" class="lien-image" target="_blank"><img src="../images/instagram.png" alt="logo insta"></a>
             <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png" alt="logo facebook"></a>
         </div>
         </div>
+        <a href="./cookies.html" id="cookies">Cookies d'utilisation</a>
         </div>
 
     </footer>
