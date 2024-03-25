@@ -46,12 +46,11 @@
     }
 
 	// Connexion à la base de donné
-	$servername ='localhost'; $username='root'; $password='root'; $database='chtitemamie_bd';
-	try {
-		$conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
-	catch(Exception $e){
-		die("Erreur : " . $e->getMessage());
-	}
+	$servername ='localhost'; 
+	$username ='root'; 
+	$password ='root'; 
+	$database ='chtitemamie_bd';
+	
+	$conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 ?>
