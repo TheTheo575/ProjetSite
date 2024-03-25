@@ -10,7 +10,7 @@
 <html lang="fr">
 
 <head>
-
+    
     <title>Réservation</title><!--titre de la page-->
     <meta charset="utf-8">
     <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
@@ -46,43 +46,11 @@
     <main>
     <div class="formreserv">
         <div class="reservation">
-            <form method="post" action="#">
+           <form method="post" action="traitement.php" legend="nbr client">
                 <fieldset>
-                    <!--Zone permettant de creer une interface de questionnaire-->
-                    <legend>Votre réservation : </legend><!--nom du fieldset-->
-                    <label for="nom">Nom :</label>
-                    <input type="text" name="nom" id="nom" placeholder="Votre nom" required/><!--zone de texte a inserer-->
-                    <img src="../images/Assiette.png" alt="LogoAssiette" id="Assiette"> <p style="display:inline;"></p>
-                    <br><br />
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" name="prenom" id="prenom" placeholder="votre Prénom" required/>
-                    <br><br /><!--zone de texte à insérer pour le prénom-->
-                    <label >Nombre de Personnes: </label>
-                    <select class="nbr" name="nbr" required>
-                        <!--zone de sélection d'option -->
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                    </select>
-                    <br><br />
-                    <label >Date de Réservation: </label>
-                    <input type="date" name="date" required/><!--zone de selection de date sur un calendrier-->
-                    <br><br />
-                    <label >Heure de réservation: </label>
-                    <input type="time" name="hour" required/><!--zone de selection de d'horaire sur une horloge-->
-                    <br><br />
-                    <label >Numero de téléphone: </label>
-                    <input type="tel" name="tel" placeholder="Numéro de téléphone" required/><!--zone de texte pour le numéro -->
-                    <br><br />
-                    <!--<input type="submit" name="Réserver" id="reservation" value="Reserver" />--><!--bouton pour confirmer la réservation-->
-                    <input type="submit" value="Reserver" id="reservation">
-                    <br><br />
-                    <i class="chut">*toutes vos informations personnelles sont confidentielles</i>
+                    <label> Nombre de Personne: <label>
+                    <input type="text" name="nbrparticipant" id="nbrparticipant" required pattern="[1-9]+"><label>exp: 14</label>
+                    <input type="submit" name="Envoyer" Value="Envoyer le formulaire"/>
                 </fieldset>
             </form>
         </div>
