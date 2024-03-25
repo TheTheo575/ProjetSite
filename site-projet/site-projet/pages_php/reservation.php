@@ -1,5 +1,5 @@
 <?php
-    //include_once 'setting.php';
+    include_once 'setting.php';
     
     // if ($accueil == false || !isset($accueil)) {
     //     header('location:accueil.php');
