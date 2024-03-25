@@ -104,9 +104,10 @@
                 <div class="recette">
                     <!-- Debut d'une carte -->
                     <div class="card-front">
-                        <!--Face avant de la carte -->
+                        <?php echo
+                        '<!--Face avant de la carte -->
                         <div>Salade césar</div>
-                        <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="salde-cesar" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
+                        <img class="photoplat" src=$result[image] alt="salde-cesar" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
@@ -115,7 +116,8 @@
                             Salade<br />
                             Mozzarella<br />
                             Poulet<br />
-                        </div>
+                        </div>'
+                        ?>
                     </div>   <!--Fin face arriere de la carte -->
                 </div>   <!--Fin d'une carte -->
                 <div class="recette">
