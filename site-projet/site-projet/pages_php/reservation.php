@@ -42,18 +42,30 @@
         </div>
         <!--menu de navigation amenant aux différentes page du site-->
     </nav>
-
+    
+    
+    
+   
     <main>
-    <div class="formreserv">
-        <div class="reservation">
-           <form method="post" action="traitement.php" legend="nbr client">
-                <fieldset>
-                    <label> Nombre de Personne: <label>
-                    <input type="text" name="nbrparticipant" id="nbrparticipant" required pattern="[1-9]+"><label>exp: 14</label>
-                    <input type="submit" name="Envoyer" Value="Envoyer le formulaire"/>
-                </fieldset>
-            </form>
-        </div>
+     <div class="formreserv">
+        <?php
+        if(isset($_POST["EnvoieValide"])||$_SERVER['REQUEST_METHOD']!='POST'){
+		    header('reservation.php');
+            echo"<div class='reservation'>";?>
+                    <form method="post" action="reservation.php" legend="nbr client">
+                        <fieldset>
+                            <label> Nombre de Personne: <label>
+                            <input type="text" name="nbrparticipant" id="nbrparticipant" required pattern="[1-9]+"><label>exp: 14</label>
+                            <input type="submit" name="Envoyer" Value="Envoyer le formulaire"/>
+                        </fieldset>
+
+                    </form>
+        <?php
+                echo"</div>";
+	    }
+        ?>
+   
+        
 
         <br /><br /><br /><br />
 
