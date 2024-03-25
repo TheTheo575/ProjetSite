@@ -89,6 +89,13 @@
        
 
                <!--==========NOS ENTREES==================-->
+        
+        <?php
+        $reqPrep="SELECT * FROM chtitemamie_bd WHERE Id=?";//La requere SQL SELECT
+        $req = $conn->prepare($reqPrep);//Préparer la requete
+        $req->execute([1]);//Executer la requete
+        $result = $req->fetch(PDO::FETCH_ASSOC);//récupérer le résultat
+        ?>
 
         <div id="liste-plats">
             <!--Debut de la liste des cartes des recettes -->
@@ -528,8 +535,10 @@
 
     </footer>
 
+    <?php
+    $conn = NULL; // On enlève la connexion à la base de donné
+    ?>
+
 </body>
 
 </html>
-
-
