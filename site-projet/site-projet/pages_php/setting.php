@@ -44,4 +44,11 @@
         }
         return true;
     }
+
+	// Connexion à la base de donné
+	$servername = 'locahost'; $username='root'; $password='root'; $database='chtitemamie_bd';
+	try {
+		$conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
 ?>
