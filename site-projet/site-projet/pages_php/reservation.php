@@ -51,7 +51,7 @@
         <?php
         if(isset($_POST["EnvoieValide"])||$_SERVER['REQUEST_METHOD']!='POST'){
 		    header('reservation.php');
-            echo"<div class="reservation">";?>
+            echo"<div class='reservation'>";?>
                     <form method="post" action="reservation.php" legend="nbr client">
                         <fieldset>
                             <label> Nombre de Personne: <label>
