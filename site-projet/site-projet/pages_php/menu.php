@@ -529,7 +529,7 @@
     </footer>
 
 </body>
-<!-- coucou jeremie -->
+
 </html>
 
 
