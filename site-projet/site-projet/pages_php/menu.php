@@ -112,7 +112,7 @@
                     </div>   <!--Fin face arriere de la carte -->
                 </div>   <!--Fin d'une carte -->
                 <div class="recette">
-                    <!-- Debut d'une carte -->
+                    <!-- Debut d'une carte coucou -->
                     <div class="card-front">
                         <!--Face avant de la carte -->
                         <div>Quiche Aux Poireaux</div>
