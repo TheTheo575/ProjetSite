@@ -89,13 +89,6 @@
        
 
                <!--==========NOS ENTREES==================-->
-        
-        <?php
-        $reqPrep="SELECT * FROM chtitemamie_bd WHERE Id=?";//La requere SQL SELECT
-        $req = $conn->prepare($reqPrep);//Préparer la requete
-        $req->execute([1]);//Executer la requete
-        $result = $req->fetch(PDO::FETCH_ASSOC);//récupérer le résultat
-        ?>
 
         <div id="liste-plats">
             <!--Debut de la liste des cartes des recettes -->
@@ -104,18 +97,21 @@
                 <div class="recette">
                     <!-- Debut d'une carte -->
                     <div class="card-front">
-                        <?php echo
+                        <?php
+                        $reqPrep="SELECT * FROM plats WHERE Id=?";//La requere SQL SELECT
+                        $req = $conn->prepare($reqPrep);//Préparer la requete
+                        $req->execute([1]);//Executer la requete
+                        $result = $req->fetch(PDO::FETCH_ASSOC);//récupérer le résultat
+                         echo
                         '<!--Face avant de la carte -->
-                        <div>Salade césar</div>
-                        <img class="photoplat" src=$result[image] alt="salde-cesar" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
+                        <div>'.$result['nom'].'</div>
+                        <img class="photoplat" src='.$result['image'].' alt="'.$result['nom'].'" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
                     </div>   <!--Fin face avant de la carte -->
                     <div class="card-back">
                         <!--Face arriere de la carte -->
                         <div class="lcarte">
                             Ingrédients :<br />
-                            Salade<br />
-                            Mozzarella<br />
-                            Poulet<br />
+                            '.$result['recette'].'
                         </div>'
                         ?>
                     </div>   <!--Fin face arriere de la carte -->
