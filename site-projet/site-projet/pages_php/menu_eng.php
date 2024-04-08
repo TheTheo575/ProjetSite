@@ -423,7 +423,7 @@
                         <!--Face arriere de la carte -->
                         <div class="lcarte">
                             Digestive List :<br />
-                            Get 27/31 , Vodka Lemon/Strberry<br />
+                            Get 27/31 , Vodka Lemon/strberry<br />
                             Rhum , Digestif Maison
                         </div>
                     </div>   <!--Fin face arriere de la carte -->
