@@ -4,6 +4,21 @@
     // if ($accueil == false || !isset($accueil)) {
     //     header('location:accueil_eng.php');
     // }
+
+    $reqPrep="SELECT * FROM plats WHERE type=?";//La requete SQL SELECT
+    $req = $conn->prepare($reqPrep); //Préparation de la requete
+
+    $req->execute(['entree']); //Execution de la requete pour les entrees
+    $result_entree = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
+
+    $req->execute(['plat']); //Execution de la requete pour les plats
+    $result_plat = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les plats
+
+    $req->execute(['dessert']); //Execution de la requete pour les desserts
+    $result_dessert = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
+
+    $req->execute(['boisson']); //Execution de la requete pour les desserts
+    $result_boisson = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
 ?>
 	
 <!DOCTYPE html>
@@ -49,35 +64,35 @@
             
             <ul class="entrees">
                 <li>Our Starters :</li>
-                <li>Salad</li>
-                <li>Leek Quiche</li>
-                <li>Eggs Cocottes Maroilles</li>
-                <li>Chicons with Béchamel</li>
+                <?php
+                for ($i=0; $i<count($result_entree); $i++) {
+                    echo "<li>".$result_entree[$i]['name']."</li>";
+                }
+                ?>
             </ul>
             <ul class="plats">
                 <li>Our Dishes:</li>
-                <li>Potjevleesch</li>
-                <li>Fricadelle</li>
-                <li>American</li>
-                <li>French fries</li>
-                <li>Mussels with Maroille</li>
-                <li>Flemish Carbonnade</li>
-                <li>Welsh</li>
+                <?php
+                for ($i=0; $i<count($result_plat); $i++) {
+                    echo "<li>".$result_plat[$i]['name']."</li>";
+                }
+                ?>
             </ul>
             <ul class="desserts">
                 <li>Our Desserts:</li>
-                <li>The Chtiramisu</li>
-                <li>The Sugar Pie</li>
-                <li>Café Liégeois</li>
-                <li>Chicorrée Creme Brulee</li>
-                <li>Gourmet Coffee</li>
+                <?php
+                for ($i=0; $i<count($result_dessert); $i++) {
+                    echo "<li>".$result_dessert[$i]['name']."</li>";
+                }
+                ?>
             </ul>
             <ul class="boissons">
                 <li>Drinks:</li>
-                <li>Soft</li>
-                <li>Beer</li>
-                <li>Digestive</li>
-                <li>Wines</li>
+                <?php
+                for ($i=0; $i<count($result_boisson); $i++) {
+                    echo "<li>".$result_boisson[$i]['name']."</li>";
+                }
+                ?>
             </ul>
             <h3 class="chut">Any poisoning directly or indirectly linked to our food will be declined.</h3>
         </div>
@@ -90,71 +105,27 @@
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-entree">
                 <legend>Our Starters</legend>   <!--Legende de chaque partie (ici les entrées) -->
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Cesar Salad</div>
-                        <img class="photoplat" src="../images/Plats/salade-cesar.jpeg" alt="cesar salad" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Salad<br />
-                            Mozzarella<br />
-                            Chiken<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>   <!--Fin d'une carte -->
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Leeks Quiche</div>
-                        <img class="photoplat" src="../images/Plats/Quiche.jpeg" alt="leeks quiche" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Egg<br />
-                            Leeks<br />
-                            Gruyere<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>   <!--Fin d'une carte -->
-                <div class="recette">
-                    <div class="card-front">
-                        <div>Eggs Cocottes Maroilles</div>
-                        <img class="photoplat" src="../images/Plats/Oeuf-Cocotte-Maroille.jpeg" alt="cocotte-maroille" style="width: 110px; height: 110px;" />
-                    </div>
-                    <div class="card-back">
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Egg<br />
-                            Maroille<br />
-                            Cream<br />
-                        </div>
-                    </div>
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Bechamel Chicon</div>
-                        <img class="photoplat" src="../images/Plats/Chicon-Bechamel.jpeg" alt="bechamel chicon" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Chicon<br />
-                            Bechamel<br />
-                            Ham<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
+                <?php
+                    for ($i=0;$i<count($result_entree);$i++) {
+                        echo '
+                        <div class="recette">
+                            <!-- Debut carte -->
+                            <div class="card-front">
+                                <!--Face avant de la carte -->
+                                <div>'.$result_entree[$i]['name'].'</div>
+                                <img class="photoplat" src="'.$result_entree[$i]['image'].'" alt="'.$result_entree[$i]['name'].'" style="width: 110px; height: 110px;" />
+                            </div>
+                                
+                            <div class="card-back">
+                                <div class="lcarte">
+                                <!--Face arrière de la carte -->
+                                    Ingrédients :<br />
+                                    '.$result_entree[$i]['recipe'].'
+                                </div>
+                            </div> 
+                        </div> <!--Fin carte -->';
+                    }
+                ?>
             </fieldset>
             <!--Fin de la liste des cartes des recettes -->
 
@@ -165,117 +136,27 @@
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-plat">
                 <legend>Our Dishies</legend>   <!--Legende de chaque partie (ici les entrées) -->
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Potjevleesch</div>
-                        <img class="photoplat" src="../images/Plats/Potjevleesch.jpeg" alt="potjevleesch" style="width: 110px; height: 110px;" /><!--Ne pas modifier les valeurs de taille -->
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Chiken<br />
-                            Bunny<br />
-                            Calf<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>   <!--Fin d'une carte -->
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Fricadelle</div>
-                        <img class="photoplat" src="../images/Plats/Fricadelle.jpeg" alt="fricadelle" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Secret Ingredients
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>   <!--Fin d'une carte -->
-                <div class="recette">
-                    <div class="card-front">
-                        <div>American</div>
-                        <img class="photoplat" src="../images/Plats/Americain.jpeg" alt="american" style="width: 110px; height: 110px;" />
-                    </div>
-                    <div class="card-back">
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            French Fries<br />
-                            Sauce of your choice<br />
-                            Sausage, Merguez or Fricadelle<br />
-                        </div>
-                    </div>
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>French Fries</div>
-                        <img class="photoplat" src="../images/Plats/Frites.jpeg" alt="french fries" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Potato<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Sea ​​Mussels</div>
-                        <img class="photoplat" src="../images/Plats/Moules.jpeg" alt="sea mussels" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Sea Mussel<br />
-                            Maroille<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Flemish Carbonnade</div>
-                        <img class="photoplat" src="../images/Plats/Carbonade-Flamande.jpeg" alt="flemish carbonnade" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Smoked Bacon<br />
-                            Beauf<br />
-                            Carrot<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Welsh</div>
-                        <img class="photoplat" src="../images/Plats/Welsh.jpeg" alt="welsh" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Egg<br />
-                            Ham<br />
-                            Cheddar<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
+                <?php
+                    for ($i=0;$i<count($result_plat);$i++) {
+                        echo '
+                        <div class="recette">
+                            <!-- Debut carte -->
+                            <div class="card-front">
+                                <!--Face avant de la carte -->
+                                <div>'.$result_plat[$i]['name'].'</div>
+                                <img class="photoplat" src="'.$result_plat[$i]['image'].'" alt="'.$result_plat[$i]['name'].'" style="width: 110px; height: 110px;" />
+                            </div>
+                                
+                            <div class="card-back">
+                                <div class="lcarte">
+                                <!--Face arrière de la carte -->
+                                    Ingrédients :<br />
+                                    '.$result_plat[$i]['recipe'].'
+                                </div>
+                            </div> 
+                        </div> <!--Fin carte -->';
+                    }
+                ?>
             </fieldset>
 
 
@@ -286,90 +167,27 @@
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-dessert">
                 <legend>Our Desserts</legend>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Chtiramisu</div>
-                        <img class="photoplat" src="../images/Plats/Tiramisu.jpeg" alt="tiramisu" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Speculos<br />
-                            Coffe<br />
-                            Cocoa<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Sugar Pie</div>
-                        <img class="photoplat" src="../images/Plats/Tarte-Sucre.jpg" alt="sugar pie" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Sugar<br />
-                            Sugar<br />
-                            And Sugar Again<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Liegeois Coffe</div>
-                        <img class="photoplat" src="../images/Plats/Cafe-Liegeois.jpg" alt="liegeois coffe" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Coffe<br />
-                            Vanilla<br />
-                            Whipped Cream<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Chicorrée Creme Brulee</div>
-                        <img class="photoplat" src="../images/Plats/Creme-Brulee.jpg" alt="chicorrée creme brulee" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Chicorée<br />
-                            Vanilla<br />
-                            Cream<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Gourmet Coffee</div>
-                        <img class="photoplat" src="../images/Plats/Cafe-Gourmand.jpg" alt="Gourmet Coffee" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Ingredient :<br />
-                            Coffe<br />
-                            Desserts of the day<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
+                <?php
+                    for ($i=0;$i<count($result_dessert);$i++) {
+                        echo '
+                        <div class="recette">
+                            <!-- Debut carte -->
+                            <div class="card-front">
+                                <!--Face avant de la carte -->
+                                <div>'.$result_dessert[$i]['name'].'</div>
+                                <img class="photoplat" src="'.$result_dessert[$i]['image'].'" alt="'.$result_dessert[$i]['name'].'" style="width: 110px; height: 110px;" />
+                            </div>
+                                
+                            <div class="card-back">
+                                <div class="lcarte">
+                                <!--Face arrière de la carte -->
+                                    Ingrédients :<br />
+                                    '.$result_dessert[$i]['recipe'].'
+                                </div>
+                            </div> 
+                        </div> <!--Fin carte -->';
+                    }
+                ?>
             </fieldset>
 
             <br />
@@ -379,72 +197,27 @@
             <!--Debut de la liste des cartes des recettes -->
             <fieldset id="liste-recette-boisson">
                 <legend>Our Drinks</legend>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Soft</div>
-                        <img class="photoplat" src="../images/Plats/Soft.jpg" alt="soft drink" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Soft List:<br />
-                            Water , Sparkling Water , Cola<br />
-                            Diabolo , Oasis , Fanta , Ice Tea<br />
-                            Schweppes<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Beer</div>
-                        <img class="photoplat" src="../images/Plats/Biere.jpg" alt="beer" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Beer List :<br />
-                            Goulade , Anosteke , Cuvé des Trolls<br />
-                            Paix Dieux , Grimbergen , Bush<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Digestive</div>
-                        <img class="photoplat" src="../images/Plats/Digestif.jpg" alt="dingestive" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Digestive List :<br />
-                            Get 27/31 , Vodka Lemon/strberry<br />
-                            Rhum , Digestif Maison
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
-                <div class="recette">
-                    <!-- Debut d'une carte -->
-                    <div class="card-front">
-                        <!--Face avant de la carte -->
-                        <div>Wines</div>
-                        <img class="photoplat" src="../images/Plats/Vin.jpg" alt="Wine" style="width: 110px; height: 110px;" />
-                    </div>   <!--Fin face avant de la carte -->
-                    <div class="card-back">
-                        <!--Face arriere de la carte -->
-                        <div class="lcarte">
-                            Wines List :<br />
-                            Red Wine : Bordeaux , Côte du Rhône<br />
-                            White Wine : Grand Cru , Chardonnay<br />
-                            Rosé : Côte de Provence , Argali Rosé<br />
-                        </div>
-                    </div>   <!--Fin face arriere de la carte -->
-                </div>
+                <?php
+                    for ($i=0;$i<count($result_boisson);$i++) {
+                        echo '
+                        <div class="recette">
+                            <!-- Debut carte -->
+                            <div class="card-front">
+                                <!--Face avant de la carte -->
+                                <div>'.$result_boisson[$i]['name'].'</div>
+                                <img class="photoplat" src="'.$result_boisson[$i]['image'].'" alt="'.$result_boisson[$i]['name'].'" style="width: 110px; height: 110px;" />
+                            </div>
+                                
+                            <div class="card-back">
+                                <div class="lcarte">
+                                <!--Face arrière de la carte -->
+                                    Lists :<br />
+                                    '.$result_boisson[$i]['recipe'].'
+                                </div>
+                            </div> 
+                        </div> <!--Fin carte -->';
+                    }
+                ?>
             </fieldset>
         </div>
 
@@ -454,12 +227,15 @@
         <div class="conteneur_collab">
             <?php
                 $date_actuelle = date("l"); // Donne le jour en entier, exemple pour mercredi on a "Wednesday"
+
+                $num_plat_jour = (int)date("d")%count($result_plat); // On récupére un numéro aléatoire
+                $plat_jour = $result_plat[$num_plat_jour]; // On choisi le plat du jour avec le num calculer précédement
                 
-                if ($date_actuelle == "Dimanche") {
+                if ($date_actuelle == "Dimanche") { // Si dimanche pas de plat du jours car restaurant fermé
                     echo "Today we are $date_actuelle and grandma is sleeping, no meal of the day ";
                 }
-                else {
-                    echo "Today we are $date_actuelle, and grandma advise you : ";
+                else { // Sinon on affiche le plat du jour
+                    echo "Today we are $date_actuelle, and grandma advise you : ".$plat_jour['name']."<br><img src='".$plat_jour['image']."' alt='plat du jour' style='width : 15%; height : 15%'>";
                 }
             ?>
         </div>
