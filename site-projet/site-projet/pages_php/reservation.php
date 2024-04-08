@@ -1,5 +1,6 @@
 <?php
-    include_once 'setting.php';
+
+    session_start();
     
     // if ($accueil == false || !isset($accueil)) {
     //     header('location:accueil.php');
@@ -49,89 +50,107 @@
     <main>
      <div class="formreserv">
         <?php
-        if(isset($_POST["EnvoieValide"])||$_SERVER['REQUEST_METHOD']!='POST'){
-		    header('reservation.php');
-            echo"<div class='reservation'>";?>
-                    <form method="post" action="reservation.php" legend="nbr client">
-                        <fieldset>
-                            <label> Nombre de Personne: <label>
-                            <input type="text" name="nbrparticipant" id="nbrparticipant" required pattern="[1-9]+"><label>exp: 14</label>
-                            <input type="submit" name="Envoyer" Value="Envoyer le formulaire"/>
-                        </fieldset>
 
-                    </form>
-        <?php
-                echo"</div>";
-	    }
+        
+        if(isset($_POST["EnvoieValide"])||$_SERVER['REQUEST_METHOD']!='POST')
+        {
+		    header('reservation.php');
         ?>
+            <div class='reservation'><form method='post' action='reservation.php'legend='nbr client'><fieldset><label> Nombre de Personne: <label><input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+'>
+            <input type='submit' name='Envoyer' Value='Valider'/></fieldset></form></div>
+            <?php
+        }
+        if(isset($_POST['nbrparticipant'])){
+            $vnb = $_POST['nbrparticipant'];
+            if($vnb>=16) {
+            ?>
+                <div class='event'>
+                <form method='post' action='reservation.php'>
+                    <fieldset>
+                        <legend>Réservation Événement </legend>
+                        <label >Nom :</label>
+                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required/>
+                        <br><br />
+                        <label >Prénom :</label>
+                        <input type='text' name='prenom' id='prenom'  placeholder='votre Prénom' required/>
+                        <br><br />
+                        <label >Numero de téléphone: </label>
+                        <input type='tel' name='tel'  id='tel' placeholder='Numéro de téléphone' required/>
+                        <br><br />
+                        <label >Date de Réservation: </label>
+                        <input type='date' name=' date' id='date' required/>
+                        <br><br />
+                        <label >Heure de réservation: </label>
+                        <input type='time' name='hour' id='time' required/>
+                        <br><br />
+                        
+                        
+                        <label>Type évenenment: </label>
+                        <select name='event' required>
+                            <option>Anniversaire</option>
+                            <option>Mariage</option>
+                            <option>Séminaire</option>
+                            <option>Soirée</option>
+                            <option>Autre</option>
+                        </select>
+                        <br><br />
+                    
+                        <label for='autre'>Autre</label>
+                        <input type='text' name='type' id='type' placeholder='Autre Événements' />
+                        <br><br />
+                    
+                        
+                        <input type='submit' value='Reserver' id='reservation' name='Reserver'>
+                        <br><br />
+                        <i class='chut'>*toute réservation d'Événement envoyée moins d'une semaine avant l'Événement ne sera pas prise en compte.</i>
+                    </fieldset>
+                </form>
+            </div>
+                <?php
+            }
+            elseif($vnb<16 ){
+                ?>
+            <div class='reservation'>
+                <form method='post' action='reservation.php'>
+                    <fieldset>
+                        
+                        <legend>Votre réservation : </legend>
+                        <label for='nom'>Nom :</label>
+                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required />
+                        <img src='../images/Assiette.png' alt='LogoAssiette' id='Assiette'> <p style='display:inline;'></p>
+                        <br><br />
+                        <label for='prenom'>Prénom :</label>
+                        <input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required/>
+                        <br><br />
+
+                        <label >Date de Réservation: </label>
+                        <input type='date' name='date' id='date' required/>
+                        <br><br />
+                        <label >Heure de réservation: </label>
+                        <input type='time' name='hour'id='time' required />
+                        <br><br />
+                        <label >Numero de téléphone: </label>
+                        <input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' required/>
+                        <br><br />
+                        <input type='submit' name='Réserver' id='reservation' value='Reserver' />
+                        
+                        <br><br />
+                        <i class='chut'>*toutes vos informations personnelles sont confidentielles</i>
+                    </fieldset>
+                </form>
+            </div>
+            <?php
+            }
+        }
+        
+        ?>
+        
    
         
 
         <br /><br /><br /><br />
 
-        <div class="event">
-            <form method="post" action="#" >
-                <fieldset><!--zone pour le formulaire-->
-                    <legend>Réservation Événement </legend><!--nom de la zone-->
-                    <label >Nom :</label>
-                    <input type="text" name="nom"  placeholder="Votre nom" required/><!--zone de texte pour le nom-->
-                    <br><br />
-                    <label >Prénom :</label>
-                    <input type="text" name="prenom"  placeholder="votre Prénom" required/><!--zone de texte pour le prénom-->
-                    <br><br />
-                    <label >Numero de téléphone: </label><!--zone de texte por le numéro de téléphone-->
-                    <input type="tel" name="tel" placeholder="Numéro de téléphone" required/>
-                    <br><br />
-                    <label >Date de Réservation: </label><!--zone de selection de dae sur un calendrier-->
-                    <input type="date" name=" date" />
-                    <br><br />
-                    <label >Heure de réservation: </label><!--zone de selection d'horaire avec une horloge-->
-                    <input type="time" name="hour" required/>
-                    <br><br />
-                    <label >Nombre de Personnes: </label>
-                    <select class="nbr" name="nbr" required><!--zone de selection d'option'-->
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                
-                    <select class="nbr" name="nbr"><!--zone selection option-->
-                        <option>0</option>
-                        <option>1</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option selected>8</option>
-                        <option>9</option>
-                    </select>
-                    <br><br />
-                    <label>Type évenenment: </label><!--zone selection option-->
-                    <select name="event" required>
-                        <option>Choisir un type </option>
-                        <option>Anniversaire</option>
-                        <option>Mariage</option>
-                        <option>Séminaire</option>
-                        <option>Soirée</option>
-                        <option>Autre</option>
-                    </select>
-                    <br><br />
-                
-                    <label for="nom">Autre</label>
-                    <input type="text" name="type" id="type" placeholder="Autre Événements" /><!--zone de texte -->
-                    <br><br />
-                
-                    <!--<input type="submit" name="Réserver l'Événement" id="reservation" value="Reserver" />--><!--bouton pour confirmer la réservaton -->
-                    <input type="submit" value="Reserver" id="reservation">
-                    <br><br />
-                    <i class="chut">*toute réservation d'Événement envoyée moins d'une semaine avant l'Événement ne sera pas prise en compte.</i>
-                </fieldset>
-            </form>
-        </div>
+        
     </div>
     </main>
 
