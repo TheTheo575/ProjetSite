@@ -66,15 +66,11 @@
         <title>Page Modification Admin</title><!--Titre de la page-->
         <meta charset="utf-8" />
         <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
+		<meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Accueil">
 		<meta name="description" content="Partie modification de la partie admin du site de la ch'tite mamie">
 		
-		<!--METTRE ICON-->
 		<link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
-		<!--METTRE ICON-->
-
-		<!--CHANGER LOCA CSS-->
-		<link rel="stylesheet" type="text/css" href="/stylesheets.css">
-		<!--CHANGER LOCA CSS-->
+    	<link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
 
     </head>
     <body><!--partie du code en charge du contenu-->
@@ -88,10 +84,23 @@
 		<nav><!--Menu de navigation-->
 		<!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
 			<div class="conteneur-nav">
-				<a href="../pages_html/accueil.html" class="lien-interne"><b><u>Accueil</u></b></a>
-				<a href="../pages_html/menu.html" class="lien-interne">Menu</a>
-				<a href="../pages_html/accueil_eng.html" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
-				<a href="../pages_html/collab.html" class="lien-interne">Partenaires</a>
+				<a href="../pages_php/accueil.php" class="lien-interne"><b><u>Accueil</u></b></a>
+				<a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+				<a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
+				<a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
+				<a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
+				<?php 
+					if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+						?>
+						<a href="connexion.php" class="lien-interne" style="fontsize: 2px;">Se connecter</a>
+						<?php
+					}
+					else{
+						?>
+						<a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>
+						<?php
+					}
+				?>
 			</div>
 		</nav>
 
