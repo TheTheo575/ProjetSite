@@ -2,7 +2,7 @@
     session_start();
     include_once 'setting.php';
     
-    if (!isset($_SESSION['accueil']) || $_SESSION['accueil']==false) { // Marque le passage de l'utilisateur par l'accueuil
+    if (!isset($_SESSION['accueil'])) { // Marque le passage de l'utilisateur par l'accueuil
         $S_SESSION['accueil']=true;
     }
 ?>

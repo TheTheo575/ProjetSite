@@ -3,7 +3,7 @@
     session_start();
     include_once 'setting.php';
     
-    // if ($accueil == false || !isset($accueil)) {
+    // if (!isset($_SESSION['accueil'])) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
     //     header('location:accueil_eng.php');
     // }
 

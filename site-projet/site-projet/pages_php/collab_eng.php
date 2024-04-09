@@ -2,9 +2,9 @@
     session_start();
     include_once 'setting.php';
     
-    if (!isset($_SESSION['accueil']) || $_SESSION['accueil']==false) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
-        header('location:accueil_eng.php');
-    }
+    // if (!isset($_SESSION['accueil'])) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
+    //     header('location:accueil_eng.php');
+    // }
 ?>
 	
 <!DOCTYPE html>
