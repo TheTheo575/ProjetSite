@@ -44,12 +44,12 @@
             <?php 
         if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
             ?>
-            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se connecter</u></b></a>
+            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;">Se connecter</a>
             <?php
         }
         else{
             ?>
-            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>
             <?php
         }
         ?>

@@ -55,6 +55,18 @@
             <a href="../pages_php/menu_eng.php" class="lien-interne" id="panglais"><b><u>FRA</u></b>/ENG</a>
             <a href="../pages_php/reservation.php" class="lien-interne" id="preservation">Réservation</a>
             <a href="../pages_php/collab.php" class="lien-interne" id="pcollab">Partenaires</a>
+            <?php 
+        if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+            ?>
+            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;">Se connecter</a>
+            <?php
+        }
+        else{
+            ?>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>
+            <?php
+        }
+        ?>
         </div>
 
     </nav>
