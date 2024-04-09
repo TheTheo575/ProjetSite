@@ -5,23 +5,23 @@
             require("connexion.php"); // Inclut le fichier de connexion à la base de données
             
             // Prépare une requête SQL pour récupérer les données de la réservation à modifier (remplacez "???" par le nom de votre table contenant les réservations)
-            $stmt = $conn->prepare("SELECT * FROM ??? WHERE Id = ?");
+            $selectReservationStmt = $conn->prepare("SELECT * FROM ??? WHERE Id = ?");
             // "???" : Remplacez ceci par le nom de votre table contenant les réservations
             
             // Exécute la requête SQL en remplaçant le paramètre par l'identifiant de la réservation récupéré depuis l'URL
-            $stmt->execute(array($_GET['identifiant']));
+            $selectReservationStmt->execute(array($_GET['identifiant']));
             
             // Récupère les résultats de la requête SQL sous forme de tableau associatif
-            $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+            $reservationData = $selectReservationStmt->fetch(PDO::FETCH_ASSOC);
             
             // Récupère les valeurs spécifiques à modifier depuis le tableau associatif
             $id = $_GET['identifiant'];
-            $nom = $resultat['Nom'];
-            $prenom = $resultat['Prenom'];
-            $nmbpers = $resultat['NmbPers'];
-            $date = $resultat['DateR'];
-            $heure = $resultat['Heure'];
-            $tel = $resultat['Téléphone'];
+            $nom = $reservationData['Nom'];
+            $prenom = $reservationData['Prenom'];
+            $nmbpers = $reservationData['NmbPers'];
+            $date = $reservationData['DateR'];
+            $heure = $reservationData['Heure'];
+            $tel = $reservationData['Téléphone'];
             
             $conn = NULL; // Ferme la connexion à la base de données
         } catch(Exception $e) {
@@ -35,10 +35,10 @@
             require("connexion.php"); // Inclut le fichier de connexion à la base de données
             
             // Prépare une requête SQL pour mettre à jour les données de la réservation dans la table (remplacez "adherents" par le nom de votre table contenant les réservations)
-            $stmt = $conn->prepare("UPDATE adherents SET Nom = ?, Prenom = ?, NmbPers = ?, DateR = ?, Heure = ?, Téléphone = ? WHERE Id = ?");
+            $updateReservationStmt = $conn->prepare("UPDATE adherents SET Nom = ?, Prenom = ?, NmbPers = ?, DateR = ?, Heure = ?, Téléphone = ? WHERE Id = ?");
             
             // Exécute la requête SQL en remplaçant les paramètres par les valeurs soumises dans le formulaire
-            $stmt->execute([
+            $updateReservationStmt->execute([
                 $_POST['nom'],
                 $_POST['prenom'],
                 $_POST['nmbpers'],
