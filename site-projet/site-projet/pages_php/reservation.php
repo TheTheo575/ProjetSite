@@ -32,13 +32,16 @@
         <!--partie du Html en haut de la page avec le logo et le nom du réstaurant-->
     </header>
 
-    <nav>
-
+    <nav><!--Menu de navigation-->
+    <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
+    <?php
+    if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false || $_SESSION['admin']=false){
+        ?>
         <div class="conteneur-nav">
             <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
             <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
-            <a href="../pages_php/reservation_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
-            <a href="../pages_php/reservation.php" class="lien-interne"><b><u>Réservation</u></b></a>
+            <a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
+            <a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
             <a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
             <?php 
         if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
@@ -53,7 +56,19 @@
         }
         ?>
         </div>
-        <!--menu de navigation amenant aux différentes page du site-->
+        <?php
+    }
+    elseif($_SESSION['admin']=true){
+        ?>
+        <div class="conteneur-nav">
+            <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
+            <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+            <a href="../pages_php/reservation.php" class="lien-interne">Réservations</a>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
+        </div>
+        <?php
+    }
+    ?>
     </nav>
     
     
