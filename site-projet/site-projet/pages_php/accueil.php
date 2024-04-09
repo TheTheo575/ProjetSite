@@ -1,6 +1,10 @@
 <?php
+    session_start();
     include_once 'setting.php';
-    $accueil = true; // L'utilisateur est bien passé par l'accueil
+
+    if (!isset($_SESSION['accueil']) || $_SESSION['accueil']==false) { // Marque le passage de l'utilisateur par l'accueil
+        $S_SESSION['accueil']=true;
+    }
 ?>
 	
 <!DOCTYPE html>
