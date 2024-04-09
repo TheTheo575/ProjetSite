@@ -246,7 +246,7 @@
                     case "Monday" :
                         $date_actuelle = "Lundi";
                         break;
-                    case "Thuesday" :
+                    case "Tuesday" :
                         $date_actuelle = "Mardi";
                         break;
                     case "Wednesday" :
