@@ -5,10 +5,10 @@
             require("connexion.php"); // Inclut le fichier de connexion à la base de données
             
             // Prépare une requête SQL d'insertion dans une table (le nom de la table est manquant : remplacez "???" par le nom de votre table)
-            $stmt = $conn->prepare("INSERT INTO ??? (Nom, Prenom, NmbPers, DateR, Heure, Tel) VALUES (?, ?, ?, ?, ?, ?)");
+            $insertReservationQuery = $conn->prepare("INSERT INTO ??? (Nom, Prenom, NmbPers, DateR, Heure, Tel) VALUES (?, ?, ?, ?, ?, ?)");
 
             // Exécute la requête SQL en remplaçant les paramètres avec les valeurs provenant du formulaire
-            $stmt->execute(array(
+            $insertReservationQuery->execute(array(
                 $_POST['nom'],      // Valeur du champ 'nom' du formulaire
                 $_POST['prenom'],   // Valeur du champ 'prenom' du formulaire
                 $_POST['nmbpers'],  // Valeur du champ 'NmbPers' du formulaire

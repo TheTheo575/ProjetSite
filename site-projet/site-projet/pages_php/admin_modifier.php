@@ -5,23 +5,23 @@
             require("connexion.php"); // Inclut le fichier de connexion à la base de données
             
             // Prépare une requête SQL pour récupérer les données de la réservation à modifier (remplacez "???" par le nom de votre table contenant les réservations)
-            $stmt = $conn->prepare("SELECT * FROM ??? WHERE Id = ?");
+            $selectReservationStmt = $conn->prepare("SELECT * FROM ??? WHERE Id = ?");
             // "???" : Remplacez ceci par le nom de votre table contenant les réservations
             
             // Exécute la requête SQL en remplaçant le paramètre par l'identifiant de la réservation récupéré depuis l'URL
-            $stmt->execute(array($_GET['identifiant']));
+            $selectReservationStmt->execute(array($_GET['identifiant']));
             
             // Récupère les résultats de la requête SQL sous forme de tableau associatif
-            $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+            $reservationData = $selectReservationStmt->fetch(PDO::FETCH_ASSOC);
             
             // Récupère les valeurs spécifiques à modifier depuis le tableau associatif
             $id = $_GET['identifiant'];
-            $nom = $resultat['Nom'];
-            $prenom = $resultat['Prenom'];
-            $nmbpers = $resultat['NmbPers'];
-            $date = $resultat['DateR'];
-            $heure = $resultat['Heure'];
-            $tel = $resultat['Téléphone'];
+            $nom = $reservationData['Nom'];
+            $prenom = $reservationData['Prenom'];
+            $nmbpers = $reservationData['NmbPers'];
+            $date = $reservationData['DateR'];
+            $heure = $reservationData['Heure'];
+            $tel = $reservationData['Téléphone'];
             
             $conn = NULL; // Ferme la connexion à la base de données
         } catch(Exception $e) {
@@ -35,10 +35,10 @@
             require("connexion.php"); // Inclut le fichier de connexion à la base de données
             
             // Prépare une requête SQL pour mettre à jour les données de la réservation dans la table (remplacez "adherents" par le nom de votre table contenant les réservations)
-            $stmt = $conn->prepare("UPDATE adherents SET Nom = ?, Prenom = ?, NmbPers = ?, DateR = ?, Heure = ?, Téléphone = ? WHERE Id = ?");
+            $updateReservationStmt = $conn->prepare("UPDATE adherents SET Nom = ?, Prenom = ?, NmbPers = ?, DateR = ?, Heure = ?, Téléphone = ? WHERE Id = ?");
             
             // Exécute la requête SQL en remplaçant les paramètres par les valeurs soumises dans le formulaire
-            $stmt->execute([
+            $updateReservationStmt->execute([
                 $_POST['nom'],
                 $_POST['prenom'],
                 $_POST['nmbpers'],
@@ -66,15 +66,11 @@
         <title>Page Modification Admin</title><!--Titre de la page-->
         <meta charset="utf-8" />
         <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
+		<meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Accueil">
 		<meta name="description" content="Partie modification de la partie admin du site de la ch'tite mamie">
 		
-		<!--METTRE ICON-->
 		<link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
-		<!--METTRE ICON-->
-
-		<!--CHANGER LOCA CSS-->
-		<link rel="stylesheet" type="text/css" href="/stylesheets.css">
-		<!--CHANGER LOCA CSS-->
+    	<link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
 
     </head>
     <body><!--partie du code en charge du contenu-->
@@ -88,10 +84,23 @@
 		<nav><!--Menu de navigation-->
 		<!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
 			<div class="conteneur-nav">
-				<a href="../pages_html/accueil.html" class="lien-interne"><b><u>Accueil</u></b></a>
-				<a href="../pages_html/menu.html" class="lien-interne">Menu</a>
-				<a href="../pages_html/accueil_eng.html" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
-				<a href="../pages_html/collab.html" class="lien-interne">Partenaires</a>
+				<a href="../pages_php/accueil.php" class="lien-interne"><b><u>Accueil</u></b></a>
+				<a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+				<a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
+				<a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
+				<a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
+				<?php 
+					if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+						?>
+						<a href="connexion.php" class="lien-interne" style="fontsize: 2px;">Se connecter</a>
+						<?php
+					}
+					else{
+						?>
+						<a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>
+						<?php
+					}
+				?>
 			</div>
 		</nav>
 

@@ -1,10 +1,10 @@
 <?php
 
     session_start();
-    
-    if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
-        header('location:accueil.php');
-    }
+    include_once 'setting.php';
+    // if ($accueil == false || !isset($accueil)) {
+    //     header('location:accueil.php');
+    // }
 ?>
 	
 <!DOCTYPE html>
@@ -83,7 +83,8 @@
         {
 		    header('reservation.php');
         ?>
-            <div class='reservation'><form method='post' action='reservation.php'legend='nbr client'><fieldset><label> Nombre de Personne: <label><input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+'>
+            <div class='reservation'><form method='post' action='reservation.php'legend='nbr client'><fieldset><label> Nombre de Personne: <label>
+            <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+'>
             <input type='submit' name='Envoyer' Value='Valider'/></fieldset></form></div>
             <?php
         }
@@ -96,10 +97,10 @@
                     <fieldset>
                         <legend>Réservation Événement </legend>
                         <label >Nom :</label>
-                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required/>
+                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
                         <br><br />
                         <label >Prénom :</label>
-                        <input type='text' name='prenom' id='prenom'  placeholder='votre Prénom' required/>
+                        <input type='text' name='prenom' id='prenom'  placeholder='votre Prénom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
                         <br><br />
                         <label >Numero de téléphone: </label>
                         <input type='tel' name='tel'  id='tel' placeholder='Numéro de téléphone' required/>
@@ -108,7 +109,7 @@
                         <input type='date' name=' date' id='date' required/>
                         <br><br />
                         <label >Heure de réservation: </label>
-                        <input type='time' name='hour' id='time' required/>
+                        <input type='time' name='time' id='time' required/>
                         <br><br />
                         
                         
@@ -118,13 +119,14 @@
                             <option>Mariage</option>
                             <option>Séminaire</option>
                             <option>Soirée</option>
-                            <option>Autre</option>
+                           
                         </select>
                         <br><br />
-                    
-                        <label for='autre'>Autre</label>
-                        <input type='text' name='type' id='type' placeholder='Autre Événements' />
-                        <br><br />
+                        <?php
+                        echo"<label> Nombre de Personne: <label>
+                        <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
+                        <br><br />"
+                        ?>
                     
                         
                         <input type='submit' value='Reserver' id='reservation' name='Reserver'>
@@ -143,22 +145,27 @@
                         
                         <legend>Votre réservation : </legend>
                         <label for='nom'>Nom :</label>
-                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required />
+                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern="^[A-Za-z '-]}$" maxlenghth="40" />
                         <img src='../images/Assiette.png' alt='LogoAssiette' id='Assiette'> <p style='display:inline;'></p>
                         <br><br />
                         <label for='prenom'>Prénom :</label>
-                        <input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required/>
+                        <input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
                         <br><br />
 
                         <label >Date de Réservation: </label>
                         <input type='date' name='date' id='date' required/>
                         <br><br />
                         <label >Heure de réservation: </label>
-                        <input type='time' name='hour'id='time' required />
+                        <input type='time' name='time'id='time' required />
                         <br><br />
                         <label >Numero de téléphone: </label>
                         <input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' required/>
                         <br><br />
+                        <?php
+                        echo"<label> Nombre de Personne: <label>
+                        <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
+                        <br><br />"
+                        ?>
                         <input type='submit' name='Réserver' id='reservation' value='Reserver' />
                         
                         <br><br />
