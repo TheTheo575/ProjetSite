@@ -27,7 +27,7 @@
         <!--titre et logo du site en haut de la page-->
         <a href="../pages_php/accueil_eng.php" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
         <p style="display:inline;">Ch'tite mamie</p>
-
+        
     </header>
 
     <nav>
