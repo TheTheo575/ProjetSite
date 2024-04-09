@@ -3,7 +3,7 @@
     include_once 'setting.php';
 
     // Marque le passage de l'utilisateur par l'accueil
-    $S_SESSION['accueil']=true;
+    $_SESSION['accueil']=true;
 ?>
 	
 <!DOCTYPE html>
@@ -29,18 +29,7 @@
         <a href="../pages_php/accueil.php" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
        <!--liens pour faire apparaitre le logo du site-->
         <p style="display:inline;">Ch'tite mamie</p><!--Paragraphe pour le Nom du restaurant-->
-        <?php 
-        if(isset($_SESSION['autentifie'])==false || $_SESSION['authentifie']=false){
-            ?>
-            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se connecter</u></b></a>
-            <?php
-        }
-        else{
-            ?>
-            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
-            <?php
-        }
-        ?>
+        
 
     </header>
 
@@ -52,6 +41,18 @@
             <a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
             <a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
             <a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
+            <?php 
+        if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+            ?>
+            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se connecter</u></b></a>
+            <?php
+        }
+        else{
+            ?>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
+            <?php
+        }
+        ?>
         </div>
 
     </nav>

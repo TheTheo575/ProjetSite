@@ -80,10 +80,10 @@
      		    	<label>Se connecter :</label>
      			    <input type="text" name="login" placeholder="Entrez votre identifiant" required>
                     <ul>
-     			    <label>Password :</label>
+     			    <label>Mot de passe :</label>
      			    <input type="password" name="passwd"  placeholder="Entrez votre mot de passe" required>
                     <ul>
-     			    <input type="submit" name="authentification" value="Envoyer"/>
+     			    <input type="submit" name="authentification" value="Se connecter"/>
      		    </fieldset>
      	    </form>
 		<?php

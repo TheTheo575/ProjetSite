@@ -2,9 +2,9 @@
     session_start();
     include_once 'setting.php';
     
-    // if (!isset($_SESSION['accueil'])) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
-    //     header('location:accueil.php');
-    // }
+    if (!isset($_SESSION['accueil'])) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
+        header('location:accueil.php');
+    }
 
     $reqPrep="SELECT * FROM plats WHERE type=?";//La requete SQL SELECT
     $req = $conn->prepare($reqPrep); //Préparation de la requete
