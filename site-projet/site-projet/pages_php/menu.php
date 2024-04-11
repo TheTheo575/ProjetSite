@@ -2,9 +2,9 @@
     session_start();
     include_once 'setting.php';
     
-    // if (!isset($_SESSION['accueil'])) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
-    //     header('location:accueil.php');
-    // }
+    if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
+        header('location:accueil.php');
+    }
 
     $reqPrep="SELECT * FROM plats WHERE type=?";//La requete SQL SELECT
     $req = $conn->prepare($reqPrep); //Préparation de la requete
@@ -47,16 +47,43 @@
 
     </header>
 
-    <nav>
-
+    <nav><!--Menu de navigation-->
+    <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
+    <?php
+    if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false || $_SESSION['admin']=false){
+        ?>
         <div class="conteneur-nav">
-            <a href="../pages_php/accueil.php" class="lien-interne" id="paccueil">Accueil</a>
-            <a href="../pages_php/menu.php" class="lien-interne" id="pmenu"><b><u>Menu</u></b></a>
-            <a href="../pages_php/menu_eng.php" class="lien-interne" id="panglais"><b><u>FRA</u></b>/ENG</a>
-            <a href="../pages_php/reservation.php" class="lien-interne" id="preservation">Réservation</a>
-            <a href="../pages_php/collab.php" class="lien-interne" id="pcollab">Partenaires</a>
+            <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
+            <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+            <a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
+            <a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
+            <a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
+            <?php 
+        if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+            ?>
+            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;">Se connecter</a>
+            <?php
+        }
+        else{
+            ?>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>
+            <?php
+        }
+        ?>
         </div>
-
+        <?php
+    }
+    elseif($_SESSION['admin']=true){
+        ?>
+        <div class="conteneur-nav">
+            <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
+            <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+            <a href="../pages_php/reservation.php" class="lien-interne">Réservations</a>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
+        </div>
+        <?php
+    }
+    ?>
     </nav>
     
     <main>

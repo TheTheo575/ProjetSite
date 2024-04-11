@@ -3,7 +3,7 @@
     include_once 'setting.php';
 
     // Marque le passage de l'utilisateur par l'accueil
-    $S_SESSION['accueil']=true;
+    $_SESSION['accueil']=true;
 ?>
 	
 <!DOCTYPE html>
@@ -29,31 +29,47 @@
         <a href="../pages_php/accueil.php" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
        <!--liens pour faire apparaitre le logo du site-->
         <p style="display:inline;">Ch'tite mamie</p><!--Paragraphe pour le Nom du restaurant-->
-        <?php 
-        if(isset($_SESSION['autentifie'])==false || $_SESSION['authentifie']=false){
-            ?>
-            <a href="connexion.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se connecter</u></b></a>
-            <?php
-        }
-        else{
-            ?>
-            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
-            <?php
-        }
-        ?>
+        
 
     </header>
 
     <nav><!--Menu de navigation-->
     <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
+    <?php
+    if(isset($_SESSION["admin"]) && $_SESSION["admin"]=true){
+        ?>
         <div class="conteneur-nav">
-            <a href="../pages_php/accueil.php" class="lien-interne"><b><u>Accueil</u></b></a>
+            <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
+            <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
+            <a href="../pages_php/reservation.php" class="lien-interne">Réservations</a>
+            <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
+        </div>
+        <?php
+    }
+    else{
+        ?>
+        <div class="conteneur-nav">
+            <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
             <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
             <a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
             <a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
             <a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
+            <?php 
+        if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false){
+            ?>
+            <a href="connexion.php" class="lien-interne">Se connecter</a>
+            <?php
+        }
+        else{
+            ?>
+            <a href="logout.php" class="lien-interne">Se déconnecter</a>
+            <?php
+        }
+        ?>
         </div>
-
+        <?php
+    }
+    ?>
     </nav>
 
     <main><!--partie en charge du contenu principale de la page-->
