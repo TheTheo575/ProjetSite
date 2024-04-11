@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2024 at 02:51 PM
+-- Generation Time: Apr 11, 2024 at 06:07 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -63,6 +63,21 @@ INSERT INTO `plats` (`Id`, `nom`, `name`, `recette`, `recipe`, `image`, `type`) 
 (19, 'Digestifs', 'Digestive', 'Get 27/31 , Vodka Citron/Fraise<br />Rhum , Digestif Maison', 'Get 27/31 , Vodka Lemon/Strawberry<br />Rhum , Digestif Maison', '../images/Plats/Digestif.jpg', 'boisson'),
 (20, 'Vins', 'Wines', 'Vin Rouge : Bordeaux , Côte du Rhône<br />Vin Blanc : Grand Cru , Chardonnay<br />Rosé : Côte de Provence , Argali Rosé<br />', 'Red Wine : Bordeaux , Côte du Rhône<br />White Wine : Grand Cru , Chardonnay<br />Rosé : Côte de Provence , Argali Rosé<br />', '../images/Plats/Vin.jpg', 'boisson');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `Id` int(11) NOT NULL,
+  `Nom` text NOT NULL,
+  `Prenom` text NOT NULL,
+  `Date` date NOT NULL,
+  `Heure` text NOT NULL,
+  `Nombre` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -74,6 +89,12 @@ ALTER TABLE `plats`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -82,6 +103,12 @@ ALTER TABLE `plats`
 --
 ALTER TABLE `plats`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
