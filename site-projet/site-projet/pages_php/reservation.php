@@ -2,9 +2,10 @@
 
     session_start();
     include_once 'setting.php';
-    // if ($accueil == false || !isset($accueil)) {
-    //     header('location:accueil.php');
-    // }
+    if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
+        header('location:accueil.php');
+    }
+    $_SESSION["current_page"]="reservation";
 ?>
 	
 <!DOCTYPE html>

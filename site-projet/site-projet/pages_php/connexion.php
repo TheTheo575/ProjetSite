@@ -19,6 +19,7 @@
 			header("Location: accueil.php"); //redirection vers la page gestion.php
 		}
 	}
+    $_SESSION["current_page"]="connexion";
 ?>
 	
 <!DOCTYPE html>

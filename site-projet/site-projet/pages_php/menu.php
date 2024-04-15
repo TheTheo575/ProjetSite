@@ -5,6 +5,7 @@
     if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
         header('location:accueil.php');
     }
+    $_SESSION["current_page"]="menu";
 
     $reqPrep="SELECT * FROM plats WHERE type=?";//La requete SQL SELECT
     $req = $conn->prepare($reqPrep); //Préparation de la requete
