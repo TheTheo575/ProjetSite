@@ -44,18 +44,18 @@
         }
         return true;
     }
-	$nom=nettoyer_donnees($_POST("nom"));
-	$prenom=nettoyer_donnees($_POST("prenom"));
-	$tel=nettoyer_donnees($_POST("tel"));
-	$date=nettoyer_donnees($_POST("date"));
-	$nbrparticipant=nettoyer_donnees($_POST("nbrparticipant"));
-	$time=nettoyer_donnees($_POST("time"));
-	if(isset($_POST("event"))){
-		$event=nettoyer_donnees($_POST("event"));
-	}
-	if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
-		header('reservation.php');
-	}	
+	// if(isset($_POST("event"))){
+	// 	$event=nettoyer_donnees($_POST("event"));
+	// 	$nom=nettoyer_donnees($_POST("nom"));
+	// 	$prenom=nettoyer_donnees($_POST("prenom"));
+	// 	$tel=nettoyer_donnees($_POST("tel"));
+	// 	$date=nettoyer_donnees($_POST("date"));
+	// 	$nbrparticipant=nettoyer_donnees($_POST("nbrparticipant"));
+	// 	$time=nettoyer_donnees($_POST("time"));
+	// }
+	// if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
+	// 	header('reservation.php');
+	// }	
 
 	// Connexion à la base de donné
 	$servername ='localhost'; 
