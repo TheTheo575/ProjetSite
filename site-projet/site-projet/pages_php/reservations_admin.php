@@ -2,9 +2,7 @@
     session_start();
     include_once 'setting.php';
 
-    // Marque le passage de l'utilisateur par l'accueil
-    $_SESSION['accueil']=true;
-    $_SESSION["current_page"]="accueil";
+    $_SESSION["current_page"]="reservadmin";
 ?>
 	
 <!DOCTYPE html>
