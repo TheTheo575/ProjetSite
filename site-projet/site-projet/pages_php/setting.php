@@ -16,13 +16,6 @@
 		return true;
 	}
 	
-	function valider_email($email){
-		if(empty($email) || !preg_match("/[a-zA-Z.'-]+@[a-zA-Z.]*(junia.com)$/", $email)) {
-			return false;
-		}
-		return true;
-	}	
-	
 	function valider_Telephone($tel){
 		if(empty($tel) || !preg_match("/^0[0-9]{9}/", $tel) || !preg_match("/[ ]*/", $tel)) {
 			return false;
@@ -30,12 +23,6 @@
 		return true;
 	}
 	
-	function valider_Photo($photo){
-		if(empty($photo) || filesize($photo) > 1000000 || (!preg_match("/(jpg)$/",$_FILES['photo']['name']) && !preg_match("/(jpeg)$/",$_FILES['photo']['name']) && !preg_match("/(png)$/",$_FILES['photo']['name']))) {
-			return false;
-		}
-		return true;
-	}
 
     // Comme j'ai vu, que tout réservation prise moins d'une semaine avant, n'est pas prise en compte, j'ai créer ça
     function valider_date($date_entre) {
@@ -44,19 +31,19 @@
         }
         return true;
     }
-	// if(isset($_POST("event"))){
-	// 	$event=nettoyer_donnees($_POST("event"));
-	// 	$nom=nettoyer_donnees($_POST("nom"));
-	// 	$prenom=nettoyer_donnees($_POST("prenom"));
-	// 	$tel=nettoyer_donnees($_POST("tel"));
-	// 	$date=nettoyer_donnees($_POST("date"));
-	// 	$nbrparticipant=nettoyer_donnees($_POST("nbrparticipant"));
-	// 	$time=nettoyer_donnees($_POST("time"));
-	// }
-	// if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
-	// 	header('reservation.php');
-	// }	
-
+	if(isset($_POST["nom"])){
+		$nom=nettoyer_donnees($_POST["nom"]);
+		$prenom=nettoyer_donnees($_POST["prenom"]);
+		$tel=nettoyer_donnees($_POST["tel"]);
+		$date=nettoyer_donnees($_POST["date"]);
+		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
+		$time=nettoyer_donnees($_POST["time"]);
+		if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
+			header('reservation.php');
+		}	
+	
+	}
+	
 	// Connexion à la base de donné
 	$servername ='localhost'; 
 	$username ='root'; 
