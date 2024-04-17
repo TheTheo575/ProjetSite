@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 11, 2024 at 06:07 PM
+-- Generation Time: Apr 17, 2024 at 09:15 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -66,6 +66,21 @@ INSERT INTO `plats` (`Id`, `nom`, `name`, `recette`, `recipe`, `image`, `type`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `profils`
+--
+
+CREATE TABLE `profils` (
+  `Id` int(11) NOT NULL,
+  `Nom` text NOT NULL,
+  `Prenom` text NOT NULL,
+  `Telephone` text NOT NULL,
+  `Email` text NOT NULL,
+  `MotDePasse` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -75,7 +90,8 @@ CREATE TABLE `reservation` (
   `Prenom` text NOT NULL,
   `Date` date NOT NULL,
   `Heure` text NOT NULL,
-  `Nombre` int(11) NOT NULL
+  `Nombre` int(11) NOT NULL,
+  `Event` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -86,6 +102,12 @@ CREATE TABLE `reservation` (
 -- Indexes for table `plats`
 --
 ALTER TABLE `plats`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `profils`
+--
+ALTER TABLE `profils`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -102,7 +124,13 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT for table `plats`
 --
 ALTER TABLE `plats`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `profils`
+--
+ALTER TABLE `profils`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reservation`
