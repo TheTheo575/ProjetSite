@@ -50,7 +50,7 @@
 		    header('reservation.php');
         ?>
             <div class='reservation'><form method='post' action='reservation.php'legend='nbr client'><fieldset><label> Nombre de Personne: <label>
-            <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+'>
+            <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[0-9]+'>
             <input type='submit' name='Envoyer' Value='Valider'/></fieldset></form></div>
             <?php
         }

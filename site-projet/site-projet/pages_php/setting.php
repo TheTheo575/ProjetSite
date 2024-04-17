@@ -47,16 +47,16 @@
 		$date=nettoyer_donnees($_POST["date"]);
 		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
 		$time=nettoyer_donnees($_POST["time"]);
-		if($_POST["nbrparticipant"]>=16){
-			$event=$_POST["event"];
-		}
-		else{
-			$event="NONE";
-		}
-		if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
-			$req="INSERT INTO reservation (Date,Event, Heure, Nom, Nombre, Prenom) VALUES (?,?,?,?,?,?) ";
+		// if($_POST["nbrparticipant"]>=16){
+		// 	$event=$_POST["event"];
+		// }
+		// else{
+		// 	$event="NONE";
+		// }
+		if(valider_NomPrenom($prenom) && valider_NomPrenom($nom) && valider_Telephone($tel) ){
+			$req="INSERT INTO reservation (Date, Heure, Nom, Nombre, Prenom) VALUES (?,?,?,?,?) ";
 			$prereq= $conn->prepare($req);
-			$prereq->execute (array($date,$event,$time,$nom,$nbrparticipant,$prenom));
+			$prereq->execute (array($date,$time,$nom,$nbrparticipant,$prenom));
 			header('Location : confimation.php');
 			
 		}	
