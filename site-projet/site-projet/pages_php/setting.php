@@ -57,8 +57,7 @@
 			$req="INSERT INTO reservation (Date,Event, Heure, Nom, Nombre, Prenom) VALUES (?,?,?,?,?,?) ";
 			$prereq= $conn->prepare($req);
 			$prereq->execute (array($date,$event,$time,$nom,$nbrparticipant,$prenom));
-			header('confimation.php');
->>>>>>> 3b40116888b7059650149678da22bce3c9492205
+			header('Location : confimation.php');
 			
 		}	
 	
