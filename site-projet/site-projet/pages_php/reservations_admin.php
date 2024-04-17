@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head><!--partie en charge de stocker les infos de la page-->
+<head>
 
-    <title>Réservations</title><!--Titre de la page-->
+    <title>Réservations</title>
     <meta charset="utf-8">
     <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
-    <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Accueil">
-    <meta name="description" content="Site de la ch'tite mamie">
+    <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Menu">
+    <meta name="description" content="Menu de la ch'tite mamie">
 
     <link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
     <link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
@@ -37,8 +37,47 @@
     ?>
 
     <main><!--partie en charge du contenu principale de la page-->
+    <?php
+        try{
+                require_once("setting.php");
 
+                $reqPrep="SELECT * FROM reservation";//La requete SQL SELECT
+                $req = $conn->prepare($reqPrep); //Préparation de la requete
 
+                 $req->execute(); //Execution de la requete pour les entrees
+                 $result = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
+
+                // $req->execute(['Prenom']); //Execution de la requete pour les plats
+                // $result_prenom = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les plats
+
+                // $req->execute(['Date']); //Execution de la requete pour les desserts
+                // $result_date = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
+
+                // $req->execute(['Heure']); //Execution de la requete pour les desserts
+                // $result_heure = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
+
+                // $req->execute(['Nombre']); //Execution de la requete pour les desserts
+                // $result_nombre = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
+                
+                $conn= NULL;
+                
+        }                 
+        catch(Exception $e){
+            die("Erreur : " . $e->getMessage());
+        }
+
+        if(isset($result)){
+            for ($i=0; $i<count($result); $i++) {
+                echo'
+                    <fieldset id="liste-recette-entree">
+                    <legend>Réservation n°'.$i.'</legend>
+                        '.$result[$i]["Nom"].' '.$result[$i]["Prenom"].'<br>
+                        '.$result[$i]["Date"].' - '.$result[$i]["Heure"].'<br>
+                        '.$result[$i]["Nombre"].' Personnes<br>
+                    </fieldset>';
+            }
+        }
+    ?>
 
     </main>
     
@@ -48,3 +87,4 @@
 </body>
 
 </html>
+            

@@ -84,7 +84,7 @@
                 }
                 ?>
             </ul>
-
+            
             <ul class="boissons"><!--liste non ordonées pour les boissons-->
                 <li> Boissons :</li>
                 <?php
