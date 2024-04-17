@@ -22,6 +22,15 @@
 		}
 		return true;
 	}
+
+	// Connexion à la base de donné
+	$servername ='localhost'; 
+	$username ='root'; 
+	$password ='root'; 
+	$database ='chtitemamie_bd';
+	
+	$conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 
     // Comme j'ai vu, que tout réservation prise moins d'une semaine avant, n'est pas prise en compte, j'ai créer ça
@@ -39,7 +48,7 @@
 		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
 		$time=nettoyer_donnees($_POST["time"]);
 		if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
-			$req="INSERT INTO reservation (Date, Heure, Nom,Nombre,Prenom) VALUES (?,?,?,?,?) ";
+			$req="INSERT INTO reservation (Date, Heure, Nom, Nombre, Prenom) VALUES (?,?,?,?,?) ";
 			$prereq= $conn->prepare($req);
 			$prereq->execute (array($date,$time,$nom,$nbrparticipant,$prenom));
 			header('reservation.php');
@@ -47,12 +56,5 @@
 	
 	}
 	
-	// Connexion à la base de donné
-	$servername ='localhost'; 
-	$username ='root'; 
-	$password ='root'; 
-	$database ='chtitemamie_bd';
-	
-	$conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+	 
 ?>

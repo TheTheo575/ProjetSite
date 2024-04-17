@@ -47,18 +47,6 @@
                  $req->execute(); //Execution de la requete pour les entrees
                  $result = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
 
-                // $req->execute(['Prenom']); //Execution de la requete pour les plats
-                // $result_prenom = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les plats
-
-                // $req->execute(['Date']); //Execution de la requete pour les desserts
-                // $result_date = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
-
-                // $req->execute(['Heure']); //Execution de la requete pour les desserts
-                // $result_heure = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
-
-                // $req->execute(['Nombre']); //Execution de la requete pour les desserts
-                // $result_nombre = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les desserts
-                
                 $conn= NULL;
                 
         }                 
@@ -67,15 +55,17 @@
         }
 
         if(isset($result)){
+            echo'<div class="conteneur_collab">';
             for ($i=0; $i<count($result); $i++) {
                 echo'
-                    <fieldset id="liste-recette-entree">
-                    <legend>Réservation n°'.$i.'</legend>
+                    <fieldset id="liste-recette-entree" style="background-color: var(--marron-fond);width: 20%;">
+                    <legend style="background-color: var(--marron-fond);">Réservation n°'.$i.'</legend>
                         '.$result[$i]["Nom"].' '.$result[$i]["Prenom"].'<br>
                         '.$result[$i]["Date"].' - '.$result[$i]["Heure"].'<br>
                         '.$result[$i]["Nombre"].' Personnes<br>
                     </fieldset>';
             }
+            echo'</div>';
         }
     ?>
 
