@@ -16,7 +16,6 @@
         <div class="conteneur-nav">
             <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
             <a href="../pages_php/menu.php" class="lien-interne">Menu</a>
-            <a href="../pages_php/accueil_eng.php" class="lien-interne"><b><u>FRA</u></b>/ENG</a>
             <a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>
             <a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>
             <?php 

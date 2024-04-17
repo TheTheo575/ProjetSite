@@ -51,7 +51,7 @@
     <nav><!--Menu de navigation-->
     <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
     <?php
-    if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']=false || $_SESSION['admin']=false){
+    if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']==false || $_SESSION['admin']==false){
         ?>
         <div class="conteneur-nav">
             <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
@@ -74,7 +74,7 @@
         </div>
         <?php
     }
-    elseif($_SESSION['admin']=true){
+    elseif($_SESSION['admin']==true){
         ?>
         <div class="conteneur-nav">
             <a href="../pages_php/accueil.php" class="lien-interne">Accueil</a>
