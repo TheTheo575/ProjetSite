@@ -117,7 +117,7 @@
                         <?php
                         echo"<label> Nombre de Personne: <label>
                         <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
-                        <br><br />"
+                        <br><br />";
                         if($vnb>=16){
                         ?>
                             <label>Type évenenment: </label>
