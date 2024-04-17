@@ -506,13 +506,13 @@ ul{
 .formreserv {
     display: grid;/*creation d'une grille */
     grid-template-columns: repeat(2,50%);/*grille de 2 colonne*/
-    grid-template-areas: "reservation event";/*creation des nom des différent emplacement de la grille*/
+    grid-template-areas: "reservation";/*creation des nom des différent emplacement de la grille*/
 }
 .reservation{
     grid-area: reservation;/*placement du formulaire reservtion dans la grille*/
 }
 .event{
-    grid-area: event;/*placement du formulaire evenement dans une grille*/
+    grid-area: reservation;/*placement du formulaire evenement dans une grille*/
 }
 
 
