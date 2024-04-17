@@ -54,9 +54,9 @@
 			$event="NONE";
 		}
 		if(valider_NomPrenom($prenom) || valider_NomPrenom($nom) || valider_Telephone($tel) || valider_date($date) ){
-			$req="INSERT INTO reservation (Date, Heure, Nom, Nombre, Prenom, Event) VALUES (?,?,?,?,?,?) ";
+			$req="INSERT INTO reservation (Date,Event, Heure, Nom, Nombre, Prenom) VALUES (?,?,?,?,?,?) ";
 			$prereq= $conn->prepare($req);
-			$prereq->execute (array($date,$time,$nom,$nbrparticipant,$prenom,$event));
+			$prereq->execute (array($date,$event,$time,$nom,$nbrparticipant,$prenom));
 			header('confimation.php');
 			
 		}	
