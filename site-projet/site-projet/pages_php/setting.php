@@ -48,7 +48,7 @@
 		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
 		$time=nettoyer_donnees($_POST["time"]);
 		if($_POST["nbrparticipant"]>=16){
-			$event=$_POST["event"]
+			$event=$_POST["event"];
 		}
 		else{
 			$event="NONE";
