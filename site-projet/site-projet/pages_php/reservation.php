@@ -91,55 +91,7 @@
         }
         if(isset($_POST['nbrparticipant'])){
             $vnb = $_POST['nbrparticipant'];
-            if($vnb>=16) {
             ?>
-                <div class='event'>
-                <form method='post' action='reservation.php'>
-                    <fieldset>
-                        <legend>Réservation Événement </legend>
-                        <label >Nom :</label>
-                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
-                        <br><br />
-                        <label >Prénom :</label>
-                        <input type='text' name='prenom' id='prenom'  placeholder='votre Prénom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
-                        <br><br />
-                        <label >Numero de téléphone: </label>
-                        <input type='tel' name='tel'  id='tel' placeholder='Numéro de téléphone' required/>
-                        <br><br />
-                        <label >Date de Réservation: </label>
-                        <input type='date' name=' date' id='date' required/>
-                        <br><br />
-                        <label >Heure de réservation: </label>
-                        <input type='time' name='time' id='time' required/>
-                        <br><br />
-                        
-                        
-                        <label>Type évenenment: </label>
-                        <select name='event' required>
-                            <option>Anniversaire</option>
-                            <option>Mariage</option>
-                            <option>Séminaire</option>
-                            <option>Soirée</option>
-                           
-                        </select>
-                        <br><br />
-                        <?php
-                        echo"<label> Nombre de Personne: <label>
-                        <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
-                        <br><br />"
-                        ?>
-                    
-                        
-                        <input type='submit' value='Reserver' id='reservation' name='Reserver'>
-                        <br><br />
-                        <i class='chut'>*toute réservation d'Événement envoyée moins d'une semaine avant l'Événement ne sera pas prise en compte.</i>
-                    </fieldset>
-                </form>
-            </div>
-                <?php
-            }
-            elseif($vnb<16 ){
-                ?>
             <div class='reservation'>
                 <form method='post' action='reservation.php'>
                     <fieldset>
@@ -166,7 +118,20 @@
                         echo"<label> Nombre de Personne: <label>
                         <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
                         <br><br />"
+                        if($vnb>=16){
                         ?>
+                            <label>Type évenenment: </label>
+                            <select name='event' required>
+                                <option>Anniversaire</option>
+                                <option>Mariage</option>
+                                <option>Séminaire</option>
+                                <option>Soirée</option>
+                            
+                            </select>
+                        <?php
+                        }
+                        ?>
+                        <br><br>
                         <input type='submit' name='Réserver' id='reservation' value='Reserver' />
                         
                         <br><br />
@@ -174,8 +139,7 @@
                     </fieldset>
                 </form>
             </div>
-            <?php
-            }
+        <?php
         }
         
         ?>
