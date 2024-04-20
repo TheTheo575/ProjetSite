@@ -4,7 +4,7 @@ include_once 'setting.php';
 
 $_SESSION["current_page"]="profil";
 
-// $user_id = $_SESSION['mail'] OU $_SESSION['mail']
+// $user_id = $_SESSION['id'] OU $_SESSION['mail']
 
 // Requête pour récupérer les informations du profil de l'utilisateur
 $sql = "SELECT * FROM profils WHERE Id = :user_id";
