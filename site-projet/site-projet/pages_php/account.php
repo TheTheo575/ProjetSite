@@ -8,7 +8,7 @@ if (isset($_SESSION['mail'])) {
     $user_email = $_SESSION['mail'];
 }
 else {
-    $_SESSION['erreur_connexion'] = "Aucun compte enregistré"; // Petit message à utiliser au cas ou
+    $_SESSION['erreur_connexion'] = "Aucun compte enregistré";
     $conn = NULL;
     header('location:connexion.php');
 }
