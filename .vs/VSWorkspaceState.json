@@ -3,10 +3,8 @@
     "",
     "\\site-projet",
     "\\site-projet\\site-projet",
-    "\\site-projet\\site-projet\\css",
-    "\\site-projet\\site-projet\\pages_html",
     "\\site-projet\\site-projet\\pages_php"
   ],
-  "SelectedNode": "\\site-projet\\site-projet\\pages_html\\reservation.html",
+  "SelectedNode": "\\site-projet\\site-projet\\pages_php\\account_connexion.php",
   "PreviewInSolutionExplorer": false
 }

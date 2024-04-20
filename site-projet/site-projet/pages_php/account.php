@@ -4,21 +4,27 @@ include_once 'setting.php';
 
 $_SESSION["current_page"]="profil";
 
-// $user_id = $_SESSION['id'] OU $_SESSION['mail']
+if (isset($_SESSION['mail'])) {
+    $user_email = $_SESSION['mail'];
+}
+else {
+    $_SESSION['erreur_connexion'] = "Aucun compte enregistré"; // Petit message à utiliser au cas ou
+    $conn = NULL;
+    header('location:connexion.php');
+}
 
 // Requête pour récupérer les informations du profil de l'utilisateur
-$sql = "SELECT * FROM profils WHERE Id = :user_id";
-$stmt = $conn->prepare($sql);
-$stmt->execute(array(':user_id' => $user_id));
-$profil = $stmt->fetch(PDO::FETCH_ASSOC);
+$reqSQL = "SELECT * FROM profils WHERE Email=?";
+$rep = $conn->prepare($reqSQL);
+$rep->execute(array($user_email));
+
+$result = $rep->fetchAll(PDO::FETCH_ASSOC); // Récupération du tableau d'information
 
 //Récupération des données de l'utilisateur dans des variables php
-if (isset($profil)) {
-    $nom = $profil['Nom'];
-    $prenom = $profil['Prenom'];
-    $telephone = $profil['Telephone'];
-    $email = $profil['Email'];
-}
+$nom = $result[0]['Nom'];
+$prenom = $result[0]['Prenom'];
+$telephone = $result[0]['Telephone'];
+$email = $result[0]['Email'];
 
 ?>
 
@@ -55,32 +61,20 @@ if (isset($profil)) {
 
         <main><!--partie en charge du contenu principale de la page-->
 
-        <?php
-        //On vérifie si le profil de l'utilisateur existe
-        if (!$profil) {
-            die("Le profil de l'utilisateur n'a pas été trouvé ! Essayez de vous connecté");
-        }
-        else {
-        ?>
-
             <div class="conteneur-accueil">
                 <p style="text-decoration:underline;">Voici votre profil :</p><!--paragraphe avec le texte souligné-->
+                <table> <!--tableau affichant les données sur le profil-->
+                    <tr>
+                        <th colspan="2">Informations sur le compte</th>
+                    </tr>
                 <?php
-                    //Affichage du profil
-                    echo '<table>';
-
-                    echo '<tr><th>Champ</th><th>Valeur</th></tr>';
-                    echo '<tr><td>Nom</td><td>' . htmlspecialchars($profil['Nom']) . '</td></tr>';
-                    echo '<tr><td>Prénom</td><td>' . htmlspecialchars($profil['Prenom']) . '</td></tr>';
-                    echo '<tr><td>Téléphone</td><td>' . htmlspecialchars($profil['Telephone']) . '</td></tr>';
-                    echo '<tr><td>Email</td><td>' . htmlspecialchars($profil['Email']) . '</td></tr>';
-                    
-                    echo '</table>';
+                    echo '<tr><td>Nom</td><td>' . $nom . '</td></tr>';
+                    echo '<tr><td>Prénom</td><td>' . $prenom . '</td></tr>';
+                    echo '<tr><td>Téléphone</td><td>' . $telephone . '</td></tr>';
+                    echo '<tr><td>Email</td><td>' . $email . '</td></tr>';
                 ?>
+                </table>
             </div>
-        <?php
-        }
-        ?>
         </main>
 
         <footer>
@@ -114,4 +108,9 @@ if (isset($profil)) {
         </footer>
 
     </body>
+
+    <?php
+    $conn = NULL;
+    ?>
+
 </html>
