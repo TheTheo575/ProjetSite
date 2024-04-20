@@ -84,15 +84,9 @@
 
     </header>
 
-    <nav><!--Menu de navigation-->
-    <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
-    <div class="conteneur-nav">
-        <a href="../pages_php/accueil_admin.php" class="lien-interne">Accueil</a>
-        <a href="../pages_php/menu_admin.php" class="lien-interne">Plat</a>
-        <a href="../pages_php/reservation_admin.php" class="lien-interne">Réservations</a>
-        <a href="logout.php" class="lien-interne" style="fontsize: 2px;"><b><u>Se déconnecter</u></b></a>
-    </div>
-    </nav>
+    <?php
+    include "nav.php";
+    ?>
 
     <main><!--partie en charge du contenu principale de la page-->
 
