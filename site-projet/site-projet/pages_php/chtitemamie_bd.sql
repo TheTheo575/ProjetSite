@@ -47,7 +47,7 @@ INSERT INTO `plats` (`Id`, `nom`, `name`, `recette`, `recipe`, `image`, `type`) 
 (3, 'Oeufs Cocottes Maroilles', 'Eggs Cocottes Maroilles', 'Oeuf<br />Maroille<br /> Crème<br />', 'Egg<br />Maroille<br />Cream<br />', '../images/Plats/Oeuf-Cocotte-Maroille.jpeg', 'entree'),
 (4, 'Chicons à la Béchamel', 'Bechamel Chicon', 'Chicon<br />Béchamel<br />Jambon<br />', 'Chicon<br />Bechamel<br />Ham<br />', '../images/Plats/Chicon-Bechamel.jpeg', 'entree'),
 (5, 'Potjevleesch', 'Potjevleesch', 'Poulet<br />Lapin<br />Veau<br />', 'Chiken<br />Bunny<br />Calf<br />', '../images/Plats/Potjevleesch.jpeg', 'plat'),
-(6, 'Fricadelle', 'Fricadelle', 'Ça, c\'est le secret de mamie', 'Secret Ingredients', '../images/Plats/Fricadelle.jpeg', 'plat'),
+(6, 'Fricadelle', 'Fricadelle', 'secret de mamie', 'Secret Ingredients', '../images/Plats/Fricadelle.jpeg', 'plat'),
 (7, 'Américain', 'American', 'Frite<br />Sauce au choix<br />Saucisse, Merguez ou Fricadelle<br />', 'French Fries<br />Sauce of your choice<br />Sausage, Merguez or Fricadelle<br />', '../images/Plats/Americain.jpeg', 'plat'),
 (8, 'Frites', 'French Fries', 'Pommes de Terre<br />', 'Potato<br />', '../images/Plats/Frites.jpeg', 'plat'),
 (9, 'Moules de Mamie', 'Sea Mussels', 'Moules<br />Maroille<br />', 'Sea Mussel<br />Maroille<br />', '../images/Plats/Moules.jpeg', 'plat'),
