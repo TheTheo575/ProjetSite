@@ -2,33 +2,23 @@
 session_start();
 include_once 'setting.php';
 
-//Dans un premier temps, on vérifie si l'utilisateur est connecté :
-if (!isset($_SESSION['profl'])) {
-    //S'il ne l'est pas, on le redirige vers la page de connexion si l'utilisateur n'est pas connecté
-    header("Location: connexion.php");
-}
 $_SESSION["current_page"]="profil";
 
-//Récupéreration de l'ID de l'utilisateur
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['mail'] OU $_SESSION['mail']
 
 // Requête pour récupérer les informations du profil de l'utilisateur
 $sql = "SELECT * FROM profils WHERE Id = :user_id";
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(array(':user_id' => $user_id));
 $profil = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//On vérifie si le profil de l'utilisateur existe
-if (!$profil) {
-    die("Le profil de l'utilisateur n'a pas été trouvé");
-}
-
 //Récupération des données de l'utilisateur dans des variables php
-$nom = $profil['Nom'];
-$prenom = $profil['Prenom'];
-$telephone = $profil['Telephone'];
-$email = $profil['Email'];
+if (isset($profil)) {
+    $nom = $profil['Nom'];
+    $prenom = $profil['Prenom'];
+    $telephone = $profil['Telephone'];
+    $email = $profil['Email'];
+}
 
 ?>
 
@@ -65,6 +55,14 @@ $email = $profil['Email'];
 
         <main><!--partie en charge du contenu principale de la page-->
 
+        <?php
+        //On vérifie si le profil de l'utilisateur existe
+        if (!$profil) {
+            die("Le profil de l'utilisateur n'a pas été trouvé ! Essayez de vous connecté");
+        }
+        else {
+        ?>
+
             <div class="conteneur-accueil">
                 <p style="text-decoration:underline;">Voici votre profil :</p><!--paragraphe avec le texte souligné-->
                 <?php
@@ -80,6 +78,9 @@ $email = $profil['Email'];
                     echo '</table>';
                 ?>
             </div>
+        <?php
+        }
+        ?>
         </main>
 
         <footer>
