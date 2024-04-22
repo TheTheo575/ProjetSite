@@ -10,7 +10,7 @@ if (isset($_SESSION['mail'])) {
 else {
     $_SESSION['erreur_connexion'] = "Aucun compte enregistré";
     $conn = NULL;
-    header('location:connexion.php');
+    header('location:account_connexion.php');
 }
 
 // Requête pour récupérer les informations du profil de l'utilisateur

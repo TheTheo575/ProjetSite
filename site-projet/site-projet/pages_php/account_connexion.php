@@ -7,6 +7,7 @@ if (isset($_POST['register'])) {
     $nom = nettoyer_donnees($_POST['nom']);
     $prenom = nettoyer_donnees($_POST['prenom']);
     $email = nettoyer_donnees($_POST['email']);
+    $telephone = nettoyer_donnees($_POST['telephone']);
     $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hashage du mot de passe
 
     //Puis nous vérifions si l'email n'existe pas déjà :
@@ -16,13 +17,13 @@ if (isset($_POST['register'])) {
         echo "Cet email est déjà utilisé. Veuillez choisir un autre.";
     } else {
         //On insère l'utilisateur dans la base de données
-        $stmt = $conn->prepare("INSERT INTO profils (Nom, Prenom, Email, MotDePasse) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$nom, $prenom, $email, $mot_de_passe]);
+        $stmt = $conn->prepare("INSERT INTO profils (Nom, Prenom, Email, Telephone, MotDePasse) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$nom, $prenom, $email, $telephone, $mot_de_passe]);
         echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
     }
 }
 
-//Vérification du formulaire de connexion
+//Vérification du formulaire de connexion :
 if (isset($_POST['login'])) {
     $email = nettoyer_donnees($_POST['email']);
     $mot_de_passe = $_POST['mot_de_passe'];
@@ -32,6 +33,7 @@ if (isset($_POST['login'])) {
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    //On vérifie si l'email et le mot de passe sont corrects :
     if ($user && password_verify($mot_de_passe, $user['MotDePasse'])) {
         $_SESSION['auth'] = true;
         $_SESSION['user_id'] = $user['Id'];
@@ -76,7 +78,7 @@ if (isset($_POST['login'])) {
 
             <h1>Connexion / Inscription</h1>
 
-            <div class='formreserv'>
+            <div class='formreserv'><!--Formulaire pour connecter ou inscrire l'utilisateur-->
                 <form method='post' action='account_connexion.php'>
                     <fieldset>
                         <legend>Commande plat</legend>
@@ -94,25 +96,36 @@ if (isset($_POST['login'])) {
 
          <?php
 
+        //Si l'utilisateur a envoyé son choix :
          if (isset($_POST['choix'])) {
-            if ($_POST['choix'] == 'Inscriptin') {
-                //Formulaire d'inscription
+            //Si l'utilisateur veut s'inscrire :
+            if ($_POST['choix'] == 'Inscription') {
+                //Formulaire d'inscription :
+                //Grâce à la méthode POST,
+                //Nous allons envoyer toutes les données de l'utilisateur à la tble "profils"
                 echo"
                 <h2>Inscription</h2>
                 <form method="post" action="">
                     <label>Nom:</label>
                     <input type="text" name="nom" required><br>
-                    <label>Prénom:</label>
+                    <label>Prenom:</label>
                     <input type="text" name="prenom" required><br>
+                    <label>Telephone:</label>
+                    <input type="text" name="telephone" required><br>
                     <label>Email:</label>
                     <input type="email" name="email" required><br>
+                    <label>Telephone:</label>
+                    <input type="text" name="telephone" required><br>
                     <label>Mot de passe:</label>
                     <input type="password" name="mot_de_passe" required><br>
                     <button type="submit" name="register">S'inscrire</button>
                 </form>";
             }
-            if ($_POST['choix'] == 'Inscriptin') {
-                //Formulaire de connexion
+            //Si l'utilisateur veut se connecter :
+            if ($_POST['choix'] == 'Inscription') {
+                //Formulaire de connexion :
+                //Pour que l'utilisateur puisse se connecter,
+                //on va lui demander seulement son email et son mot de passe
                 echo"
                 <h2>Connexion</h2>
                 <form method="post" action="">
