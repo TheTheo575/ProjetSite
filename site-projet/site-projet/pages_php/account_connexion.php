@@ -109,20 +109,22 @@ if (isset($_POST['login'])) {
                 //Nous allons envoyer toutes les données de l'utilisateur à la tble "profils"
                 echo"
                 <h2>Inscription</h2>
-                <form method="post" action="connexion.php">
-                    <label>Nom:</label>
-                    <input type="text" name="nom" required><br>
-                    <label>Prenom:</label>
-                    <input type="text" name="prenom" required><br>
-                    <label>Telephone:</label>
-                    <input type="text" name="telephone" required><br>
-                    <label>Email:</label>
-                    <input type="email" name="email" required><br>
-                    <label>Telephone:</label>
-                    <input type="text" name="telephone" required><br>
-                    <label>Mot de passe:</label>
-                    <input type="password" name="mot_de_passe" required><br>
-                    <button type="submit" name="register">S'inscrire</button>
+                <form method="post" action="account_connexion.php">
+                    <fieldset>
+                        <label>Nom:</label>
+                        <input type="text" name="nom" required><br>
+                        <label>Prenom:</label>
+                        <input type="text" name="prenom" required><br>
+                        <label>Telephone:</label>
+                        <input type="text" name="telephone" required><br>
+                        <label>Email:</label>
+                        <input type="email" name="email" required><br>
+                        <label>Telephone:</label>
+                        <input type="text" name="telephone" required><br>
+                        <label>Mot de passe:</label>
+                        <input type="password" name="mot_de_passe" required><br>
+                        <button type="submit" name="register">S'inscrire</button>
+                    </fieldset>
                 </form>";
             }
             //Si l'utilisateur veut se connecter :
@@ -132,12 +134,14 @@ if (isset($_POST['login'])) {
                 //on va lui demander seulement son email et son mot de passe
                 echo"
                 <h2>Connexion</h2>
-                <form method="post" action="connexion.php">
-                    <label>Email:</label>
-                    <input type="email" name="email" required><br>
-                    <label>Mot de passe:</label>
-                    <input type="password" name="mot_de_passe" required><br>
-                    <button type="submit" name="login">Se connecter</button>
+                <form method="post" action="account_connexion.php">
+                    <fieldset>
+                        <label>Email:</label>
+                        <input type="email" name="email" required><br>
+                        <label>Mot de passe:</label>
+                        <input type="password" name="mot_de_passe" required><br>
+                        <button type="submit" name="login">Se connecter</button>
+                    </fieldset>
                 </form>":
 
          ?>
