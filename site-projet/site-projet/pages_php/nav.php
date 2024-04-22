@@ -1,12 +1,6 @@
 <nav><!--Menu de navigation-->
 <!--Tous ce code permet d'accéder au différentes pages de notre site ( ce sont des liens)-->
 <?php
-    if($_SESSION["current_page"]=="profil"){
-        echo'<a href="../pages_php/account.php" class="lien-interne"><b><u>Profils</u></b></a>';
-    }
-    else{
-        echo'<a href="../pages_php/account.php" class="lien-interne">Partenaires</a>';
-    }
     if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true){
         echo'<div class="conteneur-nav">';
         if($_SESSION["current_page"]=="accueil"){echo'<a href="../pages_php/accueil.php" class="lien-interne"><b><u>Accueil</u></b></a>';}
@@ -28,6 +22,19 @@
         else{ echo'<a href="../pages_php/reservation.php" class="lien-interne">Réservation</a>';}
         if($_SESSION["current_page"]=="collab"){ echo'<a href="../pages_php/collab.php" class="lien-interne"><b><u>Partenaires</u></b></a>';}
         else{ echo'<a href="../pages_php/collab.php" class="lien-interne">Partenaires</a>';}
+
+        if($_SESSION["current_page"]=="profil"){ 
+            echo'<a href="../pages_php/account.php" class="lien-interne"><b><u>Profils</u></b></a>';
+        }
+        else{ 
+            echo'<a href="../pages_php/account.php" class="lien-interne">Partenaires</a>';
+        }
+        if($_SESSION["current_page"]=="connexion"){ 
+            echo'<a href="../pages_php/account_connexion.php" class="lien-interne"><b><u>Profils</u></b></a>';
+        }
+        else{ 
+            echo'<a href="../pages_php/account_connexion.php" class="lien-interne">Partenaires</a>';
+        }
 
         if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']==false){
             ?>
