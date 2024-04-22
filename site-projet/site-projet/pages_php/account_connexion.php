@@ -15,9 +15,11 @@ if (isset($_POST['register'])) {
     //Puis nous vérifions si l'email n'existe pas déjà :
     $stmt = $conn->prepare("SELECT * FROM profils WHERE Email = ?");
     $stmt->execute([$email]);
-    if ($stmt->rowCount() > 0) {
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if (count($result) > 0) {
         echo "Cet email est déjà utilisé. Veuillez choisir un autre.";
-    } else {
+    }
+    else {
         //On insère l'utilisateur dans la base de données
         $stmt = $conn->prepare("INSERT INTO profils (Nom, Prenom, Email, Telephone, MotDePasse) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$nom, $prenom, $email, $telephone, $mot_de_passe]);
