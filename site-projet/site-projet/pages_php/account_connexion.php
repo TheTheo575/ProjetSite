@@ -85,13 +85,13 @@ if (isset($_POST['login'])) {
             <div class='formreserv'><!--Formulaire pour connecter ou inscrire l'utilisateur-->
                 <form method='post' action='account_connexion.php'>
                     <fieldset>
-                        <legend>Commande plat</legend>
+                        <legend>Choix profil </legend>
                         <select name='choix' required>
                             <option value='connexion'>Connexions</option>
                             <option value='inscription'>Inscription</option>
                         </select>
                         <br><br>
-                        <input type='submit' value='valider' id='choise' name='choix'>
+                        <input type='submit' value='valider' id='choise' name='choise'>
                     </fieldset>
                 </form>
              </div>
@@ -101,13 +101,13 @@ if (isset($_POST['login'])) {
          <?php
 
         //Si l'utilisateur a envoyé son choix :
-         if (isset($_POST['choix'])) {
+         if (isset($_POST['choise'])) {
             //Si l'utilisateur veut s'inscrire :
-            if ($_POST['choix'] == 'Inscription') {
+            if ($_POST['choix'] == 'inscription') {
                 //Formulaire d'inscription :
                 //Grâce à la méthode POST,
                 //Nous allons envoyer toutes les données de l'utilisateur à la tble "profils"
-                echo"
+                echo'
                 <h2>Inscription</h2>
                 <form method="post" action="account_connexion.php">
                     <fieldset>
@@ -119,20 +119,18 @@ if (isset($_POST['login'])) {
                         <input type="text" name="telephone" required><br>
                         <label>Email:</label>
                         <input type="email" name="email" required><br>
-                        <label>Telephone:</label>
-                        <input type="text" name="telephone" required><br>
                         <label>Mot de passe:</label>
                         <input type="password" name="mot_de_passe" required><br>
-                        <button type="submit" name="register">S'inscrire</button>
+                        <button type="submit" name="register">S\'inscrire</button>
                     </fieldset>
-                </form>";
+                </form>';
             }
             //Si l'utilisateur veut se connecter :
-            if ($_POST['choix'] == 'Inscription') {
+            if ($_POST['choix'] == 'connexion') {
                 //Formulaire de connexion :
                 //Pour que l'utilisateur puisse se connecter,
                 //on va lui demander seulement son email et son mot de passe
-                echo"
+                echo'
                 <h2>Connexion</h2>
                 <form method="post" action="account_connexion.php">
                     <fieldset>
@@ -142,12 +140,15 @@ if (isset($_POST['login'])) {
                         <input type="password" name="mot_de_passe" required><br>
                         <button type="submit" name="login">Se connecter</button>
                     </fieldset>
-                </form>":
-
+                </form>';
+            }
+         }
          ?>
-            
-
         </main>
+
+        <?php
+        include "footer.php";
+        ?>
 
     </body>
 </html>
