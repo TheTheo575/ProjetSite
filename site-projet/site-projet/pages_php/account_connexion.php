@@ -2,13 +2,15 @@
 session_start();
 include_once 'setting.php';
 
+$_SESSION["current_page"]="account_connexion";
+
 //Dans un premier temps, nous vérifions le formulaire d'inscription :
 if (isset($_POST['register'])) {
     $nom = nettoyer_donnees($_POST['nom']);
     $prenom = nettoyer_donnees($_POST['prenom']);
     $email = nettoyer_donnees($_POST['email']);
     $telephone = nettoyer_donnees($_POST['telephone']);
-    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hashage du mot de passe
+    $mot_de_passe = nettoyer_donnees($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hashage du mot de passe
 
     //Puis nous vérifions si l'email n'existe pas déjà :
     $stmt = $conn->prepare("SELECT * FROM profils WHERE Email = ?");
@@ -23,21 +25,21 @@ if (isset($_POST['register'])) {
     }
 }
 
-//Vérification du formulaire de connexion :
 if (isset($_POST['login'])) {
-    $email = nettoyer_donnees($_POST['email']);
+    $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
 
     //On récupère l'utilisateur depuis la base de données
     $stmt = $conn->prepare("SELECT * FROM profils WHERE Email = ?");
     $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //On vérifie si l'email et le mot de passe sont corrects :
-    if ($user && password_verify($mot_de_passe, $user['MotDePasse'])) {
+    if ($mot_de_passe == $user[0]['MotDePasse']) {
         $_SESSION['auth'] = true;
-        $_SESSION['user_id'] = $user['Id'];
-        header("Location: profil.php");
+        $_SESSION['user_id'] = $user[0]['Id'];
+        $_SESSION['user_email'] = $email;
+        header("Location:profil.php");
         exit();
     } else {
         echo "Email ou mot de passe incorrect.";
