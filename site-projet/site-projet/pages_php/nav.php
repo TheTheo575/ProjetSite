@@ -27,13 +27,13 @@
             echo'<a href="../pages_php/account.php" class="lien-interne"><b><u>Profils</u></b></a>';
         }
         else{ 
-            echo'<a href="../pages_php/account.php" class="lien-interne">Partenaires</a>';
+            echo'<a href="../pages_php/account.php" class="lien-interne">Profils</a>';
         }
         if($_SESSION["current_page"]=="connexion"){ 
-            echo'<a href="../pages_php/account_connexion.php" class="lien-interne"><b><u>Profils</u></b></a>';
+            echo'<a href="../pages_php/account_connexion.php" class="lien-interne"><b><u>Se connecter</u></b></a>';
         }
         else{ 
-            echo'<a href="../pages_php/account_connexion.php" class="lien-interne">Partenaires</a>';
+            echo'<a href="../pages_php/account_connexion.php" class="lien-interne">Se connecter</a>';
         }
 
         if(!isset($_SESSION['authentifie']) || $_SESSION['authentifie']==false){
