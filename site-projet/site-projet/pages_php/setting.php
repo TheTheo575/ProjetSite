@@ -40,7 +40,7 @@
         }
         return true;
     }
-	if(isset($_POST["nom"])){
+	if(isset($_POST["nom"]) && isset($_POST['Réserver'])){
 		$nom=nettoyer_donnees($_POST["nom"]);
 		$prenom=nettoyer_donnees($_POST["prenom"]);
 		$tel=nettoyer_donnees($_POST["tel"]);
