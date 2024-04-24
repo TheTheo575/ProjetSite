@@ -14,7 +14,7 @@ else {
 }
 
 // Requête pour récupérer les informations du profil de l'utilisateur
-$reqSQL = "SELECT * FROM profils WHERE Email=?";
+$reqSQL = "SELECT * FROM profils WHERE Email = ?";
 $rep = $conn->prepare($reqSQL);
 $rep->execute(array($user_email));
 

@@ -38,12 +38,14 @@ if (isset($_POST['login'])) {
 
     //On vérifie si l'email et le mot de passe sont corrects :
     if ($mot_de_passe == $user[0]['MotDePasse']) {
+        //Authentification réussie : définir les variables de session
         $_SESSION['auth'] = true;
-        $_SESSION['user_id'] = $user[0]['Id'];
+        $_SESSION['user_id'] = $user['Id'];
         $_SESSION['user_email'] = $email;
-        header("Location:account.php");
+        header("Location: account.php");
         exit();
     } else {
+        //Authentification échouée : afficher un message d'erreur
         echo "Email ou mot de passe incorrect.";
     }
 }
@@ -109,21 +111,23 @@ if (isset($_POST['login'])) {
                 //Nous allons envoyer toutes les données de l'utilisateur à la tble "profils"
                 echo'
                 <h2>Inscription</h2>
-                <form method="post" action="account_connexion.php">
-                    <fieldset>
-                        <label>Nom:</label>
-                        <input type="text" name="nom" required><br>
-                        <label>Prenom:</label>
-                        <input type="text" name="prenom" required><br>
-                        <label>Telephone:</label>
-                        <input type="text" name="telephone" required><br>
-                        <label>Email:</label>
-                        <input type="email" name="email" required><br>
-                        <label>Mot de passe:</label>
-                        <input type="password" name="mot_de_passe" required><br>
-                        <button type="submit" name="register">S\'inscrire</button>
-                    </fieldset>
-                </form>';
+                <div class='formreserv'>
+                    <form method="post" action="account_connexion.php">
+                        <fieldset>
+                            <label>Nom:</label>
+                            <input type="text" name="nom" required><br>
+                            <label>Prenom:</label>
+                            <input type="text" name="prenom" required><br>
+                            <label>Telephone:</label>
+                            <input type="text" name="telephone" required><br>
+                            <label>Email:</label>
+                            <input type="email" name="email" required><br>
+                            <label>Mot de passe:</label>
+                            <input type="password" name="mot_de_passe" required><br>
+                            <button type="submit" name="register">S\'inscrire</button>
+                        </fieldset>
+                    </form>
+                </div>';
             }
             //Si l'utilisateur veut se connecter :
             if ($_POST['choix'] == 'connexion') {
@@ -132,15 +136,17 @@ if (isset($_POST['login'])) {
                 //on va lui demander seulement son email et son mot de passe
                 echo'
                 <h2>Connexion</h2>
-                <form method="post" action="account_connexion.php">
-                    <fieldset>
-                        <label>Email:</label>
-                        <input type="email" name="email" required><br>
-                        <label>Mot de passe:</label>
-                        <input type="password" name="mot_de_passe" required><br>
-                        <button type="submit" name="login">Se connecter</button>
-                    </fieldset>
-                </form>';
+                <div class='formreserv'>
+                    <form method="post" action="account_connexion.php">
+                        <fieldset>
+                            <label>Email:</label>
+                            <input type="email" name="email" required><br>
+                            <label>Mot de passe:</label>
+                            <input type="password" name="mot_de_passe" required><br>
+                            <button type="submit" name="login">Se connecter</button>
+                        </fieldset>
+                    </form>
+                </div>';
             }
          }
          ?>
