@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
         $_SESSION['auth'] = true;
         $_SESSION['user_id'] = $user['Id'];
         $_SESSION['user_email'] = $email;
-        header("Location: account.php");
+        header("location: account.php");
         exit();
     } else {
         //Authentification échouée : afficher un message d'erreur
@@ -111,7 +111,7 @@ if (isset($_POST['login'])) {
                 //Nous allons envoyer toutes les données de l'utilisateur à la tble "profils"
                 echo'
                 <h2>Inscription</h2>
-                <div class='formreserv'>
+                <div class="formreserv">
                     <form method="post" action="account_connexion.php">
                         <fieldset>
                             <label>Nom:</label>
@@ -136,7 +136,7 @@ if (isset($_POST['login'])) {
                 //on va lui demander seulement son email et son mot de passe
                 echo'
                 <h2>Connexion</h2>
-                <div class='formreserv'>
+                <div class="formreserv">
                     <form method="post" action="account_connexion.php">
                         <fieldset>
                             <label>Email:</label>
