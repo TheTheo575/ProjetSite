@@ -17,7 +17,7 @@ if (isset($_POST['register'])) {
     $stmt->execute([$email]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (count($result) > 0) {
-        echo "Cet email est déjà utilisé. Veuillez choisir un autre.";
+        echo "Cet email est déjà utilisé. Veuillez en choisir un différent ou vous connecter.";
     }
     else {
         //On insère l'utilisateur dans la base de données
@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
         $_SESSION['auth'] = true;
         $_SESSION['user_id'] = $user[0]['Id'];
         $_SESSION['user_email'] = $email;
-        header("Location:profil.php");
+        header("Location:account.php");
         exit();
     } else {
         echo "Email ou mot de passe incorrect.";

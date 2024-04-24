@@ -12,3 +12,12 @@ text-color : white
 lien-interne : (pour tout les petits lien présent qui mène d'une page html à l'autre, ce présent dans l'onglet nav)
 
 lien-image : (ce présent dans le footer avec insta, twitter et facebook)
+
+## Codes de connexions :
+### Admins :
+Identifiant : email JUNIA
+Code : Prenom12345 (avec l'initiale en majuscule) ex: Theo12345
+
+### Client :
+Identifiant : email quelconqe
+Code : mdp quelconqe
