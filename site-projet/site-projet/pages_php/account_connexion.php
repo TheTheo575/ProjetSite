@@ -17,13 +17,13 @@ if (isset($_POST['register'])) {
     $stmt->execute([$email]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (count($result) > 0) {
-        echo "Cet email est déjà utilisé. Veuillez en choisir un différent ou vous connecter.";
+        $_SESSION['MessageErreur']="Cet email est déjà utilisé. Veuillez en choisir un différent ou vous connecter.";
     }
     else {
         //On insère l'utilisateur dans la base de données
         $stmt = $conn->prepare("INSERT INTO profils (Nom, Prenom, Email, Telephone, MotDePasse) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$nom, $prenom, $email, $telephone, $mot_de_passe]);
-        echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
+        //echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
     }
 }
 
@@ -36,22 +36,28 @@ if (isset($_POST['login'])) {
     $stmt->execute([$email]);
     $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    //On vérifie si l'email et le mot de passe sont corrects :
-    if ($mot_de_passe == $user[0]['MotDePasse']) {
-        //Authentification réussie : définir les variables de session
-        $_SESSION['authentifie'] = true;
-        $_SESSION['mail'] = $email;
+    //On affiche un message d'erreur si aucun compte n'existe
+    if (count($user) < 1) {
+        $_SESSION['MessageErreur']="Cet email n'existe pas, essayez de créer un compte.";
+    }
+    else{
+        //On vérifie si l'email et le mot de passe sont corrects :
+        if ($mot_de_passe == $user[0]['MotDePasse']) {
+            //Authentification réussie : définir les variables de session
+            $_SESSION['authentifie'] = true;
+            $_SESSION['mail'] = $email;
 
-        $testadminSQL = $conn->prepare("SELECT * FROM profils WHERE Email= ?");
-        $testadminSQL->execute([$email]);
-        $testadmin = $testadminSQL->fetch(PDO::FETCH_ASSOC);
-        if($testadmin ['Admin'] == 1) $_SESSION['admin']=true;
-        else $_SESSION['admin']=false;
-        $_SESSION["TEST"]=$testadmin[0]['Admin'];
-        header("location: account.php");
-    } else {
-        //Authentification échouée : afficher un message d'erreur
-        echo "Email ou mot de passe incorrect.";
+            $testadminSQL = $conn->prepare("SELECT * FROM profils WHERE Email= ?");
+            $testadminSQL->execute([$email]);
+            $testadmin = $testadminSQL->fetch(PDO::FETCH_ASSOC);
+            if($testadmin ['Admin'] == 1) $_SESSION['admin']=true;
+            else $_SESSION['admin']=false;
+            $_SESSION["TEST"]=$testadmin[0]['Admin'];
+            header("location: account.php");
+        } else {
+            //Authentification échouée : afficher un message d'erreur
+            $_SESSION['MessageErreur'] = "Email ou mot de passe incorrect.";
+        }
     }
 }
 ?>
@@ -99,7 +105,11 @@ if (isset($_POST['login'])) {
                         </select>
                         <br>
                         <?php
-                        //Message d'erreur à faire 
+                        if(isset($_SESSION['MessageErreur'])){
+                            echo "<i style='font-size: 13px;'>".$_SESSION['MessageErreur']."</i><br>";
+                            $_SESSION['MessageErreur'] = '';
+                            unset($_SESSION['MessageErreur']);
+                        }
                         ?>
                         <input type='submit' value='valider' id='choise' name='choise'>
                     </fieldset>
