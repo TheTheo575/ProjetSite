@@ -33,11 +33,12 @@
         if(isset($result)){
             echo'<div class="conteneur_collab">';
             for ($i=0; $i<count($result); $i++) {
+                $date = new DateTimeImmutable($result[$i]["Date"]);
                 echo'
                     <fieldset id="liste-recette-entree" style="background-color: var(--marron-fond);width: 20%;">
                     <legend style="background-color: var(--marron-fond);">Réservation n°'.$i.'</legend>
                         '.$result[$i]["Nom"].' '.$result[$i]["Prenom"].'<br>
-                        '.$result[$i]["Date"].' - '.$result[$i]["Heure"].'<br>
+                        '.$date->format('d-m-Y').' - '.$result[$i]["Heure"].'<br>
                         '.$result[$i]["Nombre"].' Personnes<br>
                     </fieldset>';
             }

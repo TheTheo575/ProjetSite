@@ -6,6 +6,24 @@
         header('location:accueil.php');
     }
     $_SESSION["current_page"]="Reservation";
+
+    if(isset($_POST["nom"]) && isset($_POST['Réserver'])){
+		$nom=nettoyer_donnees($_POST["nom"]);
+		$prenom=nettoyer_donnees($_POST["prenom"]);
+		$tel=nettoyer_donnees($_POST["tel"]);
+		$date=nettoyer_donnees($_POST["date"]);
+		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
+		$time=nettoyer_donnees($_POST["time"]);
+		if($_POST["nbrparticipant"]>15) $event=$_POST["event"];
+		else $event="NONE";
+
+		if(valider_NomPrenom($prenom) && valider_NomPrenom($nom)){
+            require_once("setting.php");
+			$prereq= $conn->prepare("INSERT INTO `reservation` (`Id`, `Nom`, `Prenom`, `Date`, `Heure`, `Nombre`, `Event`) VALUES (NULL,?,?,?,?,?,?)");
+            $prereq->execute([$nom, $prenom, $date, $time, $nbrparticipant, $event]); 
+            header('location:accueil.php');
+		}
+	}
 ?>
 	
 <!DOCTYPE html>
@@ -25,7 +43,7 @@
 		    header('reservation.php');
         ?>
             <div class='reservation'><form method='post' action='reservation.php'legend='nbr client'><fieldset><label> Nombre de Personne: <label>
-            <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[0-9]+'>
+            <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]{1}[0-9]*'>
             <input type='submit' name='Envoyer' Value='Valider'/></fieldset></form></div>
             <?php
         }
@@ -56,7 +74,7 @@
                         <br><br />
                         <?php
                         echo"<label> Nombre de Personne: <label>
-                        <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]+' value='$vnb'; >
+                        <input type='text' name='nbrparticipant' id='nbrparticipant' required pattern='[1-9]{1}[0-9]*' value='$vnb'; >
                         <br><br />";
                         if($vnb>=16){
                         ?>
