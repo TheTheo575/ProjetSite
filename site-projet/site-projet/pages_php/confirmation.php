@@ -12,13 +12,13 @@
 
     <head>
 
-        <title>Cofirmation</title>
+        <title>Confirmation</title>
         <meta charset="utf-8">
 
         <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
         <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Accueil">
         <meta name="description" content="Confirmation de réservation">
-        <meta http-equiv="refresh" content="5; URL=accueil.html">
+        <meta http-equiv="refresh" content="5; URL=accueil.php">
 
         <link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
         <link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
@@ -49,7 +49,36 @@
 
             <div class="conteneur-confirmation">
 
-                <p>Votre réservation a bien été prise en compte</p>
+                <?php 
+                if(isset($_SESSION['reserv']) && $_SESSION['reserv']!=NULL){
+                try{
+                    require_once("setting.php");
+    
+                    $req = $conn->prepare("SELECT * FROM reservation WHERE Id=?"); //Préparation de la requete
+                    $req->execute([$_SESSION['reserv']]); //Execution de la requete pour les entrees
+                    $result = $req->fetch(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
+                    
+                }                 
+                catch(Exception $e){
+                    die("Erreur : " . $e->getMessage());
+                }
+    
+                if(isset($result)){
+                    $date = new DateTimeImmutable($result["Date"]);
+                    echo'<div class="conteneur_collab">';
+                    echo'
+                        <fieldset id="liste-recette-entree" style="background-color: var(--marron-fond);width: 70%;">
+                        <legend>Votre réservation :</legend>
+                            '.$result["Nom"].' '.$result["Prenom"].'<br>
+                            '.$date->format('d-m-Y').' - '.$result["Heure"].'<br>
+                            '.$result["Nombre"].' Personnes<br>
+                        </fieldset>';
+                    echo'</div>';
+                    unset($_SESSION['reserv']);
+                }
+                }
+                else echo'<p>Votre réservation a bien été prise en compte</p>';
+            ?>
 
             </div>
 

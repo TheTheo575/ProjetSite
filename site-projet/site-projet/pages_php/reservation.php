@@ -21,7 +21,12 @@
             require_once("setting.php");
 			$prereq= $conn->prepare("INSERT INTO `reservation` (`Id`, `Nom`, `Prenom`, `Date`, `Heure`, `Nombre`, `Event`) VALUES (NULL,?,?,?,?,?,?)");
             $prereq->execute([$nom, $prenom, $date, $time, $nbrparticipant, $event]); 
-            header('location:accueil.php');
+            
+            $req = $conn->prepare("SELECT * FROM reservation WHERE Nom=? AND Prenom=? AND Date=? AND Heure=? AND Nombre=? AND Event=?"); //Préparation de la requete
+            $req->execute([$nom, $prenom, $date, $time, $nbrparticipant, $event]); //Execution de la requete pour les entrees
+            $result = $req->fetch(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
+            $_SESSION['reserv'] = $result['Id'];
+            header('location:confirmation.php');
 		}
 	}
 ?>
