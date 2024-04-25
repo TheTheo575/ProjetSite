@@ -5,7 +5,7 @@
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
         <?php
-        if($_SESSION['mail']=='adam.pavy@student.junia.com') echo '<iframe width="110" height="200" src="https://www.myinstants.com/instant/fart-button/embed/" frameborder="0" scrolling="no"></iframe>';
+        if(isset($_SESSION['mail']) && $_SESSION['mail']=='adam.pavy@student.junia.com') echo '<iframe width="110" height="200" src="https://www.myinstants.com/instant/fart-button/embed/" frameborder="0" scrolling="no"></iframe>';
         ?>
         </div>
 
