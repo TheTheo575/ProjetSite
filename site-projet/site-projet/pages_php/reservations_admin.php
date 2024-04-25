@@ -36,10 +36,11 @@
                 $date = new DateTimeImmutable($result[$i]["Date"]);
                 echo'
                     <fieldset id="liste-recette-entree" style="background-color: var(--marron-fond);width: 20%;">
-                    <legend style="background-color: var(--marron-fond);">Réservation n°'.$i.'</legend>
+                    <legend style="background-color: var(--marron-fond);">Réservation n°'.($i+1).'</legend>
                         '.$result[$i]["Nom"].' '.$result[$i]["Prenom"].'<br>
                         '.$date->format('d-m-Y').' - '.$result[$i]["Heure"].'<br>
                         '.$result[$i]["Nombre"].' Personnes<br>
+                        '.$result[$i]["Event"].'
                     </fieldset>';
             }
             echo'</div>';

@@ -15,7 +15,7 @@
 		$nbrparticipant=nettoyer_donnees($_POST["nbrparticipant"]);
 		$time=nettoyer_donnees($_POST["time"]);
 		if($_POST["nbrparticipant"]>15) $event=$_POST["event"];
-		else $event="NONE";
+		else $event="Table";
 
 		if(valider_NomPrenom($prenom) && valider_NomPrenom($nom)){
             require_once("setting.php");
