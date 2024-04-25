@@ -10,7 +10,7 @@ if (isset($_POST['register'])) {
     $prenom = nettoyer_donnees($_POST['prenom']);
     $email = nettoyer_donnees($_POST['email']);
     $telephone = nettoyer_donnees($_POST['telephone']);
-    $mot_de_passe = nettoyer_donnees($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hashage du mot de passe
+    $mot_de_passe = nettoyer_donnees($_POST['mot_de_passe']); // Hashage du mot de passe
 
     //Puis nous vérifions si l'email n'existe pas déjà :
     $stmt = $conn->prepare("SELECT * FROM profils WHERE Email = ?");
@@ -39,11 +39,15 @@ if (isset($_POST['login'])) {
     //On vérifie si l'email et le mot de passe sont corrects :
     if ($mot_de_passe == $user[0]['MotDePasse']) {
         //Authentification réussie : définir les variables de session
-        $_SESSION['auth'] = true;
-        $_SESSION['user_id'] = $user['Id'];
-        $_SESSION['user_email'] = $email;
+        $_SESSION['authentifie'] = true;
+        $_SESSION['mail'] = $email;
+
+        $testadmin = $conn->prepare("SELECT Admin FROM profils WHERE Email=?");
+        $testadmin->execute([$email]);
+        if($testadmin == 1) $_SESSION['admin']=true;
+        else $_SESSION['admin']=false;
+        
         header("location: account.php");
-        exit();
     } else {
         //Authentification échouée : afficher un message d'erreur
         echo "Email ou mot de passe incorrect.";
