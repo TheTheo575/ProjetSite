@@ -5,40 +5,15 @@
     if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
         header('location:accueil.php');
     }
-    $_SESSION["current_page"]="reserv";
+    $_SESSION["current_page"]="Reservation";
 ?>
 	
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    
-    <title>Réservation</title><!--titre de la page-->
-    <meta charset="utf-8">
-    <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
-    <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Réservation">
-    <meta name="description" content="Reservation pour manger à la ch'tite mamie">
-
-    <link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png"><!--image de la chtite mamie pour représenter la page-->
-    <link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
-    <!--liens vers  le doc CSS-->
-</head>
-
-<body>
-
-    <header>
-
-        <a href="../pages_php/accueil.php" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
-        <p style="display:inline;">Ch'tite mamie</p>
-        <!--partie du Html en haut de la page avec le logo et le nom du réstaurant-->
-    </header>
-
     <?php
-    include "nav.php";
+    include "header.php";
     ?>
-    
-    
-    
    
     <main>
      <div class="formreserv">

@@ -5,36 +5,14 @@
     if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
         header('location:accueil.php');
     }
-    $_SESSION["current_page"]="collab";
+    $_SESSION["current_page"]="Partenaires";
 ?>
 	
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-
-    <title>Partenaires</title><!--partenaire-->
-    <meta charset="utf-8">
-    <meta name="author" content="Jérémie Marcant, Théo Neveu, Alexis Evin, Adam Pavy">
-    <meta name="keywords" content="Restaurant, Mamie, Ch'tite Mamie, Réservation">
-    <meta name="description" content="Collaborateur de la ch'tite mamie">
-    <!--icon pour le logo de la page-->
-    <link rel="icon" type="image/x-icon" href="../images/mamie-Logo.png">
-    <link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
-    <!--liens vers la page CSS-->
-</head>
-
-<body>
-
-    <header>
-        <!--partie en charge du logo et du Nom de la pages en haut du site-->
-        <a href="../pages_php/accueil.php" class="lien-interne image-accueil"><img src="../images/mamie-Logo.png" alt="Logo du restaurant" style="display: inline; width: 75px; height: 75px"></a>
-        <p style="display:inline;">Ch'tite mamie</p>
-
-    </header>
-
     <?php
-    include "nav.php";
+    include "header.php";
     ?>
 
     <main>

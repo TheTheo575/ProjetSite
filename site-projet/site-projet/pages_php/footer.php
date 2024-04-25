@@ -4,6 +4,9 @@
         <p class="foot">Nous contacter</p>
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
+        <?php
+        if($_SESSION['mail']=='adam.pavy@student.junia.com') echo '<iframe width="110" height="200" src="https://www.myinstants.com/instant/fart-button/embed/" frameborder="0" scrolling="no"></iframe>';
+        ?>
         </div>
 
         <div class="carte">
@@ -23,5 +26,4 @@
             <a href="http://facebook.com/ChtiteMamie" class="lien-image" target="_blank"><img src="../images/facebook.png" alt="logo facebook"></a>
         </div>
        
-
     </footer>
