@@ -26,6 +26,14 @@
     $telephone = $result[0]['Telephone'];
     $email = $result[0]['Email'];
 
+    if($_SESSION["admin"]==true)$typecompte="Admin";
+    else{
+        setcookie("UserPrenom",$prenom,(time()+(3600*24*365)),'/','',false,true);
+        setcookie("UserNom",$nom,(time()+(3600*24*365)),'/','',false,true);
+        setcookie("UserTel",$telephone,(time()+(3600*24*365)),'/','',false,true);
+        $typecompte="Client";
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -62,14 +70,11 @@
             <main><!--partie en charge du contenu principale de la page-->
 
                 <div class="conteneur-accueil">
-                    <p style="text-decoration:underline;">Voici votre profil :</p><!--paragraphe avec le texte souligné-->
                     <table> <!--tableau affichant les données sur le profil-->
                         <tr>
                             <th colspan="2">Informations sur le compte</th>
                         </tr>
                     <?php
-                        if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true)$typecompte="Admin";
-                        else $typecompte="Client";
 
                         echo '<tr><td>Nom</td><td>' . $nom . '</td></tr>';
                         echo '<tr><td>Prénom</td><td>' . $prenom . '</td></tr>';
@@ -80,7 +85,7 @@
                     </table>
                 </div>
                 <div class="conteneur_collab">
-                <a href="../pages_php/logout.php" style="color: black;">Se déconnecter</a>            
+                <a href="logout.php" style="color: black;">Se déconnecter</a>            
                 </div>
             </main>
 

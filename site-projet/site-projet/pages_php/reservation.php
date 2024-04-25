@@ -63,11 +63,11 @@
                         
                         <legend>Votre réservation : </legend>
                         <label for='nom'>Nom :</label>
-                        <input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern="^[A-Za-z '-]}$" maxlenghth="40" />
+                        <?php echo "<input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserNom']."  onFocus=\"this.value='';\"/>" ?>
                         <img src='../images/Assiette.png' alt='LogoAssiette' id='Assiette'> <p style='display:inline;'></p>
                         <br><br />
                         <label for='prenom'>Prénom :</label>
-                        <input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern="^[A-Za-z '-]}$" maxlenghth="40"/>
+                        <?php echo "<input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserPrenom']."  onFocus=\"this.value='';\"/>" ?>
                         <br><br />
 
                         <label >Date de Réservation: </label>
@@ -77,7 +77,7 @@
                         <input type='time' name='time'id='time' required />
                         <br><br />
                         <label >Numero de téléphone: </label>
-                        <input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' required/>
+                        <?php echo "<input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' value=".$_COOKIE['UserTel']."  onFocus=\"this.value='';\" required />" ?>
                         <br><br />
                         <?php
                         echo"<label> Nombre de Personne: <label>
@@ -95,8 +95,9 @@
                             </select>
                         <?php
                         }
+                        if(isset($_COOKIE['UserNom']) && isset($_COOKIE['UserPrenom']) && isset($_COOKIE['UserTel']))echo "<i style='font-size: 13px;'>Vos informations ont été préremplies</i>";
+                        echo"<br><br>";
                         ?>
-                        <br><br>
                         <input type='submit' name='Réserver' id='reservation' value='Reserver' />
                         
                         <br><br />

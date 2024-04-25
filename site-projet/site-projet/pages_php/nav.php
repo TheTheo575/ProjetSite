@@ -10,7 +10,6 @@
         if($_SESSION["current_page"]=="reservadmin") echo'<a href="../pages_php/reservations_admin.php" class="lien-interne"><b><u>Réservations</u></b></a>';
         else echo'<a href="../pages_php/reservations_admin.php" class="lien-interne">Réservations</a>';
         echo'<a href="logout.php" class="lien-interne" style="fontsize: 2px;">Se déconnecter</a>';
-        echo'admin = '.$_SESSION['admin'];
     }
     else{
         echo'<div class="conteneur-nav">';
@@ -34,6 +33,5 @@
         
     }
     echo "</div>";
-    if($_SESSION['admin']) echo "admin"
     ?>
     </nav>

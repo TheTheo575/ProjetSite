@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 17, 2024 at 09:15 AM
+-- Generation Time: Apr 25, 2024 at 02:46 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -75,8 +75,16 @@ CREATE TABLE `profils` (
   `Prenom` text NOT NULL,
   `Telephone` text NOT NULL,
   `Email` text NOT NULL,
-  `MotDePasse` text NOT NULL
+  `MotDePasse` text NOT NULL,
+  `Admin` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `profils`
+--
+
+INSERT INTO `profils` (`Id`, `Nom`, `Prenom`, `Telephone`, `Email`, `MotDePasse`, `Admin`) VALUES
+(1, 'NEVEU', 'Théo', '0767120955', 'theo.neveu@student.junia.com', 'Theo12345', 1);
 
 -- --------------------------------------------------------
 
@@ -130,7 +138,7 @@ ALTER TABLE `plats`
 -- AUTO_INCREMENT for table `profils`
 --
 ALTER TABLE `profils`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reservation`

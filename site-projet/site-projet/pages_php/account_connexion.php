@@ -42,12 +42,12 @@ if (isset($_POST['login'])) {
         $_SESSION['authentifie'] = true;
         $_SESSION['mail'] = $email;
 
-        $testadminSQL = $conn->prepare("SELECT Admin FROM profils WHERE Email= ?");
+        $testadminSQL = $conn->prepare("SELECT * FROM profils WHERE Email= ?");
         $testadminSQL->execute([$email]);
         $testadmin = $testadminSQL->fetch(PDO::FETCH_ASSOC);
-        if($testadmin[0]['Admin'] == 1) $_SESSION['admin']=true;
+        if($testadmin ['Admin'] == 1) $_SESSION['admin']=true;
         else $_SESSION['admin']=false;
-        
+        $_SESSION["TEST"]=$testadmin[0]['Admin'];
         header("location: account.php");
     } else {
         //Authentification échouée : afficher un message d'erreur
@@ -97,7 +97,10 @@ if (isset($_POST['login'])) {
                             <option value='connexion'>Connexions</option>
                             <option value='inscription'>Inscription</option>
                         </select>
-                        <br><br>
+                        <br>
+                        <?php
+                        //Message d'erreur à faire 
+                        ?>
                         <input type='submit' value='valider' id='choise' name='choise'>
                     </fieldset>
                 </form>
@@ -129,7 +132,7 @@ if (isset($_POST['login'])) {
                             <input type="email" name="email" required><br>
                             <label>Mot de passe:</label>
                             <input type="password" name="mot_de_passe" required><br>
-                            <button type="submit" name="register">S\'inscrire</button>
+                            <input type="submit" value="S\'inscrire" name="register">
                         </fieldset>
                     </form>
                 </div>';
@@ -148,7 +151,7 @@ if (isset($_POST['login'])) {
                             <input type="email" name="email" required><br>
                             <label>Mot de passe:</label>
                             <input type="password" name="mot_de_passe" required><br>
-                            <button type="submit" name="login">Se connecter</button>
+                            <input type="submit" value="Se connecter" name="login">
                         </fieldset>
                     </form>
                 </div>';
