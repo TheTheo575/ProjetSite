@@ -68,15 +68,19 @@
                             <th colspan="2">Informations sur le compte</th>
                         </tr>
                     <?php
+                        if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true)$typecompte="Admin";
+                        else $typecompte="Client";
+
                         echo '<tr><td>Nom</td><td>' . $nom . '</td></tr>';
                         echo '<tr><td>Prénom</td><td>' . $prenom . '</td></tr>';
                         echo '<tr><td>Téléphone   </td><td>' . $telephone . '</td></tr>';
                         echo '<tr><td>Email</td><td>' . $email . '</td></tr>';
+                        echo '<tr><td>Compte</td><td>' . $typecompte . '</td></tr>';
                     ?>
                     </table>
                 </div>
-                <div>
-                <a href="../pages_php/logout.php" class="lien-interne">Se déconnecter</a>
+                <div class="conteneur_collab">
+                <a href="../pages_php/logout.php" style="color: black;">Se déconnecter</a>            
                 </div>
             </main>
 

@@ -42,9 +42,10 @@ if (isset($_POST['login'])) {
         $_SESSION['authentifie'] = true;
         $_SESSION['mail'] = $email;
 
-        $testadmin = $conn->prepare("SELECT Admin FROM profils WHERE Email=?");
-        $testadmin->execute([$email]);
-        if($testadmin == 1) $_SESSION['admin']=true;
+        $testadminSQL = $conn->prepare("SELECT Admin FROM profils WHERE Email= ?");
+        $testadminSQL->execute([$email]);
+        $testadmin = $testadminSQL->fetch(PDO::FETCH_ASSOC);
+        if($testadmin[0]['Admin'] == 1) $_SESSION['admin']=true;
         else $_SESSION['admin']=false;
         
         header("location: account.php");

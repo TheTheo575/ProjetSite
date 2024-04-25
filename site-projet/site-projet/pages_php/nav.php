@@ -31,9 +31,9 @@
             if($_SESSION["current_page"]=="profil") echo'<a href="../pages_php/account.php" class="lien-interne"><b><u>Profil</u></b></a>';
             else echo'<a href="../pages_php/account.php" class="lien-interne">Profil</a>';
         }
-        echo "</div>";
+        
     }
-    echo $_SESSION["mail"];
-    echo $_SESSION["admin"];
+    echo "</div>";
+    if($_SESSION['admin']) echo "admin"
     ?>
     </nav>

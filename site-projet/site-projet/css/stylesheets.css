@@ -515,4 +515,8 @@ ul{
     grid-area: reservation;/*placement du formulaire evenement dans une grille*/
 }
 
+#bouton_deconnexion {
+    color : red;
+}
+
 
