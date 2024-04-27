@@ -61,12 +61,14 @@
                         
                         <legend>Votre réservation : </legend>
                         <label for='nom'>Nom :</label>
-                        <?php if(isset($_COOKIE['UserNom'])) echo "<input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserNom']."  onFocus=\"this.value='';\"/>";
+                        <?php 
+                        if(isset($_COOKIE['UserNom'])) echo "<input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserNom']."  onFocus=\"this.value='';\"/>";
                         else echo "<input type='text' name='nom' id='nom' placeholder='Votre nom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' />"; ?>
                         <img src='../images/Assiette.png' alt='LogoAssiette' id='Assiette'> <p style='display:inline;'></p>
                         <br><br />
                         <label for='prenom'>Prénom :</label>
-                        <?php if(isset($_COOKIE['UserPrenom'])) echo "<input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserPrenom']."  onFocus=\"this.value='';\"/>";
+                        <?php 
+                        if(isset($_COOKIE['UserPrenom'])) echo "<input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' value=".$_COOKIE['UserPrenom']."  onFocus=\"this.value='';\"/>";
                         else echo "<input type='text' name='prenom' id='prenom' placeholder='votre Prénom' required pattern='^[A-Za-z '-]}$' maxlenghth='40' />"; ?>
                         <br><br />
 
@@ -77,7 +79,8 @@
                         <input type='time' name='time'id='time' required />
                         <br><br />
                         <label >Numero de téléphone: </label>
-                        <?php if(isset($_COOKIE['UserPrenom'])) echo "<input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' value=".$_COOKIE['UserTel']."  onFocus=\"this.value='';\" required />";
+                        <?php 
+                        if(isset($_COOKIE['UserPrenom'])) echo "<input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' value=".$_COOKIE['UserTel']."  onFocus=\"this.value='';\" required />";
                         else echo "<input type='tel' name='tel' id='tel' placeholder='Numéro de téléphone' required />"; ?>
                         <br><br />
                         <?php
