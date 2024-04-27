@@ -2,6 +2,10 @@
     session_start();
     include_once 'setting.php';
 
+    if (!isset($_SESSION['accueil'])|| !$_SESSION['accueil']) { // Si l'utilisateur n'est pas passé par l'accueil on l'y renvoie
+        header('location:accueil.php');
+    }
+
     $_SESSION["current_page"]="Reservations";
 ?>
 	
@@ -16,20 +20,15 @@
     <?php
         try{
                 require_once("setting.php");
-
                 $reqPrep="SELECT * FROM reservation";//La requete SQL SELECT
                 $req = $conn->prepare($reqPrep); //Préparation de la requete
-
                  $req->execute(); //Execution de la requete pour les entrees
                  $result = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat pour les entrées
-
-                $conn= NULL;
-                
+                $conn= NULL;   
         }                 
         catch(Exception $e){
             die("Erreur : " . $e->getMessage());
         }
-
         if(isset($result)){
             echo'<div class="conteneur_collab">';
             for ($i=0; $i<count($result); $i++) {
