@@ -152,5 +152,9 @@ if (isset($_POST['login'])) {
         include "footer.php";
         ?>
 
+        <?php
+            $conn = NULL;
+        ?>
+
     </body>
 </html>
