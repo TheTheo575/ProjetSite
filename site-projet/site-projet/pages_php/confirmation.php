@@ -85,8 +85,9 @@
         </main>
 
         <?php
-    include "footer.php";
-    ?>
+    	include "footer.php";
+	$conn = NULL;
+    	?>
 
     </body>
 
