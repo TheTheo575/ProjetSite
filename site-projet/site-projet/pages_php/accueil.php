@@ -51,6 +51,9 @@
     include "footer.php";
     ?>
 
+    <?php
+	$conn = NULL;
+    ?>
 </body>
 
 </html>
