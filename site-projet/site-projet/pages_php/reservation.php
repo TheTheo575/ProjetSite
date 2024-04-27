@@ -119,6 +119,7 @@
 
     <?php
     include "footer.php";
+    $conn = NULL;
     ?>
 
 </body>
