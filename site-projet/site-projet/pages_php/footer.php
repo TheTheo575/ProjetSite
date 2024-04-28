@@ -4,7 +4,7 @@
         <p class="foot">Nous contacter</p>
         <p>Téléphone : +33 3 16 14 23 XX</p>
         <p>Mail : ChtiteMamie@gmail.com</p>
-         </div>
+        </div>
 
         <div class="carte">
         <p class="foot">Où nous trouver :</p>
