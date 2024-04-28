@@ -16,8 +16,10 @@ lien-image : (ce présent dans le footer avec insta, twitter et facebook)
 ## Codes de connexions :
 ### Admins :
 Identifiant : email JUNIA
+
 Code : Prenom12345 (avec l'initiale en majuscule) ex: Theo12345
 
 ### Client :
-Identifiant : email quelconqe
+Identifiant : email quelconque
+
 Code : mdp quelconqe
