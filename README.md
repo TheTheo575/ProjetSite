@@ -23,3 +23,7 @@ Code : Prenom12345 (avec l'initiale en majuscule) ex: Theo12345
 Identifiant : email quelconque
 
 Code : mdp quelconqe
+
+### Vous avez vos propres identifiants :
+Identifiant : meryem.benyoussef@junia.com
+Code : Meryem12345
