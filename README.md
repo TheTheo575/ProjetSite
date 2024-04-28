@@ -17,13 +17,20 @@ lien-image : (ce présent dans le footer avec insta, twitter et facebook)
 ### Admins :
 Identifiant : email JUNIA
 
-Code : Prenom12345 (avec l'initiale en majuscule) ex: Theo12345
+Code : Prenom12345 (avec l'initiale en majuscule)
 
 ### Client :
 Identifiant : email quelconque
 
 Code : mdp quelconqe
 
-### Vous avez vos propres identifiants :
+## Vous avez vos propres identifiants :
+### Admin :
 Identifiant : meryem.benyoussef@junia.com
+
 Code : Meryem12345
+
+### Client :
+Identifiant : theo.neveu@client.com
+
+Code : Client12345
